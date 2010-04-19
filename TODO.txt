@@ -1,0 +1,4 @@
+UIElements
+-table
+
+Write SendInput wrapper to do click, double_click and right_click properly

@@ -37,13 +37,12 @@ or (taking a regex for the window title instead of a string - tests become more 
 
 <b>kill an app</b>
 
-<tt>
-@app.kill
 
-@app.running? == false
+<tt>@app.kill</tt>
 
-@app.should_not be_running
-</tt>
+<tt>@app.running? == false</tt>
+
+<tt>@app.should_not be_running</tt>
 
 <b>Get application windows:</b>
 

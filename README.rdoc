@@ -1,0 +1,108 @@
+=bewildr
+Test WPF apps in (iron) ruby!
+
+Written by Nat Ritmeyer (http://www.natontesting.com)
+
+==Intro
+<b>This is pre-alpha software - it has a way to go before being complete...</b>
+
+Documentation is on the way; until then, take a look at the tests or read the API overview below.
+
+==Getting started
+===Installation
+
+Install the latest ironruby (http://www.ironruby.net/), and for your own sanity install it in c:\\\\ironruby instead of the default location.
+
+<tt>
+gem install bewildr
+</tt>
+
+You'll need at least rubygems version 1.3.6 (gem update --system)
+
+===API Overview
+
+<b>Start an app</b>
+
+<tt>@app = Bewildr::Application.start('notepad')</tt>
+
+<tt>@app = Bewildr::Application.start('c:/windows/notepad.exe')</tt>
+
+<b>Start an app and wait for a particular window:</b>
+
+<tt>@app, @window = Bewildr::Application.start_app_and_wait_for_window('notepad', 'Untitled - Notepad')</tt>
+
+or (taking a regex for the window title instead of a string - tests become more robust):
+
+<tt>@app, @window = Bewildr::Application.start_app_and_wait_for_window('c:/windows/notepad.exe', /.* - Notepad/)</tt>
+
+<b>kill an app</b>
+
+<tt>
+@app.kill
+
+@app.running? == false
+
+@app.should_not be_running
+</tt>
+
+<b>Get application windows:</b>
+
+All windows belonging to an app:
+
+<tt>@all_windows_for_my_app = @app.get_windows</tt>
+
+Window with a particular name:
+
+<tt>@main_window = @app.get_window('My App 1.0')</tt>
+
+Window with a particular name (find window using regex instead of string):
+
+<tt>@main_window = @app.get_window(/My App .*/)</tt>
+
+<b>Find an element by its automation id:</b>
+
+<tt>my_button = @window.get(:id => 'my_button')</tt>
+
+<b>Find an element by its type:</b>
+
+<tt>@all_buttons = @window.get(:type => :button)</tt>
+
+<b>Find an element by its name:</b>
+
+<tt>my_button = @window.get(:name => 'Click Here')</tt>
+
+<b>Find an element by a combination of criteria:</b>
+
+<tt>@main_window.get(:type => :hyperlink, :name => "Link Text")</tt>
+
+<b>Click a button:</b>
+
+<tt>@window.get(:id => 'my_button').click</tt>
+
+<b>Check for existence/enabled state of an element:</b>
+
+<tt>@window.get(:id => 'some_element').exists?</tt>
+
+<tt>@window.get(:id => 'some_element').enabled?</tt>
+
+...which allows for some nice idiomatic test code if you're using rspec:
+
+<tt>@window.get(:id => 'some_element').should_not exist</tt>
+
+<tt>@window.get(:id => 'some_element').should be_enabled</tt>
+
+==Background story
+I've recently been testing a WPF app using ironruby and the White automation library
+(see http://www.natontesting.com/2010/02/17/how-to-test-a-wpf-app-using-ironruby-and-white/
+for an example of my adventures). White proved to be buggy, painful and worst of all, slow.
+The whole time I was writing the framework and the tests, I wanted a replacement for white -
+something written in ruby, something that talked directly to MS Automation, something that
+had a simple architecture (trying to figure out what's going in in white is not trivial) and
+something that could be used to write idiomatic tests (using rspec matchers).
+
+Thus, Bewildr. "Scratch your own itch", and all that.
+
+Why 'bewildr'? Quite simply, I have been bewildrd for the whole journey. Bewildrd by white,
+bewildrd by Microsoft's automation architecture (which turns out, in fact, to be very well
+thought out - it just required a mind-shift, that's all) and bewildrd as a result of the
+recent late nights writing bewildr.

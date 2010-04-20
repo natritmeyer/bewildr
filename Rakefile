@@ -10,14 +10,14 @@ require 'cucumber/rake/task'
 
 spec = Gem::Specification.new do |s|
   s.name = 'bewildr'
-  s.version = '0.0.1'
+  s.version = '0.1'
   s.has_rdoc = true
   s.extra_rdoc_files = ['README', 'LICENSE']
   s.summary = 'Test your WPF apps with (iron) ruby!'
   s.description = s.summary
   s.author = 'Nat Ritmeyer'
   s.email = 'nat@natontesting.com'
-  # s.executables = ['your_executable_here']
+  s.homepage = 'http://github.com/natritmeyer/bewildr'
   s.files = %w(LICENSE README Rakefile) + Dir.glob("{bin,lib}/**/*")
   s.require_path = "lib"
   s.bindir = "bin"

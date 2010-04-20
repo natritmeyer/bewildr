@@ -1,5 +1,4 @@
 When /^I select File, Click Me from the menu$/ do
-  #puts @main_window.get(:id => "menu1").root_menu_items.inspect
   @main_window.get(:id => "menu1").select_menu(["File", "Click Me"])
 end
 

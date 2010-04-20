@@ -83,17 +83,33 @@ module Bewildr
       get({:scope => :children}).collect {|element| Bewildr::Element.new(element)}
     end
 
+    def click
+      CLICKR.click(clickable_point)
+    end
+
+    def double_click
+      CLICKR.double_click(clickable_point)
+    end
+
+    def right_click
+      CLICKR.right_click(clickable_point)
+    end
+
+    def clickable_point
+      existence_check
+      @automation_element.get_clickable_point
+    end
+
     private
 
     def set_control_type
       @control_type = Bewildr::ControlType.symbol_for_enum(@automation_element.current.control_type)
     end
-    
+
+    #list of control types comes from http://msdn.microsoft.com/en-us/library/ms750574.aspx
     def build_element
-      #http://msdn.microsoft.com/en-us/library/ms750574.aspx
       case @control_type
       when :button
-        extend Bewildr::ControlPatterns::InvokePattern
       when :calendar
       when :check_box
         extend Bewildr::ControlPatterns::TogglePattern
@@ -109,9 +125,7 @@ module Bewildr
       when :group
       when :header
       when :header_item
-        extend Bewildr::ControlPatterns::InvokePattern
       when :hyperlink
-        extend Bewildr::ControlPatterns::InvokePattern
         extend Bewildr::ControlTypeAdditions::TextAdditions
       when :image
       when :list

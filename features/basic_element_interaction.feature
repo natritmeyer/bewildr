@@ -25,8 +25,12 @@ Feature: basic element interaction
     Given I start the WpfTest app and wait for the main window
     Then bewildr complains that the non existent element does not exist
 
-    @wip
     Scenario: get an object using more than one condition
     Given I start the WpfTest app and wait for the main window
     When I get the link by specifying more than one condition
     Then I have a reference to the link
+
+    Scenario: wait for existence of an object
+    Given I start the WpfTest app and wait for the main window
+    When I wait for existence of an object
+    Then that object exists

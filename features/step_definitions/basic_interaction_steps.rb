@@ -33,3 +33,11 @@ end
 Then /^I have a reference to the link$/ do
   @link_find_by_multiple_conditions.should exist
 end
+
+When /^I wait for existence of an object$/ do
+  @main_window.wait_for_existence_of(:id => "textBox")
+end
+
+Then /^that object exists$/ do
+  @main_window.get(:id => "textBox").should exist
+end

@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C# Express 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BewildrTestApp", "BewildrTestApp\BewildrTestApp.csproj", "{CC095EC1-64A6-4C34-8063-AAE166557F3C}"
 EndProject
 Global

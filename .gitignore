@@ -1,5 +1,7 @@
 support/BewildrTestApp/BewildrTestApp/bin/*
 support/BewildrTestApp/BewildrTestApp/obj/*
+#support/BewildrTestApp/BewildrTestApp.suo
+
 support/BewildrClickr/BewildrClickr/bin/*
 support/BewildrClickr/BewildrClickr/obj/*
 nbproject/private/rake-d.txt

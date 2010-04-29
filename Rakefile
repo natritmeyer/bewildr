@@ -10,15 +10,15 @@ require 'cucumber/rake/task'
 
 spec = Gem::Specification.new do |s|
   s.name = 'bewildr'
-  s.version = '0.1'
+  s.version = '0.1.1'
   s.has_rdoc = true
-  s.extra_rdoc_files = ['README', 'LICENSE']
+  s.extra_rdoc_files = ['README.rdoc', 'LICENSE']
   s.summary = 'Test your WPF apps with (iron) ruby!'
   s.description = s.summary
   s.author = 'Nat Ritmeyer'
   s.email = 'nat@natontesting.com'
   s.homepage = 'http://github.com/natritmeyer/bewildr'
-  s.files = %w(LICENSE README Rakefile) + Dir.glob("{bin,lib}/**/*")
+  s.files = %w(LICENSE README.rdoc Rakefile) + Dir.glob("{bin,lib}/**/*")
   s.require_path = "lib"
   s.bindir = "bin"
 end
@@ -30,9 +30,9 @@ Rake::GemPackageTask.new(spec) do |p|
 end
 
 Rake::RDocTask.new do |rdoc|
-  files =['README', 'LICENSE', 'lib/**/*.rb']
+  files =['README.rdoc', 'LICENSE', 'lib/**/*.rb']
   rdoc.rdoc_files.add(files)
-  rdoc.main = "README" # page to start on
+  rdoc.main = "README.rdoc" # page to start on
   rdoc.title = "bewildr Docs"
   rdoc.rdoc_dir = 'doc/rdoc' # rdoc output folder
   rdoc.options << '--line-numbers'

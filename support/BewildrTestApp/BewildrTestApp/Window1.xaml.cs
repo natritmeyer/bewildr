@@ -63,5 +63,10 @@ namespace BewildrTestApp
             myMagicButton.Content = "suddenly exists";
             stackPanel1.Children.Add(myMagicButton);
         }
+
+        private void a_link_Click(object sender, RoutedEventArgs e)
+        {
+            link_clicked_label.Content = "link clicked!";
+        }
     }
 }

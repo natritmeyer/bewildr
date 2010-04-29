@@ -17,8 +17,10 @@
                 <Grid>
                     <TextBox Height="23" HorizontalAlignment="Left" Margin="18,15,0,0" Name="enabled_text_field" VerticalAlignment="Top" Width="120" />
                     <TextBox Height="23" HorizontalAlignment="Left" Margin="18,44,0,0" Name="disabled_text_field" VerticalAlignment="Top" Width="120" IsEnabled="False" />
-                    <Label Height="28" HorizontalAlignment="Left" Margin="18,103,0,0" Name="label1" VerticalAlignment="Top" Width="120">a label with some text</Label>
-                    <RichTextBox Height="100" HorizontalAlignment="Left" Margin="18,153,0,159" Name="richTextBox1" Width="200" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="18,73,0,0" Name="label1" VerticalAlignment="Top" Width="120">a label with some text</Label>
+                    <RichTextBox Height="100" HorizontalAlignment="Left" Margin="18,107,0,205" Name="richTextBox1" Width="200" />
+                    <TextBlock Height="28" HorizontalAlignment="Left" Margin="18,0,0,171" VerticalAlignment="Bottom" Width="120"><Hyperlink Name="a_link" Click="a_link_Click">Label</Hyperlink></TextBlock>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="57,0,0,176" Name="link_clicked_label" VerticalAlignment="Bottom" Width="120">link not clicked yet</Label>
                 </Grid>
             </TabItem>
             <TabItem Header="checks/radio" Name="tabItem4">

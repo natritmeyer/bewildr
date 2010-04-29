@@ -72,5 +72,35 @@ namespace BewildrTestApp
         {
             sub_sub_level_menu_result.Content = "selected!";
         }
+
+        private void tree_l1_double_clicked(object sender, RoutedEventArgs e)
+        {
+            tree_results.Content = "level 1 double clicked";
+        }
+
+        private void tree_l2_double_clicked(object sender, RoutedEventArgs e)
+        {
+            tree_results.Content = "level 2 double clicked";
+        }
+
+        private void tree_l3_double_clicked(object sender, RoutedEventArgs e)
+        {
+            tree_results.Content = "level 3 double clicked";
+        }
+
+        private void tree_l1_selected(object sender, RoutedEventArgs e)
+        {
+            tree_results.Content = "level 1 selected";
+        }
+
+        private void tree_l2_selected(object sender, RoutedEventArgs e)
+        {
+            tree_results.Content = "level 2 selected";
+        }
+
+        private void tree_l3_selected(object sender, RoutedEventArgs e)
+        {
+            tree_results.Content = "level 3 selected";
+        }
     }
 }

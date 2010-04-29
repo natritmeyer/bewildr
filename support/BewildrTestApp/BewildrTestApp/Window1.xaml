@@ -4,7 +4,7 @@
     Title="Bewildr Test App" Height="561" Width="905">
     <Grid>
         <TabControl Margin="12,68,12,12" Name="main_tabs">
-            <TabItem Header="basic" Name="tabItem1_basic">
+            <TabItem Header="basic" Name="tab_basic">
                 <Grid>
                     <Button Height="39" HorizontalAlignment="Left" Margin="12,14,0,0" Name="enabled_button" VerticalAlignment="Top" Width="126" Click="enabled_button_Click">enabled</Button>
                     <Label Height="22" HorizontalAlignment="Left" Margin="150,23,0,0" Name="enabled_button_message" VerticalAlignment="Top" Width="138">not clicked yet...</Label>
@@ -13,7 +13,7 @@
                     <StackPanel HorizontalAlignment="Left" Margin="150,106,0,0" Name="stackPanel1" Width="200" Height="99.723" VerticalAlignment="Top" />
                 </Grid>
             </TabItem>
-            <TabItem Header="text fields" Name="tabItem3">
+            <TabItem Header="text fields" Name="tab_text_fields">
                 <Grid>
                     <TextBox Height="23" HorizontalAlignment="Left" Margin="18,15,0,0" Name="enabled_text_field" VerticalAlignment="Top" Width="120" />
                     <TextBox Height="23" HorizontalAlignment="Left" Margin="18,44,0,0" Name="disabled_text_field" VerticalAlignment="Top" Width="120" IsEnabled="False" />
@@ -23,7 +23,7 @@
                     <Label Height="28" HorizontalAlignment="Left" Margin="57,0,0,176" Name="link_clicked_label" VerticalAlignment="Bottom" Width="120">link not clicked yet</Label>
                 </Grid>
             </TabItem>
-            <TabItem Header="checks/radio" Name="tabItem4">
+            <TabItem Header="checks/radio" Name="tab_checks_radio">
                 <Grid>
                     <CheckBox Height="16" HorizontalAlignment="Left" Margin="20,16,0,0" Name="two_state_checkbox" VerticalAlignment="Top" Width="120">two state checkbox</CheckBox>
                     <CheckBox HorizontalAlignment="Left" Margin="20,38,0,357.723" Name="disabled_checkbox" Width="120" IsEnabled="False">disabled checkbox</CheckBox>
@@ -33,18 +33,24 @@
                     <RadioButton Height="16" HorizontalAlignment="Left" Margin="20,170,0,0" Name="radioButton3" VerticalAlignment="Top" Width="120" GroupName="radio_group">radio 3</RadioButton>
                 </Grid>
             </TabItem>
-            <TabItem Header="listboxes" Name="tabItem2">
+            <TabItem Header="listboxes" Name="tab_list_boxes">
                 <Grid>
                     <ListBox Height="100" HorizontalAlignment="Left" Margin="22,19,0,0" Name="single_select_list_box" VerticalAlignment="Top" Width="120" />
                     <ComboBox HorizontalAlignment="Left" Margin="22,140,0,0" Name="comboBox1" Width="120" Height="22.723" VerticalAlignment="Top" IsReadOnly="False" />
                     <ListBox Height="100" Margin="148,19,0,0" Name="multiple_select_list" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" SelectionMode="Multiple" />
                 </Grid>
             </TabItem>
-            <TabItem Header="menus" Name="tabItem1">
+            <TabItem Header="menus" Name="tab_menus">
                 <Grid>
                     <Label Height="28" HorizontalAlignment="Left" Margin="17,17,0,0" Name="top_level_menu_result" VerticalAlignment="Top" Width="161">menu not yet selected...</Label>
                     <Label Height="28" HorizontalAlignment="Left" Margin="17,51,0,0" Name="sub_level_menu_result" VerticalAlignment="Top" Width="161">menu not yet selected...</Label>
                     <Label Height="28" HorizontalAlignment="Left" Margin="17,85,0,0" Name="sub_sub_level_menu_result" VerticalAlignment="Top" Width="161">menu not yet selected...</Label>
+                </Grid>
+            </TabItem>
+            <TabItem Header="bars" Name="tab_bars">
+                <Grid>
+                    <ProgressBar Height="22" Margin="17,16,414,0" Name="progressBar1" VerticalAlignment="Top" Value="75" />
+                    <Slider Height="22" Margin="17,44,414,0" Name="slider1" VerticalAlignment="Top" Value="3" />
                 </Grid>
             </TabItem>
         </TabControl>

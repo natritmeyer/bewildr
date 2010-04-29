@@ -4,12 +4,13 @@
     Title="Bewildr Test App" Height="561" Width="905">
     <Grid>
         <TabControl Margin="12,68,12,12" Name="main_tabs">
-            <TabItem Header="basic" Name="tabItem1">
+            <TabItem Header="basic" Name="tabItem1_basic">
                 <Grid>
                     <Button Height="39" HorizontalAlignment="Left" Margin="12,14,0,0" Name="enabled_button" VerticalAlignment="Top" Width="126" Click="enabled_button_Click">enabled</Button>
                     <Label Height="22" HorizontalAlignment="Left" Margin="150,23,0,0" Name="enabled_button_message" VerticalAlignment="Top" Width="138">not clicked yet...</Label>
                     <Button Height="41" HorizontalAlignment="Left" Margin="12,59,0,0" Name="disabled_button" VerticalAlignment="Top" Width="126" IsEnabled="False">disabled</Button>
                     <Button Height="41" HorizontalAlignment="Left" Margin="12,106,0,0" Name="wait_for_existence_button" VerticalAlignment="Top" Width="126" Click="wait_for_existence_button_Click">click for existence test</Button>
+                    <StackPanel HorizontalAlignment="Left" Margin="150,106,0,0" Name="stackPanel1" Width="200" Height="99.723" VerticalAlignment="Top" />
                 </Grid>
             </TabItem>
             <TabItem Header="text fields" Name="tabItem3">

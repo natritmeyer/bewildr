@@ -59,7 +59,9 @@ namespace BewildrTestApp
             //wait for a bit
             Thread.Sleep(1000);
             //make a new element appear
-
+            System.Windows.Controls.Button myMagicButton = new Button();
+            myMagicButton.Content = "suddenly exists";
+            stackPanel1.Children.Add(myMagicButton);
         }
     }
 }

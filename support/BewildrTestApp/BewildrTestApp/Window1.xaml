@@ -53,6 +53,10 @@
                     <Slider Height="22" Margin="17,44,414,0" Name="slider1" VerticalAlignment="Top" Value="3" />
                 </Grid>
             </TabItem>
+            <TabItem Header="tables" Name="tab_tables">
+                <Grid>
+                </Grid>
+            </TabItem>
         </TabControl>
         <Menu Height="22" Name="main_menu" VerticalAlignment="Top" >
             <MenuItem Header="Menu One">

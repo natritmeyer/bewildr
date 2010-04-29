@@ -68,5 +68,22 @@ namespace BewildrTestApp
         {
             link_clicked_label.Content = "link clicked!";
         }
+
+        private void menuTopLevel_Click(object sender, RoutedEventArgs e)
+        {
+            top_level_menu_result.Content = "selected!";
+        }
+
+        private void menuSubLevel_Click(object sender, RoutedEventArgs e)
+        {
+            sub_level_menu_result.Content = "selected!";
+        }
+
+        private void menuSubSubLevel_Click(object sender, RoutedEventArgs e)
+        {
+            sub_sub_level_menu_result.Content = "selected!";
+        }
+
+
     }
 }

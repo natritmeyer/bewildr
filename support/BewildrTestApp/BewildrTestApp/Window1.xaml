@@ -40,6 +40,28 @@
                     <ListBox Height="100" Margin="148,19,0,0" Name="multiple_select_list" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" SelectionMode="Multiple" />
                 </Grid>
             </TabItem>
+            <TabItem Header="menus" Name="tabItem1">
+                <Grid>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="17,17,0,0" Name="top_level_menu_result" VerticalAlignment="Top" Width="161">menu not yet selected...</Label>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="17,51,0,0" Name="sub_level_menu_result" VerticalAlignment="Top" Width="161">menu not yet selected...</Label>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="17,85,0,0" Name="sub_sub_level_menu_result" VerticalAlignment="Top" Width="161">menu not yet selected...</Label>
+                </Grid>
+            </TabItem>
         </TabControl>
+        <Menu Height="22" Name="main_menu" VerticalAlignment="Top" >
+            <MenuItem Header="Menu One">
+                <MenuItem Header="item one" Click="menuTopLevel_Click"/>
+                <MenuItem Header="item two"/>
+            </MenuItem>
+            <MenuItem Header="Menu Two">
+                <MenuItem Header="item 1"/>
+                <MenuItem Header="sub menu">
+                    <MenuItem Header="sub menu with action" Click="menuSubLevel_Click"/>
+                    <MenuItem Header="sub sub menu">
+                        <MenuItem Header="sub sub menu with action" Click="menuSubSubLevel_Click"/>
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

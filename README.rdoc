@@ -38,9 +38,8 @@ or (taking a regex for the window title instead of a string - tests become more 
   @app.running? == false
   @app.should_not be_running
 
-<b>Get application windows:</b>
-
 ===Window Management
+<b>Get application windows:</b>
 
 All windows belonging to an app:
 

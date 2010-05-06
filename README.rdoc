@@ -17,8 +17,8 @@ Install the latest ironruby (http://www.ironruby.net/), and for your own sanity 
 
 You'll need at least rubygems version 1.3.6 (gem update --system)
 
-===API Overview
-
+==API Overview
+===Application Management
 <b>Start an app</b>
 
   @app = Bewildr::Application.start('notepad')
@@ -40,6 +40,8 @@ or (taking a regex for the window title instead of a string - tests become more 
 
 <b>Get application windows:</b>
 
+===Window Management
+
 All windows belonging to an app:
 
   @all_windows_for_my_app = @app.get_windows
@@ -51,6 +53,8 @@ Window with a particular name:
 Window with a particular name (find window using regex instead of string):
 
   @main_window = @app.get_window(/My App .*/)
+
+===Basic Element Interaction
 
 <b>Find an element by its automation id:</b>
 
@@ -85,10 +89,10 @@ Window with a particular name (find window using regex instead of string):
 ==Background story
 I've recently been testing a WPF app using ironruby and the White automation library
 (see http://www.natontesting.com/2010/02/17/how-to-test-a-wpf-app-using-ironruby-and-white/
-for an example of my adventures). White proved to be buggy, painful and worst of all, slow.
+for an overview of my adventures). White proved to be buggy, painful and worst of all, slow.
 The whole time I was writing the framework and the tests, I wanted a replacement for white -
 something written in ruby, something that talked directly to MS Automation, something that
-had a simple architecture (trying to figure out what's going in in white is not trivial) and
+had a simple architecture (trying to figure out what's going in in white is not fun) and
 something that could be used to write idiomatic tests (using rspec matchers).
 
 Thus, Bewildr. "Scratch your own itch", and all that.

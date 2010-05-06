@@ -13,9 +13,7 @@ Documentation is on the way; until then, take a look at the tests or read the AP
 
 Install the latest ironruby (http://www.ironruby.net/), and for your own sanity install it in c:\\\\ironruby instead of the default location.
 
-<tt>
-gem install bewildr
-</tt>
+  gem install bewildr
 
 You'll need at least rubygems version 1.3.6 (gem update --system)
 
@@ -23,71 +21,65 @@ You'll need at least rubygems version 1.3.6 (gem update --system)
 
 <b>Start an app</b>
 
-<tt>@app = Bewildr::Application.start('notepad')</tt>
-
-<tt>@app = Bewildr::Application.start('c:/windows/notepad.exe')</tt>
+  @app = Bewildr::Application.start('notepad')
+  @app = Bewildr::Application.start('c:/windows/notepad.exe')
 
 <b>Start an app and wait for a particular window:</b>
 
-<tt>@app, @window = Bewildr::Application.start_app_and_wait_for_window('notepad', 'Untitled - Notepad')</tt>
+  @app, @window = Bewildr::Application.start_app_and_wait_for_window('notepad', 'Untitled - Notepad')
 
 or (taking a regex for the window title instead of a string - tests become more robust):
 
-<tt>@app, @window = Bewildr::Application.start_app_and_wait_for_window('c:/windows/notepad.exe', /.* - Notepad/)</tt>
+  @app, @window = Bewildr::Application.start_app_and_wait_for_window('c:/windows/notepad.exe', /.* - Notepad/)
 
 <b>kill an app</b>
 
-
-<tt>@app.kill</tt>
-
-<tt>@app.running? == false</tt>
-
-<tt>@app.should_not be_running</tt>
+  @app.kill
+  @app.running? == false
+  @app.should_not be_running
 
 <b>Get application windows:</b>
 
 All windows belonging to an app:
 
-<tt>@all_windows_for_my_app = @app.get_windows</tt>
+  @all_windows_for_my_app = @app.get_windows
 
 Window with a particular name:
 
-<tt>@main_window = @app.get_window('My App 1.0')</tt>
+  @main_window = @app.get_window('My App 1.0')
 
 Window with a particular name (find window using regex instead of string):
 
-<tt>@main_window = @app.get_window(/My App .*/)</tt>
+  @main_window = @app.get_window(/My App .*/)
 
 <b>Find an element by its automation id:</b>
 
-<tt>my_button = @window.get(:id => 'my_button')</tt>
+  my_button = @window.get(:id => 'my_button')
 
 <b>Find an element by its type:</b>
 
-<tt>@all_buttons = @window.get(:type => :button)</tt>
+  @all_buttons = @window.get(:type => :button)
 
 <b>Find an element by its name:</b>
 
-<tt>my_button = @window.get(:name => 'Click Here')</tt>
+  my_button = @window.get(:name => 'Click Here')
 
 <b>Find an element by a combination of criteria:</b>
 
-<tt>@main_window.get(:type => :hyperlink, :name => "Link Text")</tt>
+  @main_window.get(:type => :hyperlink, :name => "Link Text")
 
 <b>Click a button:</b>
 
-<tt>@window.get(:id => 'my_button').click</tt>
+  @window.get(:id => 'my_button').click
 
 <b>Check for existence/enabled state of an element:</b>
 
-<tt>@window.get(:id => 'some_element').exists?</tt>
-
-<tt>@window.get(:id => 'some_element').enabled?</tt>
+  @window.get(:id => 'some_element').exists?
+  @window.get(:id => 'some_element').enabled?
 
 ...which allows for some nice idiomatic test code if you're using rspec:
 
-<tt>@window.get(:id => 'some_element').should_not exist</tt>
-
+  @window.get(:id => 'some_element').should_not exist
   @window.get(:id => 'some_element').should be_enabled
 
 ==Background story

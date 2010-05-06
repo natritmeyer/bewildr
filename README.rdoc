@@ -88,7 +88,7 @@ Window with a particular name (find window using regex instead of string):
 
 <tt>@window.get(:id => 'some_element').should_not exist</tt>
 
-<tt>@window.get(:id => 'some_element').should be_enabled</tt>
+  @window.get(:id => 'some_element').should be_enabled
 
 ==Background story
 I've recently been testing a WPF app using ironruby and the White automation library

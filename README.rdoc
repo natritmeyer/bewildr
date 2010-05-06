@@ -4,7 +4,7 @@ Test WPF apps in (iron) ruby!
 Written by Nat Ritmeyer (http://www.natontesting.com)
 
 ==Intro
-<b>This is pre-alpha software - it has a way to go before being complete...</b>
+This is pre-alpha software - it has a way to go before being complete...
 
 Documentation is on the way; until then, take a look at the tests or read the API overview below.
 
@@ -19,12 +19,12 @@ You'll need at least rubygems version 1.3.6 (gem update --system)
 
 ==API Overview
 ===Application Management
-<b>Start an app</b>
+Start an app
 
   @app = Bewildr::Application.start('notepad')
   @app = Bewildr::Application.start('c:/windows/notepad.exe')
 
-<b>Start an app and wait for a particular window:</b>
+Start an app and wait for a particular window:
 
   @app, @window = Bewildr::Application.start_app_and_wait_for_window('notepad', 'Untitled - Notepad')
 
@@ -32,14 +32,14 @@ or (taking a regex for the window title instead of a string - tests become more 
 
   @app, @window = Bewildr::Application.start_app_and_wait_for_window('c:/windows/notepad.exe', /.* - Notepad/)
 
-<b>kill an app</b>
+Kill an app
 
   @app.kill
   @app.running? == false
   @app.should_not be_running
 
 ===Window Management
-<b>Get application windows:</b>
+Get application windows:
 
 All windows belonging to an app:
 
@@ -55,27 +55,29 @@ Window with a particular name (find window using regex instead of string):
 
 ===Basic Element Interaction
 
-<b>Find an element by its automation id:</b>
+Find an element by its automation id:
 
   my_button = @window.get(:id => 'my_button')
 
-<b>Find an element by its type:</b>
+Find an element by its type:
 
   @all_buttons = @window.get(:type => :button)
 
-<b>Find an element by its name:</b>
+Find an element by its name:
 
   my_button = @window.get(:name => 'Click Here')
 
-<b>Find an element by a combination of criteria:</b>
+Find an element by a combination of criteria:
 
   @main_window.get(:type => :hyperlink, :name => "Link Text")
 
-<b>Click a button:</b>
+Click a button:
 
   @window.get(:id => 'my_button').click
 
-<b>Check for existence/enabled state of an element:</b>
+===Element State
+
+Check for existence/enabled state of an element:
 
   @window.get(:id => 'some_element').exists?
   @window.get(:id => 'some_element').enabled?
@@ -84,6 +86,21 @@ Window with a particular name (find window using regex instead of string):
 
   @window.get(:id => 'some_element').should_not exist
   @window.get(:id => 'some_element').should be_enabled
+
+Wait for an element to exist:
+
+  @window.wait_for_existence_of(:id => "an_object")
+
+Wait for an element to disappear:
+
+  @window.wait_for_non_existence_of(:id => "an_object")
+
+The wait_for_existence_of method can be called recursively:
+
+  @window.wait_for_existence_of(:id => "an_object").wait_for_existence_of(:id => "child_object")
+
+The line above will result in waiting for 'an_object', and once it has appeared it'll wait for an
+object below it in the object hierarchy called 'child_object'.
 
 ==Background story
 I've recently been testing a WPF app using ironruby and the White automation library

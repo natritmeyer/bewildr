@@ -103,17 +103,12 @@ The line above will result in waiting for 'an_object', and once it has appeared 
 object below it in the object hierarchy called 'child_object'.
 
 ==Background story
-I've recently been testing a WPF app using ironruby and the White automation library
-(see http://www.natontesting.com/2010/02/17/how-to-test-a-wpf-app-using-ironruby-and-white/
-for an overview of my adventures). White proved to be buggy, painful and worst of all, slow.
-The whole time I was writing the framework and the tests, I wanted a replacement for white -
-something written in ruby, something that talked directly to MS Automation, something that
-had a simple architecture (trying to figure out what's going in in white is not fun) and
-something that could be used to write idiomatic tests (using rspec matchers).
+I've recently being testing a WPF app. I wrote some classes to wrap the White automation library
+(http://white.codeplex.com/) using IronRuby to allow the WPF app tests to be written in ruby - the
+same language as the tests for the other systems. Due to some performance issues and a number of
+bugs, I ended up rewriting large chunks of the functionality of white by directly talking to the MS
+Automation API (http://msdn.microsoft.com/en-us/library/ms747327(v=VS.100).aspx). After a while it
+occured to me... "why not write a library from scratch that tests WPF apps, that's fast and allows
+for idiomatic tests due to a clean API?"
 
-Thus, Bewildr. "Scratch your own itch", and all that.
-
-Why 'bewildr'? Quite simply, I have been bewildrd for the whole journey. Bewildrd by white,
-bewildrd by Microsoft's automation architecture (which turns out, in fact, to be very well
-thought out - it just required a mind-shift, that's all) and bewildrd as a result of the
-recent late nights writing bewildr.
+Enter 'Bewildr'.

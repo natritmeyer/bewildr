@@ -9,6 +9,7 @@
             </source-roots>
             <test-roots>
                 <root id="test.features.dir" name="Cucumber Features"/>
+                <root id="test.legacy_features.dir"/>
             </test-roots>
         </data>
     </configuration>

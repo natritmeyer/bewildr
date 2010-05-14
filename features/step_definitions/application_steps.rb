@@ -14,6 +14,11 @@ When /^I start the app using attach or launch$/ do
   @app = Bewildr::Application.attach_or_launch("features/support/BewildrTestApp.exe")
 end
 
+Given /^I start the test app$/ do
+  @app = Bewildr::Application.attach_or_launch("features/support/BewildrTestApp.exe")
+  @main_window = @app.wait_for_window("Bewildr Test App")
+end
+
 Then /^there is only one instance of the test app running$/ do
   Bewildr::Application.processes_with_name("BewildrTestApp").size.should == 1
 end

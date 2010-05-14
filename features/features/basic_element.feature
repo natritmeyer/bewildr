@@ -4,14 +4,15 @@ Feature: basic element interaction
     In order to do my job
     I want to be able to interact with objects, ie: click, check state, check existence etc
 
-    @wip
     Scenario: check for existence of an element which exists
     Given I start the test app
     And I select the basic elements tab
     Then the first button exists
 
+    @wip
     Scenario: check for existence of an element which doesn't exist
     Given I start the test app
+    And I select the basic elements tab
     Then a non existent element does not exist
 
     Scenario: check for enabledness of an enabled element

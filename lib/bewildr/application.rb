@@ -10,7 +10,7 @@ module Bewildr
     private :initialize
 
     def kill
-      @proc.kill
+      `taskkill /f /t /pid #{@proc_id}`
       Timeout::timeout(5) do
         sleep 0.1 until @proc.has_exited
       end
@@ -78,6 +78,18 @@ module Bewildr
       Bewildr::Application.new(process)
     end
 
+    def self.attach_or_launch(path_to_exe)
+      #if app is already open attach to it
+      potential_process_name = File.basename(path_to_exe, ".exe")
+      if Bewildr::Application.processes_with_name(potential_process_name).size > 0
+        #app is running, attach to it
+        Bewildr::Application.attach_to_process_name(potential_process_name)
+      else
+        #app is not running, start a new instance
+        Bewildr::Application.start(path_to_exe)
+      end
+    end
+
     def self.start_app_and_wait_for_window(path, window_name)
       app = Bewildr::Application.start(path)
       window = app.wait_for_window(window_name)
@@ -90,6 +102,11 @@ module Bewildr
 
     def self.processes_with_name(input)
       System::Diagnostics::Process.get_processes_by_name(input).collect {|p| Bewildr::Application.attach_to_process(p) }
+    end
+
+    def self.wait_for_process_with_name(input)
+      Timeout.timeout(30) {sleep 0.1 until System::Diagnostics::Process.get_processes_by_name(input).size > 0}
+      self.attach_to_process_name(input)
     end
   end
 end

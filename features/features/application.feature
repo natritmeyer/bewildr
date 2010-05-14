@@ -4,14 +4,32 @@ Feature: Application interaction
     In order to do my job
     I want to be able to start, stop and get the status of the app I'm testing
 
-    Scenario: Start an application
-    Given I start the WpfTest app
-    When I check to see if the WpfTest app is running
-    Then the WpfTest app is running
+    Scenario: Start an app from scratch
+    Given I ensure that there are no instances of the test app running
+    When I start the test app from scratch
+    Then the test app is running
 
-    Scenario: Close an application
-    Given I start the WpfTest app
-    When I check to see if the WpfTest app is running
-    Then the WpfTest app is running
-    When I close the WpfTest app
-    Then the WpfTest app is not running
+    Scenario: 'Attach or Launch' from scratch
+    Given I ensure that there are no instances of the test app running
+    When I start the app using attach or launch
+    Then the test app is running
+
+    Scenario: 'Attach or Launch' when recycling an old app
+    Given I ensure that there are no instances of the test app running
+    And I start the test app from scratch
+    When I start the app using attach or launch
+    Then the test app is running
+    And there is only one instance of the test app running
+
+    Scenario: Kill an app
+    Given I ensure that there are no instances of the test app running
+    And I start the test app from scratch
+    When I terminate the app with extreme prejudice
+    Then the app is no longer running
+
+    Scenario: Launch app, wait for it, then attach to it
+    Given I ensure that there are no instances of the test app running
+    When I start the test app without getting a reference to it
+    And I then wait for the app to appear
+    Then I have a reference to the test app
+    

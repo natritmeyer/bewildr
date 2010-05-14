@@ -17,3 +17,7 @@ end
 Then /^the disabled button is disabled$/ do
  @main_window.get(:id => "disabled_button").should_not be_enabled
 end
+
+Then /^bewildr complains that the non existent element does not exist$/ do
+  lambda {@main_window.get(:id => "I dont exist").enabled?}.should raise_error(ElementDoesntExist)
+end

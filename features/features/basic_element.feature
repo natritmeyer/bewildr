@@ -19,14 +19,15 @@ Feature: basic element interaction
     And I select the basic elements tab
     Then the enabled button is enabled
 
-    @wip
     Scenario: check for nonenabledness of a disabled element
     Given I start the test app
     And I select the basic elements tab
     Then the disabled button is disabled
 
+    @wip
     Scenario: check for enabledness of a non existent element
     Given I start the test app
+    And I select the basic elements tab
     Then bewildr complains that the non existent element does not exist
 
     Scenario: get an object using more than one condition

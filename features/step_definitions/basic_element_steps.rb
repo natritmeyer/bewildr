@@ -29,3 +29,12 @@ end
 Then /^I have a reference to the button$/ do
   @button.should exist
 end
+
+When /^I wait for existence of an element$/ do
+  @main_window.get(:id => "wait_for_existence_button").click
+  @suddenly_exists_button = @main_window.wait_for_existence_of(:name => "suddenly exists")
+end
+
+Then /^the element that I waited for exists$/ do
+  @suddenly_exists_button.should exist
+end

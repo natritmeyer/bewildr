@@ -14,16 +14,16 @@ Feature: basic element interaction
     And I select the basic elements tab
     Then a non existent element does not exist
 
-    @wip
     Scenario: check for enabledness of an enabled element
     Given I start the test app
     And I select the basic elements tab
     Then the enabled button is enabled
 
+    @wip
     Scenario: check for nonenabledness of a disabled element
     Given I start the test app
-    When I click the disabled controls button
-    Then the text field is disabled
+    And I select the basic elements tab
+    Then the disabled button is disabled
 
     Scenario: check for enabledness of a non existent element
     Given I start the test app

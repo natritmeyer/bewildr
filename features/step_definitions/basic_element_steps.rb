@@ -13,3 +13,7 @@ end
 Then /^the enabled button is enabled$/ do
   @main_window.get(:id => "enabled_button").should be_enabled
 end
+
+Then /^the disabled button is disabled$/ do
+ @main_window.get(:id => "disabled_button").should_not be_enabled
+end

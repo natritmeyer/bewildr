@@ -9,15 +9,16 @@ Feature: basic element interaction
     And I select the basic elements tab
     Then the first button exists
 
-    @wip
     Scenario: check for existence of an element which doesn't exist
     Given I start the test app
     And I select the basic elements tab
     Then a non existent element does not exist
 
+    @wip
     Scenario: check for enabledness of an enabled element
     Given I start the test app
-    Then the button in the group box is enabled
+    And I select the basic elements tab
+    Then the enabled button is enabled
 
     Scenario: check for nonenabledness of a disabled element
     Given I start the test app

@@ -21,3 +21,11 @@ end
 Then /^bewildr complains that the non existent element does not exist$/ do
   lambda {@main_window.get(:id => "I dont exist").enabled?}.should raise_error(ElementDoesntExist)
 end
+
+When /^I get the enabled button by specifying more than one condition$/ do
+  @button = @main_window.get(:id => "enabled_button", :type => :button)
+end
+
+Then /^I have a reference to the button$/ do
+  @button.should exist
+end

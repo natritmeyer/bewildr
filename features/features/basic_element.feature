@@ -24,16 +24,17 @@ Feature: basic element interaction
     And I select the basic elements tab
     Then the disabled button is disabled
 
-    @wip
     Scenario: check for enabledness of a non existent element
     Given I start the test app
     And I select the basic elements tab
     Then bewildr complains that the non existent element does not exist
 
+    @wip
     Scenario: get an object using more than one condition
     Given I start the test app
-    When I get the link by specifying more than one condition
-    Then I have a reference to the link
+    And I select the basic elements tab
+    When I get the enabled button by specifying more than one condition
+    Then I have a reference to the button
 
     Scenario: wait for existence of an object
     Given I start the test app

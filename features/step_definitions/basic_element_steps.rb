@@ -46,3 +46,7 @@ end
 Then /^the result message says clicked!$/ do
   @main_window.get(:id => "enabled_button_message").text.should match("clicked!")
 end
+
+Then /^the basic elements tab contains the enabled button$/ do
+  @main_window.get(:id => "tab_basic").contains?(:id => "enabled_button").should be_true
+end

@@ -42,6 +42,11 @@ Feature: basic element interaction
     Then the element that I waited for exists
 
     @wip
+    Scenario: one element contains another
+    Given I start the test app
+    And I select the basic elements tab
+    Then the basic elements tab contains the enabled button
+
     Scenario: click an element
     Given I start the test app
     And I select the basic elements tab

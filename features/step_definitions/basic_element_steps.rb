@@ -38,3 +38,11 @@ end
 Then /^the element that I waited for exists$/ do
   @suddenly_exists_button.should exist
 end
+
+When /^I click the enabled button$/ do
+  @main_window.get(:id => "enabled_button").click
+end
+
+Then /^the result message says clicked!$/ do
+  @main_window.get(:id => "enabled_button_message").text.should match("clicked!")
+end

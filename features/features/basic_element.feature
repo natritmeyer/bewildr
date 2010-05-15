@@ -35,9 +35,15 @@ Feature: basic element interaction
     When I get the enabled button by specifying more than one condition
     Then I have a reference to the button
 
-    @wip
     Scenario: wait for existence of an object
     Given I start the test app
     And I select the basic elements tab
     When I wait for existence of an element
     Then the element that I waited for exists
+
+    @wip
+    Scenario: click an element
+    Given I start the test app
+    And I select the basic elements tab
+    When I click the enabled button
+    Then the result message says clicked!

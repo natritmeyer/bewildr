@@ -158,6 +158,7 @@ module Bewildr
       when :scroll_bar
       when :seperator
       when :slider
+        extend Bewildr::ControlPatterns::RangeValuePattern
       when :spinner
       when :split_button
       when :status_bar

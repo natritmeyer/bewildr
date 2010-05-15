@@ -17,3 +17,11 @@ end
 Then /^the min value of the sliding bar is 0$/ do
   @main_window.get(:id => "slider1").minimum.should == 0
 end
+
+Then /^the current value of the progress bar is 75$/ do
+  @main_window.get(:id => "progressBar1").value.should == 75
+end
+
+Then /^the current value of the sliding bar is 3$/ do
+  @main_window.get(:id => "slider1").value.should == 3
+end

@@ -25,3 +25,11 @@ end
 Then /^the current value of the sliding bar is 3$/ do
   @main_window.get(:id => "slider1").value.should == 3
 end
+
+When /^I change the value of the sliding bar to 8$/ do
+  @main_window.get(:id => "slider1").value = 8
+end
+
+Then /^the current value of the sliding bar is 8$/ do
+  @main_window.get(:id => "slider1").value.should == 8
+end

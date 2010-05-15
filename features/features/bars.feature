@@ -16,16 +16,20 @@ Feature: progress and sliding bars
     Then the max value of the sliding bar is 10
     And the min value of the sliding bar is 0
 
-    @wip
     Scenario: get current value of a progress bar
     Given I start the test app
     And I select the bars tab
     Then the current value of the progress bar is 75
 
-    @wip
     Scenario: get current value of a sliding bar
     Given I start the test app
     And I select the bars tab
     Then the current value of the sliding bar is 3
 
+    @wip
     Scenario: change value of a sliding bar
+    Given I start the test app
+    And I select the bars tab
+    Then the current value of the sliding bar is 3
+    When I change the value of the sliding bar to 8
+    Then the current value of the sliding bar is 8

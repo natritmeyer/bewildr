@@ -7,6 +7,10 @@ module Bewildr
         @automation_element.get_current_pattern(System::Windows::Automation::RangeValuePattern.pattern).current.value
       end
 
+      def value=(input)
+        @automation_element.get_current_pattern(System::Windows::Automation::RangeValuePattern.pattern).set_value(input.to_f)
+      end
+
       def maximum
         @automation_element.get_current_pattern(System::Windows::Automation::RangeValuePattern.pattern).current.maximum
       end

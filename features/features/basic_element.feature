@@ -41,7 +41,6 @@ Feature: basic element interaction
     When I wait for existence of an element
     Then the element that I waited for exists
 
-    @wip
     Scenario: one element contains another
     Given I start the test app
     And I select the basic elements tab

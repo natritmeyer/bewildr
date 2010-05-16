@@ -9,7 +9,6 @@ Feature: checkbox interaction
     And I select the checkbox tab
     Then the two state checkbox is unchecked
 
-    @wip
     Scenario: check a checkbox
     Given I start the test app
     And I select the checkbox tab
@@ -17,6 +16,18 @@ Feature: checkbox interaction
     Then the two state checkbox is checked
     
     Scenario: uncheck a checkbox
+    Given I start the test app
+    And I select the checkbox tab
+    When I check the two state checkbox
+    Then the two state checkbox is checked
+    When I uncheck the two state checkbox
+    Then the two state checkbox is unchecked
+
+    @wip
     Scenario: check a disabled checkbox
+    Given I start the test app
+    And I select the checkbox tab
+    Then I can't check a disabled checkbox
+
     Scenario: cycle through 2 state checkbox
     Scenario: cycle through 3 state checkbox

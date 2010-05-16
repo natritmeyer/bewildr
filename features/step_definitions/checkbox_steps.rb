@@ -17,3 +17,11 @@ Then /^the two state checkbox is checked$/ do
   @main_window.get(:id => "two_state_checkbox").should_not be_unchecked
   @main_window.get(:id => "two_state_checkbox").checked_state.should == :on
 end
+
+When /^I uncheck the two state checkbox$/ do
+  @main_window.get(:id => "two_state_checkbox").uncheck
+end
+
+Then /^I can't check a disabled checkbox$/ do
+  lambda { @main_window.get(:id => "disabled_checkbox").check }.should raise_error(ElementNotEnabled)
+end

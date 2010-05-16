@@ -26,7 +26,6 @@ Feature: progress and sliding bars
     And I select the bars tab
     Then the current value of the sliding bar is 3
 
-    @wip
     Scenario: change value of a sliding bar
     Given I start the test app
     And I select the bars tab

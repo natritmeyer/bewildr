@@ -1,3 +1,5 @@
+- implemented slider
+
 v0.1.1 - 2010/4/29
 - adding wait_for_existence_of and wait_for_non_existence_of
 

@@ -3,6 +3,7 @@ Given /^I select the checkbox tab$/ do
 end
 
 Then /^the two state checkbox is unchecked$/ do
+  @main_window.get(:id => "two_state_checkbox").should_not be_indeterminate
   @main_window.get(:id => "two_state_checkbox").should_not be_checked
   @main_window.get(:id => "two_state_checkbox").should be_unchecked
   @main_window.get(:id => "two_state_checkbox").checked_state.should == :off
@@ -13,6 +14,7 @@ When /^I check the two state checkbox$/ do
 end
 
 Then /^the two state checkbox is checked$/ do
+  @main_window.get(:id => "two_state_checkbox").should_not be_indeterminate
   @main_window.get(:id => "two_state_checkbox").should be_checked
   @main_window.get(:id => "two_state_checkbox").should_not be_unchecked
   @main_window.get(:id => "two_state_checkbox").checked_state.should == :on
@@ -24,4 +26,11 @@ end
 
 Then /^I can't check a disabled checkbox$/ do
   lambda { @main_window.get(:id => "disabled_checkbox").check }.should raise_error(ElementNotEnabled)
+end
+
+Then /^the three state checkbox is set to indeterminate/ do
+  @main_window.get(:id => "three_state_checkbox").should be_indeterminate
+  @main_window.get(:id => "three_state_checkbox").should_not be_checked
+  @main_window.get(:id => "three_state_checkbox").should_not be_unchecked
+  @main_window.get(:id => "three_state_checkbox").checked_state.should == :indeterminate
 end

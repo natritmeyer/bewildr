@@ -24,6 +24,10 @@ module Bewildr
               state == :off
             end
 
+            def indeterminate?
+              state == :indeterminate
+            end
+
             def checked_state
               state
             end

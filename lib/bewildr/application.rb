@@ -12,7 +12,7 @@ module Bewildr
     def kill
       `taskkill /f /t /pid #{@proc_id}`
       Timeout::timeout(5) do
-        sleep 0.1 until @proc.has_exited
+        sleep 0.1 while running?
       end
     end
 

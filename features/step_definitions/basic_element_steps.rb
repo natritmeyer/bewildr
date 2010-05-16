@@ -50,3 +50,11 @@ end
 Then /^the basic elements tab contains the enabled button$/ do
   @main_window.get(:id => "tab_basic").contains?(:id => "enabled_button").should be_true
 end
+
+Then /^the click for existence test button name is 'click for existence test'$/ do
+  @main_window.get(:id => "wait_for_existence_button").name.should match("click for existence test")
+end
+
+Then /^the automation id of the enabled button is enabled_button$/ do
+  @main_window.get(:id => "enabled_button").automation_id.should match("enabled_button")
+end

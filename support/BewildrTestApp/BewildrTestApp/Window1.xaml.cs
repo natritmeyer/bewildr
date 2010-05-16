@@ -36,6 +36,9 @@ namespace BewildrTestApp
             multiple_select_list.Items.Add("One");
             multiple_select_list.Items.Add("Two");
             multiple_select_list.Items.Add("Three");
+
+            //set three state checkbox to be intermediate
+            three_state_checkbox.IsChecked = null;
         }
 
         private void enabled_button_Click(object sender, RoutedEventArgs e)

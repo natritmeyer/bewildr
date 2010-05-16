@@ -42,16 +42,16 @@ module Bewildr
 
     def wait_for_window(input, wait_time = 30)
       begin
-      Timeout::timeout(wait_time) do
-        begin
-          my_window = get_window(input)
-          raise if my_window.nil?
-          return my_window
-        rescue
-          sleep 0.2
-          retry
+        Timeout::timeout(wait_time) do
+          begin
+            my_window = get_window(input)
+            raise if my_window.nil?
+            return my_window
+          rescue
+            sleep 0.2
+            retry
+          end
         end
-      end
       rescue Timeout::Error
         raise ElementDoesntExist
       end
@@ -97,7 +97,10 @@ module Bewildr
     end
 
     def self.kill_all_processes_with_name(input)
-      System::Diagnostics::Process.get_processes_by_name(input).each {|p| p.kill}
+      System::Diagnostics::Process.get_processes_by_name(input).each do |p|
+        p.kill
+        p.wait_for_exit
+      end
     end
 
     def self.processes_with_name(input)

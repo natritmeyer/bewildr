@@ -1,4 +1,8 @@
-- implemented slider
+v0.1.2 - ???
+- added slider interaction
+- added intermediate state check for checkboxes
+- tests now use custom built bewildr test app
+- process kill logic much better
 
 v0.1.1 - 2010/4/29
 - adding wait_for_existence_of and wait_for_non_existence_of

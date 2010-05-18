@@ -4,7 +4,6 @@ Feature: checkbox interaction
     In order to do my job
     I want to be able to interact with comboboxes
 
-    @wip
     Scenario: select a value and get selected text from a combobox
     Given I start the test app
     And I select the combobox tab
@@ -18,6 +17,11 @@ Feature: checkbox interaction
     And I select the combobox tab
     Then there are ten combobox items
 
+    @wip
     Scenario: get list of combo box item names
+    Given I start the test app
+    And I select the combobox tab
+    Then the items in the combobox match the expected items
+
     Scenario: select combo box item by index
     

@@ -13,3 +13,7 @@ end
 Then /^the selected combobox item is zero$/ do
   @main_window.get(:id => "comboBox1").selected.should match("Zero")
 end
+
+Then /^the items in the combobox match the expected items$/ do
+  @main_window.get(:id => "comboBox1").items.should == %w{Zero One Two Three Four Five Six Seven Eight Nine}
+end

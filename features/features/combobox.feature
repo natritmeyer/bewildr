@@ -9,19 +9,19 @@ Feature: checkbox interaction
     And I select the combobox tab
     When I select zero from the combobox
     Then the selected combobox item is zero
-
-    Scenario: select combobox item using regex
     
     Scenario: get count of combo box items
     Given I start the test app
     And I select the combobox tab
     Then there are ten combobox items
 
-    @wip
     Scenario: get list of combo box item names
     Given I start the test app
     And I select the combobox tab
     Then the items in the combobox match the expected items
 
     Scenario: select combo box item by index
-    
+    Given I start the test app
+    And I select the combobox tab
+    When I select the 4th combobox item by its index
+    Then the selected combobox item is three

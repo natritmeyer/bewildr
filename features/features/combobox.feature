@@ -4,9 +4,15 @@ Feature: checkbox interaction
     In order to do my job
     I want to be able to interact with comboboxes
 
-    Scenario: select a value and get selected text from a combobox
-    
     @wip
+    Scenario: select a value and get selected text from a combobox
+    Given I start the test app
+    And I select the combobox tab
+    When I select zero from the combobox
+    Then the selected combobox item is zero
+
+    Scenario: select combobox item using regex
+    
     Scenario: get count of combo box items
     Given I start the test app
     And I select the combobox tab

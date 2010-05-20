@@ -41,3 +41,13 @@ end
 Then /^the first item from the multi select list box is selected$/ do
   @main_window.get(:id => "multiple_select_list").selected.should match("Zero")
 end
+
+When /^I select Two from the multi select list box$/ do
+  @main_window.get(:id => "multiple_select_list").select("Two")
+end
+
+Then /^the selected items for the multi select list box are Zero and Two$/ do
+  sleep 2
+  puts @main_window.get(:id => "multiple_select_list").can_select_multiple?
+  puts @main_window.get(:id => "multiple_select_list").selected.should == %w{Zero Two}
+end

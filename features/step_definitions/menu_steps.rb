@@ -14,6 +14,22 @@ When /^I select Menu One, item one$/ do
   @main_window.get(:id => "main_menu").select_menu(["Menu One", "item one"])
 end
 
+When /^I select Menu Two, sub menu, sub menu with action$/ do
+  @main_window.get(:id => "main_menu").select_menu(["Menu Two", "sub menu", "sub menu with action"])
+end
+
+When /^I select Menu Two, sub menu, sub sub menu, sub sub menu with action$/ do
+  @main_window.get(:id => "main_menu").select_menu(["Menu Two", "sub menu", "sub sub menu", "sub sub menu with action"])
+end
+
 Then /^the first level menu message box indicates that the menu item was selected$/ do
   @main_window.get(:id => "top_level_menu_result").text.should match("selected!")
+end
+
+Then /^the second level menu message box indicates that the menu item was selected$/ do
+  @main_window.get(:id => "sub_level_menu_result").text.should match("selected!")
+end
+
+Then /^the third level menu message box indicates that the menu item was selected$/ do
+  @main_window.get(:id => "sub_sub_level_menu_result").text.should match("selected!")
 end

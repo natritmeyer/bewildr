@@ -14,22 +14,23 @@ Feature: list interaction
     And I select the menu tab
     Then Menu One contains item two
 
-    @wip
     Scenario: select first level menu item
     Given I start the test app
     And I select the menu tab
     When I select Menu One, item one
     Then the first level menu message box indicates that the menu item was selected
 
+    @wip
     Scenario: select second level menu item
     Given I start the test app
     And I select the menu tab
-    When I select
+    When I select Menu Two, sub menu, sub menu with action
     Then the second level menu message box indicates that the menu item was selected
 
+    @wip
     Scenario: select third level menu item
     Given I start the test app
     And I select the menu tab
-    When I select
+    When I select Menu Two, sub menu, sub sub menu, sub sub menu with action
     Then the third level menu message box indicates that the menu item was selected
 

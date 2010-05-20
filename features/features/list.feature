@@ -9,13 +9,19 @@ Feature: list interaction
     And I select the list tab
     Then the single select list box contains the expected items
 
-    @wip
     Scenario: get list box items from multi select list
     Given I start the test app
     And I select the list tab
     Then the multi select list box contains the expected items
 
+    @wip
     Scenario: select item from single select list
+    Given I start the test app
+    And I select the list tab
+    When I select the first item from the single select list box
+    Then the first item from the single select list box is selected
+
+    Scenario: select item by index from single select list
     Scenario: select item from single select list then select another
     Scenario: select item from multi select list
     Scenario: select two items from multi select list

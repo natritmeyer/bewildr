@@ -18,10 +18,7 @@ module Bewildr
       end
 
       def selected
-        case can_select_multiple?
-        when true then get_selection
-        when false then get_selection.first
-        end
+        can_select_multiple? ? get_selection : get_selection.first
       end
     end
   end

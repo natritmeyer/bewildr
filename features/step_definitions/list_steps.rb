@@ -10,10 +10,18 @@ Then /^the multi select list box contains the expected items$/ do
   @main_window.get(:id => "multiple_select_list").items.should == %w{Zero One Two Three}
 end
 
-When /^I select the first item from the single select list box$/ do
+When /^I select Zero from the single select list box$/ do
   @main_window.get(:id => "single_select_list_box").select("Zero")
 end
 
 Then /^the first item from the single select list box is selected$/ do
   @main_window.get(:id => "single_select_list_box").selected.should match("Zero")
+end
+
+When /^I select the second item from the single select list box$/ do
+  @main_window.get(:id => "single_select_list_box").select(1)
+end
+
+Then /^the second item from the single select list box is selected$/ do
+  @main_window.get(:id => "single_select_list_box").selected.should match("One")
 end

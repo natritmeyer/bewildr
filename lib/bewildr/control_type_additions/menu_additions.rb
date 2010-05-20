@@ -12,6 +12,10 @@ module Bewildr
           def root_menu_items
             get(:type =>:menu_item, :scope => :children)
           end
+
+          def root_menu_item_names
+            root_menu_items.collect {|menu_item| menu_item.name}
+          end
           
           def select_menu(path)
              menu_item(path).click

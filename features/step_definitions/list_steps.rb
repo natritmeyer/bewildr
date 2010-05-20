@@ -33,3 +33,11 @@ end
 Then /^the single select list box selected item is Three$/ do
   @main_window.get(:id => "single_select_list_box").selected.should match("Three")
 end
+
+When /^I select Zero from the multi select list box$/ do
+  @main_window.get(:id => "multiple_select_list").select("Zero")
+end
+
+Then /^the first item from the multi select list box is selected$/ do
+  @main_window.get(:id => "multiple_select_list").selected.should match("Zero")
+end

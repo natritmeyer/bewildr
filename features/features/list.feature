@@ -20,14 +20,21 @@ Feature: list interaction
     When I select Zero from the single select list box
     Then the first item from the single select list box is selected
 
-    @wip
     Scenario: select item by index from single select list
     Given I start the test app
     And I select the list tab
     When I select the second item from the single select list box
     Then the second item from the single select list box is selected
 
+    @wip
     Scenario: select item from single select list then select another
+    Given I start the test app
+    And I select the list tab
+    When I select Zero from the single select list box
+    Then the first item from the single select list box is selected
+    When I select Three from the single select list box
+    Then the single select list box selected item is Three
+
     Scenario: select item from multi select list
     Scenario: select two items from multi select list
     Scenario: deselect item from multi select list

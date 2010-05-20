@@ -25,3 +25,11 @@ end
 Then /^the second item from the single select list box is selected$/ do
   @main_window.get(:id => "single_select_list_box").selected.should match("One")
 end
+
+When /^I select Three from the single select list box$/ do
+  @main_window.get(:id => "single_select_list_box").select("Three")
+end
+
+Then /^the single select list box selected item is Three$/ do
+  @main_window.get(:id => "single_select_list_box").selected.should match("Three")
+end

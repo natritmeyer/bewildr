@@ -19,7 +19,6 @@ Feature: list interaction
     When I select the menu tab
     Then the selected tab is named menu
 
-    @wip
     Scenario: no tab by that name
     Given I start the test app
     Then bewildr throws an exception if I try to access a non-existent tab

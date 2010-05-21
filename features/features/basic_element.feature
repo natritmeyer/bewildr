@@ -57,7 +57,6 @@ Feature: basic element interaction
     And I select the basic elements tab
     Then the click for existence test button name is 'click for existence test'
 
-    @wip
     Scenario: get automation id of an element
     Given I start the test app
     And I select the basic elements tab

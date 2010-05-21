@@ -22,7 +22,6 @@ Feature: radio interaction
     Then the second radio button is selected
     And the third radio button is unselected
 
-    @wip
     Scenario: cycle through radio buttons
     Given I start the test app
     And I select the radio tab

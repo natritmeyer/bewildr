@@ -9,7 +9,6 @@ Feature: link interaction
     And I select the link tab
     Then the link text is Label
 
-    @wip
     Scenario: click a link
     Given I start the test app
     And I select the link tab

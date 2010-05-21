@@ -8,7 +8,8 @@ module Bewildr
 
         base.instance_eval do
           def select(input)
-            selectable_elements = get(:type => :tab_item, :scope => :children)
+            raise NoSuchTab unless tab_names.include?(input)
+            selectable_elements = tabs
             selectable_elements.find {|selectable_element| selectable_element.name == input}.select
           end
 
@@ -18,6 +19,10 @@ module Bewildr
 
           def tab_names
             tabs.collect {|tab| tab.name}
+          end
+
+          def selected
+            tabs.find {|tab| tab.selected?}
           end
         end
       end

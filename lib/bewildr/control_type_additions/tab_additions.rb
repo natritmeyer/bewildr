@@ -11,6 +11,14 @@ module Bewildr
             selectable_elements = get(:type => :tab_item, :scope => :children)
             selectable_elements.find {|selectable_element| selectable_element.name == input}.select
           end
+
+          def tabs
+            get(:type => :tab_item, :scope => :children)
+          end
+
+          def tab_names
+            tabs.collect {|tab| tab.name}
+          end
         end
       end
     end

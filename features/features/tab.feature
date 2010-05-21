@@ -12,10 +12,14 @@ Feature: list interaction
     Given I start the test app
     Then the tab names are the expected ones
 
-    @wip
     Scenario: select tab
     Given I start the test app
     And I select the listboxes tab
     Then the selected tab is named listboxes
     When I select the menu tab
     Then the selected tab is named menu
+
+    @wip
+    Scenario: no tab by that name
+    Given I start the test app
+    Then bewildr throws an exception if I try to access a non-existent tab

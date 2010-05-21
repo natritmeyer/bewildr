@@ -17,3 +17,7 @@ end
 Then /^the selected tab is named menu$/ do
   @main_window.get(:id => "main_tabs").selected.name.should match("menus")
 end
+
+Then /^bewildr throws an exception if I try to access a non-existent tab$/ do
+   lambda {@main_window.get(:id => "main_tabs").select("non existent")}.should raise_error(NoSuchTab)
+end

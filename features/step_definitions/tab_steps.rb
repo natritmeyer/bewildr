@@ -3,17 +3,17 @@ Then /^there are 8 tabs$/ do
 end
 
 Then /^the tab names are the expected ones$/ do
-  pending # express the regexp above with the c
+  @main_window.get(:id => "main_tabs").tab_names.should == ["basic", "text fields", "checks/radio", "listboxes", "menus", "bars", "tables", "tree"]
 end
 
-Given /^I select the tab tab$/ do
-  pending # express the regexp above with the c
+Given /^I select the listboxes tab$/ do
+   @main_window.get(:id => "main_tabs").select("listboxes")
 end
 
-Then /^the selected tab is named tab$/ do
-  pending # express the regexp above with the c
+Then /^the selected tab is named listboxes/ do
+  @main_window.get(:id => "main_tabs").selected.name.should match("listboxes")
 end
 
 Then /^the selected tab is named menu$/ do
-  pending # express the regexp above with the c
+  @main_window.get(:id => "main_tabs").selected.name.should match("menus")
 end

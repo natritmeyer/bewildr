@@ -5,5 +5,6 @@ class ElementDoesntExist < StandardError; end
 class PasswordFieldReadAttempt < StandardError; end
 class NoSuchItemInComboBox < StandardError; end
 class NoSuchItemInListBox < StandardError; end
+class NoSuchTab < StandardError; end
 
 class BewildrInternalError < StandardError; end

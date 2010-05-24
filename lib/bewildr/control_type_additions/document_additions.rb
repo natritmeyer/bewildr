@@ -12,7 +12,10 @@ module Bewildr
           end
 
           def text=(input)
-            
+            focus
+            select_all
+            System::Windows::Forms::SendKeys.send_wait("{DEL}")
+            System::Windows::Forms::SendKeys.send_wait(input)
           end
         end
       end

@@ -4,8 +4,6 @@ Test WPF apps in (iron) ruby!
 Written by Nat Ritmeyer (http://www.natontesting.com)
 
 ==Intro
-This is pre-alpha software - it has a way to go before being complete...
-
 Documentation is on the way; until then, take a look at the tests or read the API overview below.
 
 ==Getting started

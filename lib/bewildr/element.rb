@@ -65,6 +65,10 @@ module Bewildr
       end
     end
 
+    def focus
+      @automation_element.set_focus
+    end
+
     #:id => "id"
     #:name => "bob"
     #:type => :button

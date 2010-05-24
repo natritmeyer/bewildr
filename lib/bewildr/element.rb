@@ -133,6 +133,7 @@ module Bewildr
         extend Bewildr::ControlTypeAdditions::DataGridAdditions
       when :data_item
       when :document
+        extend Bewildr::ControlTypeAdditions::DocumentAdditions
       when :edit
         extend Bewildr::ControlPatterns::ValuePattern
       when :group

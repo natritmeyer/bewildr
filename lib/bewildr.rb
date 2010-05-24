@@ -10,6 +10,7 @@ raise LoadError, "Bewildr only works under IronRuby" unless RUBY_ENGINE == "iron
 load_assembly 'UIAutomationClient, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
 load_assembly 'UIAutomationTypes, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
 load_assembly 'System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'
+load_assembly 'System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'
 
 #require BewildrClickr - stopgap until the ffi gem works under ironruby
 require File.join(File.expand_path(File.dirname(__FILE__)), "bewildr", "ext", "BewildrClickr.dll")

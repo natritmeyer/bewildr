@@ -6,3 +6,7 @@ Feature: rich text box interaction
 
     @wip
     Scenario: get and set the contents of a rich text box
+    Given I start the test app
+    And I select the textfields tab
+    When I enter some text into the rich text box
+    Then the rich text box contains the text I entered

@@ -8,3 +8,5 @@ Need to create my own wpf app to run tests against - using the one from the whit
 Documentation
 - rdoc for everything
 - simple instructions in readme
+
+Better exception throwing, eg: check for enabled state of textfield before attempting to set the text

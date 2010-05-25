@@ -18,11 +18,6 @@ Feature: text field interaction
     When I enter some different text into the text field
     Then the text field contains the different text
 
-    Scenario: attempt setting value of disabled text field
-    Given I start the test app
-    And I select the textfields tab
-    Then bewildr complains if I try to enter text into the disabled text field
-
     Scenario: get value of label
     Given I start the test app
     And I select the textfields tab

@@ -71,6 +71,9 @@
                     <Label Height="28" HorizontalAlignment="Left" Margin="17,0,0,133" Name="tree_results" VerticalAlignment="Bottom" Width="120">nothing done yet...</Label>
                 </Grid>
             </TabItem>
+            <TabItem Header="table" Name="tab_table">
+                <Grid />
+            </TabItem>
         </TabControl>
         <Menu Height="22" Name="main_menu" VerticalAlignment="Top" >
             <MenuItem Header="Menu One">

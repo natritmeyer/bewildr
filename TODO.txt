@@ -1,12 +1,11 @@
 UIElements
 - table (finish off; edit functionality, etc)
-- rich text box (can't do anything with this yet - it behaves totally different to a standard text field
 - find a way to multi-select items in a multi-select list box... can't seem to do this with boilerplate ms ui automation libraries...
 
-Need to create my own wpf app to run tests against - using the one from the white project is limiting
+Execution Logic
+- Better exception throwing, eg: check for enabled state of textfield before attempting to set the text
 
 Documentation
 - rdoc for everything
-- simple instructions in readme
-
-Better exception throwing, eg: check for enabled state of textfield before attempting to set the text
+- github wiki pages
+- create a 'watir-like' grid explaining what methods are available on what object types

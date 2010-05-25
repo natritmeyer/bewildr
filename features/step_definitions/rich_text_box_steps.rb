@@ -9,3 +9,11 @@ end
 Then /^the rich text box contains the text I entered$/ do
   @main_window.get(:id => "richTextBox1").text.should match("some text")
 end
+
+When /^I enter some different text into the rich text box$/ do
+  @main_window.get(:id => "richTextBox1").text = "some more text"
+end
+
+Then /^the rich text box contains the different text$/ do
+  @main_window.get(:id => "richTextBox1").text.should match("some more text")
+end

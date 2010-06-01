@@ -26,25 +26,25 @@ module Bewildr
       end
     end
 
-    def get_windows
+    def windows
       Bewildr::Windows.windows_by_process_id(@proc_id)
     end
 
-    def get_window_by_name(input)
+    def window_by_name(input)
       case input
-      when String then return get_windows.select{|window| window.name.strip == input.strip}.first
-      when Regexp then return get_windows.select{|window| input.match(window.name.strip).nil? == false}.first
+      when String then return windows.select{|window| window.name.strip == input.strip}.first
+      when Regexp then return windows.select{|window| input.match(window.name.strip).nil? == false}.first
       else
         raise ArgumentError, "input not a string or regexp but a #{input.class}"
       end
     end
-    alias :get_window :get_window_by_name
+    alias :window :window_by_name
 
     def wait_for_window(input, wait_time = 30)
       begin
         Timeout::timeout(wait_time) do
           begin
-            my_window = get_window(input)
+            my_window = window(input)
             raise if my_window.nil?
             return my_window
           rescue
@@ -55,10 +55,6 @@ module Bewildr
       rescue Timeout::Error
         raise ElementDoesntExist
       end
-    end
-
-    def window_count
-      get_windows.size
     end
 
     #takes name or full path of exe to start

@@ -60,9 +60,9 @@
             <TabItem Header="tree" Name="tab_trees">
                 <Grid>
                     <TreeView HorizontalAlignment="Left" Margin="17,18,0,167" Name="treeView1" Width="284">
-                        <TreeViewItem Header="Level 1" MouseDoubleClick="tree_l1_double_clicked" Selected="tree_l1_selected">
-                            <TreeViewItem Header="Level 2" MouseDoubleClick="tree_l2_double_clicked" Selected="tree_l2_selected">
-                                <TreeViewItem Header="Level 3" MouseDoubleClick="tree_l3_double_clicked" Selected="tree_l3_selected">
+                        <TreeViewItem Header="Level 1" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
+                            <TreeViewItem Header="Level 2" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
+                                <TreeViewItem Header="Level 3" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
                                     
                                 </TreeViewItem>
                             </TreeViewItem>
@@ -72,7 +72,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="table" Name="tab_table">
-                <Grid />
+                <DataGrid AutoGenerateColumns="False" Height="200" Name="dataGrid1" Width="200" />
             </TabItem>
         </TabControl>
         <Menu Height="22" Name="main_menu" VerticalAlignment="Top" >

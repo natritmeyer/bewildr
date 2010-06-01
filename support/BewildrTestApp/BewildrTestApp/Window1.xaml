@@ -54,8 +54,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="tables" Name="tab_tables">
-                <Grid>
-                </Grid>
+                <DataGrid AutoGenerateColumns="False" Height="200" Name="dataGrid1" Width="200" />
             </TabItem>
             <TabItem Header="tree" Name="tab_trees">
                 <Grid>
@@ -70,9 +69,6 @@
                     </TreeView>
                     <Label Height="28" HorizontalAlignment="Left" Margin="17,0,0,133" Name="tree_results" VerticalAlignment="Bottom" Width="120">nothing done yet...</Label>
                 </Grid>
-            </TabItem>
-            <TabItem Header="table" Name="tab_table">
-                <DataGrid AutoGenerateColumns="False" Height="200" Name="dataGrid1" Width="200" />
             </TabItem>
         </TabControl>
         <Menu Height="22" Name="main_menu" VerticalAlignment="Top" >

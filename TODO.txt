@@ -1,6 +1,7 @@
 UIElements
 - table (finish off; edit functionality, etc)
 - find a way to multi-select items in a multi-select list box... can't seem to do this with boilerplate ms ui automation libraries...
+- images
 
 Execution Logic
 - Better exception throwing, eg: check for enabled state of textfield before attempting to set the text

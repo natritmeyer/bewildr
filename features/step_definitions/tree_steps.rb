@@ -29,3 +29,26 @@ end
 Then /^the level 2 tree item is selected$/ do
   @main_window.get(:id => "treeView1").node(["Level 1", "Level 2"]).should be_selected
 end
+When /^I double click the level 1 tree item$/ do
+  @main_window.get(:id => "treeView1").node(["Level 1"]).double_click
+end
+
+Then /^the result message displays the level 1 double click message$/ do
+  @main_window.get(:id => "tree_results").text.should match("Level 1 double clicked")
+end
+
+When /^I double click the level 2 tree item$/ do
+  @main_window.get(:id => "treeView1").node(["Level 1", "Level 2"]).double_click
+end
+
+Then /^the result message displays the level 2 double click message$/ do
+  @main_window.get(:id => "tree_results").text.should match("Level 2 double clicked")
+end
+
+When /^I double click the level 3 tree item$/ do
+  @main_window.get(:id => "treeView1").node(["Level 1", "Level 2", "Level 3"]).double_click
+end
+
+Then /^the result message displays the level 3 double click message$/ do
+  @main_window.get(:id => "tree_results").text.should match("Level 3 double clicked")
+end

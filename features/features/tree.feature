@@ -15,7 +15,6 @@ Feature: tree interaction
     When I expand the level 1 tree item
     Then the level 1 tree item contains the level 2 tree item
 
-    @wip
     Scenario: select a node
     Given I start the test app
     And I select the tree tab
@@ -24,5 +23,12 @@ Feature: tree interaction
     When I select the level 2 tree item
     Then the level 2 tree item is selected
 
-
     Scenario: double click a node
+    Given I start the test app
+    And I select the tree tab
+    When I double click the level 1 tree item
+    Then the result message displays the level 1 double click message
+    When I double click the level 2 tree item
+    Then the result message displays the level 2 double click message
+    When I double click the level 3 tree item
+    Then the result message displays the level 3 double click message

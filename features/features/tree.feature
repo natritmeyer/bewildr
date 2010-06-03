@@ -10,5 +10,10 @@ Feature: tree interaction
     Then the tree contains the level 3 tree item
 
     Scenario: get list of child nodes
+    Given I start the test app
+    And I select the tree tab
+    When I expand the level 1 tree item
+    Then the level 1 tree item contains the level 2 tree item
+
     Scenario: select a node
     Scenario: double click a node

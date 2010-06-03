@@ -13,3 +13,19 @@ end
 Then /^the level 1 tree item contains the level 2 tree item$/ do
   @main_window.get(:id => "treeView1").node(["Level 1"]).child_nodes.name.should match("Level 2")
 end
+
+When /^I select the level 1 tree item$/ do
+  @main_window.get(:id => "treeView1").node(["Level 1"]).select
+end
+
+Then /^the level 1 tree item is selected$/ do
+  @main_window.get(:id => "treeView1").node(["Level 1"]).should be_selected
+end
+
+When /^I select the level 2 tree item$/ do
+  @main_window.get(:id => "treeView1").select_node(["Level 1", "Level 2"])
+end
+
+Then /^the level 2 tree item is selected$/ do
+  @main_window.get(:id => "treeView1").node(["Level 1", "Level 2"]).should be_selected
+end

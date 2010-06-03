@@ -52,7 +52,6 @@ Feature: basic element interaction
     When I click the enabled button
     Then the result message says clicked!
 
-    @wip
     Scenario: double click an element
     Given I start the test app
     And I select the basic elements tab

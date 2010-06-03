@@ -52,6 +52,13 @@ Feature: basic element interaction
     When I click the enabled button
     Then the result message says clicked!
 
+    @wip
+    Scenario: double click an element
+    Given I start the test app
+    And I select the basic elements tab
+    When I double click the double click label
+    Then the double click result message says double clicked!
+
     Scenario: get name of an element
     Given I start the test app
     And I select the basic elements tab

@@ -58,3 +58,11 @@ end
 Then /^the automation id of the enabled button is enabled_button$/ do
   @main_window.get(:id => "enabled_button").automation_id.should match("enabled_button")
 end
+
+When /^I double click the double click label$/ do
+  @main_window.get(:id => "double_click_me").double_click
+end
+
+Then /^the double click result message says double clicked!$/ do
+  @main_window.get(:id => "double_click_result").text.should match("double clicked!")
+end

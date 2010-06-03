@@ -48,5 +48,5 @@ Spec::Rake::SpecTask.new do |t|
 end
 
 Cucumber::Rake::Task.new(:features) do |t|
-  t.cucumber_opts = "features --format pretty --no-color"
+  t.cucumber_opts = "features --format pretty --no-color -q"
 end

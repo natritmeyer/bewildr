@@ -115,5 +115,10 @@ namespace BewildrTestApp
         {
             tree_results.Content = ((TreeViewItem)treeView1.SelectedItem).Header + " selected";
         }
+
+        private void label_double_clicked(object sender, RoutedEventArgs e)
+        {
+            double_click_result.Content = "double clicked!";
+        }
     }
 }

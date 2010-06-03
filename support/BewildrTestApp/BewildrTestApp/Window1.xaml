@@ -11,6 +11,8 @@
                     <Button Height="41" HorizontalAlignment="Left" Margin="12,59,0,0" Name="disabled_button" VerticalAlignment="Top" Width="126" IsEnabled="False">disabled</Button>
                     <Button Height="41" HorizontalAlignment="Left" Margin="12,106,0,0" Name="wait_for_existence_button" VerticalAlignment="Top" Width="126" Click="wait_for_existence_button_Click">click for existence test</Button>
                     <StackPanel HorizontalAlignment="Left" Margin="150,106,0,0" Name="stackPanel1" Width="200" Height="99.723" VerticalAlignment="Top" />
+                    <Label Content="Double click me" MouseDoubleClick="label_double_clicked" Height="43" HorizontalAlignment="Left" Margin="12,227,0,0" Name="double_click_me" VerticalAlignment="Top" Width="126" BorderThickness="1" Background="LightGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <Label Content="not double clicked yet..." Height="28" HorizontalAlignment="Left" Margin="150,237,0,0" Name="double_click_result" VerticalAlignment="Top" Width="200" />
                 </Grid>
             </TabItem>
             <TabItem Header="text fields" Name="tab_text_fields">

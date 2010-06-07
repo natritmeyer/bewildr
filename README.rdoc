@@ -47,15 +47,15 @@ Get application windows:
 
 All windows belonging to an app:
 
-  @all_windows_for_my_app = @app.get_windows
+  @all_windows_for_my_app = @app.windows
 
 Window with a particular name:
 
-  @main_window = @app.get_window('My App 1.0')
+  @main_window = @app.window('My App 1.0')
 
 Window with a particular name (find window using regex instead of string):
 
-  @main_window = @app.get_window(/My App .*/)
+  @main_window = @app.window(/My App .*/)
 
 ===Basic Element Interaction
 

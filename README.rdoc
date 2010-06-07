@@ -15,7 +15,7 @@ Documentation is on the way; until then, take a look at the tests or read the AP
 
 ===Installation
 
-  gem install bewildr
+  gem install bewildr --no-rdoc --no-ri
 
 To use bewildr:
 

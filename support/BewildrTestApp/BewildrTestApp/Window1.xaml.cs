@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
 using System.Data;
@@ -43,7 +44,6 @@ namespace BewildrTestApp
             three_state_checkbox.IsChecked = null;
 
             //create the table
-            DataSet data_set = new DataSet();
             DataTable data_table = new DataTable("testdata");
 
             //create the table columns
@@ -61,14 +61,8 @@ namespace BewildrTestApp
             data_table.Rows.Add("2", "Bob", "good");
             data_table.Rows.Add("3", "Eve", "bad");
 
-            //add data table to data set
-            data_set.Tables.Add(data_table);
-
-            //dataGrid1.SetBinding
-
-            //dataGrid1.SetBinding(data_set, "testdata");
-
-            //dataGrid1.ItemsSource = data_set.Tables[0].AsEnumerable();
+            ///horrible binding stuff
+            dataGrid1.DataContext = data_table;
         }
 
         private void enabled_button_Click(object sender, RoutedEventArgs e)

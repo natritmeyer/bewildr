@@ -56,7 +56,9 @@
                 </Grid>
             </TabItem>
             <TabItem Header="tables" Name="tab_tables">
-                <DataGrid AutoGenerateColumns="False" Height="200" Name="dataGrid1" Width="200" />
+                <Grid>
+                    <DataGrid AutoGenerateColumns="True"  Height="200" Name="dataGrid1" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="50" Margin="26,0,664,192" VerticalAlignment="Bottom" CanUserResizeColumns="False"/>
+                </Grid>
             </TabItem>
             <TabItem Header="tree" Name="tab_trees">
                 <Grid>
@@ -64,7 +66,7 @@
                         <TreeViewItem Header="Level 1" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
                             <TreeViewItem Header="Level 2" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
                                 <TreeViewItem Header="Level 3" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
-                                    
+
                                 </TreeViewItem>
                             </TreeViewItem>
                         </TreeViewItem>

@@ -23,5 +23,5 @@ When /^I enter some text into the password field$/ do
 end
 
 Then /^bewildr complains on attempting to read the password field$/ do
-  pending # express the regexp above with the code you wish you had
+  lambda {password = @main_window.get(:id => "password_field").text }.should raise_error PasswordFieldReadAttempt
 end

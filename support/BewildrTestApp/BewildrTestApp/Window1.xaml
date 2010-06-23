@@ -23,6 +23,7 @@
                     <RichTextBox Height="100" HorizontalAlignment="Left" Margin="18,107,0,205" Name="richTextBox1" Width="200" />
                     <TextBlock Height="28" HorizontalAlignment="Left" Margin="18,0,0,171" VerticalAlignment="Bottom" Width="120"><Hyperlink Name="a_link" Click="a_link_Click">Label</Hyperlink></TextBlock>
                     <Label Height="28" HorizontalAlignment="Left" Margin="57,0,0,176" Name="link_clicked_label" VerticalAlignment="Bottom" Width="120">link not clicked yet</Label>
+                    <PasswordBox Height="23" HorizontalAlignment="Left" Margin="18,246,0,0" Name="password_field" VerticalAlignment="Top" Width="120" />
                 </Grid>
             </TabItem>
             <TabItem Header="checks/radio" Name="tab_checks_radio">

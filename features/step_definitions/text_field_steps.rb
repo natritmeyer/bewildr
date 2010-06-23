@@ -17,3 +17,11 @@ end
 Then /^the label text is as expected$/ do
   @main_window.get(:id => "label1").text.should match("a label with some text")
 end
+
+When /^I enter some text into the password field$/ do
+  @main_window.get(:id => "password_field").text = "p4ssw0rd"
+end
+
+Then /^bewildr complains on attempting to read the password field$/ do
+  pending # express the regexp above with the code you wish you had
+end

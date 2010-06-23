@@ -22,3 +22,10 @@ Feature: text field interaction
     Given I start the test app
     And I select the textfields tab
     Then the label text is as expected
+
+    @wip
+    Scenario: fail on reading attempt on password field
+    Given I start the test app
+    And I select the textfields tab
+    When I enter some text into the password field
+    Then bewildr complains on attempting to read the password field

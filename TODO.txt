@@ -6,6 +6,9 @@ UIElements
 - increase the size of the list box to see if scrolling is necessary
 - deal with NoClickablePointException
 
+App Management
+- write tests and functionality for starting the app with command line args, working directories etc
+
 Execution Logic
 - Better exception throwing, eg: check for enabled state of textfield before attempting to set the text
 - specifically, check .exe file exists before trying to execute it; deal with missing exe appropriately

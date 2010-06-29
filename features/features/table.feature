@@ -24,13 +24,19 @@ Feature: table interaction
     And I select the tables tab
     Then the column names are called col 1, col 2, col 3
 
-    @wip
     Scenario: get table cell content
     Given I start the test app
     And I select the tables tab
     Then the first cell in the first row contains 1
     And the second cell in the second row contains Bob
     And the third cell in the third row contains bad
+
+    @wip
+    Scenario: set table cell content
+    Given I start the test app
+    And I select the tables tab
+    When I set the third cell in the first row to girl
+    Then the third cell in the first row contains girl
 
     Scenario: column span
     Scenario: row span

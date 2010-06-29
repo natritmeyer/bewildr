@@ -29,3 +29,11 @@ end
 Then /^the third cell in the third row contains bad$/ do
   @main_window.get(:id => "dataGrid1").cell(2,2).text.should match("bad")
 end
+
+When /^I set the third cell in the first row to girl$/ do
+  @main_window.get(:id => "dataGrid1").cell(0,2).text = "girl"
+end
+
+Then /^the third cell in the first row contains girl$/ do
+  @main_window.get(:id => "dataGrid1").cell(0,2).text.should match("girl")
+end

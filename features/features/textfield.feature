@@ -29,7 +29,6 @@ Feature: text field interaction
     When I enter some text into the password field
     Then bewildr complains on attempting to read the password field
 
-    @wip
     Scenario: attempt setting text of disabled text field
     Given I start the test app
     And I select the textfields tab

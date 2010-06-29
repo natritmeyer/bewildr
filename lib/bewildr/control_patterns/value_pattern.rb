@@ -13,6 +13,7 @@ module Bewildr
       end
 
       def text=(input)
+        raise ElementNotEnabled unless enabled?
         @automation_element.get_current_pattern(System::Windows::Automation::ValuePattern.pattern).set_value(input)
       end
     end

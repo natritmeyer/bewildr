@@ -25,3 +25,7 @@ end
 Then /^bewildr complains on attempting to read the password field$/ do
   lambda { @main_window.get(:id => "password_field").text }.should raise_error(PasswordFieldReadAttempt)
 end
+
+Then /^I cannot set the text of a disabled text field$/ do
+  lambda { @main_window.get(:id => "disabled_text_field").text = "bob" }.should raise_error(ElementNotEnabled)
+end

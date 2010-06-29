@@ -17,3 +17,15 @@ end
 Then /^the column names are called col 1, col 2, col 3$/ do
   @main_window.get(:id => "dataGrid1").column_header_names.should == ["col 1", "col 2", "col 3"]
 end
+
+Then /^the first cell in the first row contains 1$/ do
+  pending
+end
+
+Then /^the second cell in the second row contains Bob$/ do
+  pending
+end
+
+Then /^the third cell in the third row contains bad$/ do
+  pending
+end

@@ -32,4 +32,7 @@ Feature: Application interaction
     When I start the test app without getting a reference to it
     And I then wait for the app to appear
     Then I have a reference to the test app
-    
+
+    Scenario: Attempt starting a non existent app
+    Given I have a path to an exe which does not exist
+    Then bewildr complains when it cannot find the exe

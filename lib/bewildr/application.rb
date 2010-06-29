@@ -59,6 +59,7 @@ module Bewildr
 
     #takes name or full path of exe to start
     def self.start(process_name)
+      raise "Can't find: #{process_name}" unless File.exist?(process_name)
       Bewildr::Application.new(System::Diagnostics::Process.start(process_name))
     end
 

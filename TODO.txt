@@ -10,7 +10,6 @@ App Management
 
 Execution Logic
 - Better exception throwing, eg: check for enabled state of textfield before attempting to set the text
-- specifically, check .exe file exists before trying to execute it; deal with missing exe appropriately
 
 Documentation
 - rdoc for everything

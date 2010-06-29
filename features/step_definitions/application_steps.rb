@@ -43,3 +43,11 @@ end
 Then /^I have a reference to the test app$/ do
   @app.should be_running
 end
+
+Given /^I have a path to an exe which does not exist$/ do
+  @path_to_non_existent_app = "C:\\a\\path\\which\\probably\\doesnt\\exist\\mystery.exe"
+end
+
+Then /^bewildr complains when it cannot find the exe$/ do
+  lambda { Bewildr::Application.start(@path_to_non_existent_app) }.should raise_error
+end

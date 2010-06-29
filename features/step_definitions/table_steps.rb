@@ -19,13 +19,13 @@ Then /^the column names are called col 1, col 2, col 3$/ do
 end
 
 Then /^the first cell in the first row contains 1$/ do
-  pending
+  @main_window.get(:id => "dataGrid1").cell(0,0).text.should match("1")
 end
 
 Then /^the second cell in the second row contains Bob$/ do
-  pending
+  @main_window.get(:id => "dataGrid1").cell(1,1).text.should match("Bob")
 end
 
 Then /^the third cell in the third row contains bad$/ do
-  pending
+  @main_window.get(:id => "dataGrid1").cell(2,2).text.should match("bad")
 end

@@ -37,3 +37,11 @@ end
 Then /^the third cell in the first row contains girl$/ do
   @main_window.get(:id => "dataGrid1").cell(0,2).text.should match("girl")
 end
+
+Then /^the first cell in the first row has a column span of 1$/ do
+  @main_window.get(:id => "dataGrid1").cell(0,0).column_span.should == 1
+end
+
+Then /^the first cell in the first row has a row span of 1$/ do
+  @main_window.get(:id => "dataGrid1").cell(0,0).row_span.should == 1
+end

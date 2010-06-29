@@ -39,6 +39,7 @@ require 'bewildr/control_patterns/range_value_pattern'
 require 'bewildr/control_patterns/grid_pattern'
 require 'bewildr/control_patterns/table_pattern'
 require 'bewildr/control_patterns/text_pattern'
+require 'bewildr/control_patterns/table_item_pattern'
 
 require 'bewildr/control_type_additions/text_additions'
 require 'bewildr/control_type_additions/combo_box_additions'

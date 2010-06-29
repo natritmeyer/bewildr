@@ -201,6 +201,7 @@ module Bewildr
       @automation_element.get_supported_patterns.each do |supported_pattern|
         case supported_pattern.programmatic_name.to_s
         when "ValuePatternIdentifiers.Pattern" then extend Bewildr::ControlPatterns::ValuePattern
+        when "TableItemPatternIdentifiers.Pattern" then extend Bewildr::ControlPatterns::TableItemPattern
         end
       end
     end

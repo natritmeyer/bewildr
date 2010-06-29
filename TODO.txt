@@ -2,9 +2,13 @@ UIElements
 - table (finish off; edit functionality, etc)
 - find a way to multi-select items in a multi-select list box... can't seem to do this with boilerplate ms ui automation libraries...
 - images
+- remove logic that converts array with one element to the element itself
+- increase the size of the list box to see if scrolling is necessary
+- deal with NoClickablePointException
 
 Execution Logic
 - Better exception throwing, eg: check for enabled state of textfield before attempting to set the text
+- specifically, check .exe file exists before trying to execute it; deal with missing exe appropriately
 
 Documentation
 - rdoc for everything

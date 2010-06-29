@@ -118,7 +118,7 @@ module Bewildr
         current_clickable_point = nil
         begin
           current_clickable_point = @automation_element.get_clickable_point
-        rescue NoClickablePointException
+        rescue System::Windows::Automation::NoClickablePointException
           retry
         end
         return current_clickable_point

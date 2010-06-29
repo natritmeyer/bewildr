@@ -8,7 +8,9 @@ module Bewildr
         base.extend Bewildr::ControlPatterns::TablePattern
 
         base.instance_eval do
-
+          def cell(row, column)
+            get_item(row, column)
+          end
         end
       end
     end

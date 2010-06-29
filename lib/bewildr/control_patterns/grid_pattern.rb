@@ -10,6 +10,11 @@ module Bewildr
       def column_count
         @automation_element.get_current_pattern(System::Windows::Automation::GridPattern.pattern).current.column_count
       end
+
+      def get_item(row, column)
+        item = @automation_element.get_current_pattern(System::Windows::Automation::GridPattern.pattern).get_item(row, column)
+        Bewildr::Element.new(item)
+      end
     end
   end
 end

@@ -31,7 +31,6 @@ Feature: table interaction
     And the second cell in the second row contains Bob
     And the third cell in the third row contains bad
 
-    @wip
     Scenario: set table cell content
     Given I start the test app
     And I select the tables tab

@@ -23,7 +23,6 @@ Feature: text field interaction
     And I select the textfields tab
     Then the label text is as expected
 
-    @wip
     Scenario: fail on reading attempt on password field
     Given I start the test app
     And I select the textfields tab

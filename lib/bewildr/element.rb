@@ -133,6 +133,7 @@ module Bewildr
       when :combo_box
         extend Bewildr::ControlTypeAdditions::ComboBoxAdditions
       when :custom
+        build_custom_control_type
       when :data_grid
         extend Bewildr::ControlTypeAdditions::DataGridAdditions
       when :data_item
@@ -184,6 +185,15 @@ module Bewildr
         extend Bewildr::ControlTypeAdditions::TreeItemAdditions
       when :window
         extend Bewildr::ControlTypeAdditions::WindowAdditions
+      end
+    end
+
+    #TODO: this is horrible - fix it
+    def build_custom_control_type
+      @automation_element.get_supported_patterns.each do |supported_pattern|
+        case supported_pattern.programmatic_name.to_s
+          when "ValuePatternIdentifiers.Pattern" then extend Bewildr::ControlPatterns::ValuePattern
+        end
       end
     end
   end

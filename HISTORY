@@ -1,3 +1,7 @@
+???
+- added table (datagrid) interaction
+- toughened up the starting of apps
+
 v0.1.2 - 2010/5/7
 - added slider interaction
 - added intermediate state check for checkboxes

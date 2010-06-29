@@ -7,7 +7,7 @@ UIElements
 - deal with NoClickablePointException
 
 App Management
-- write tests and functionality for starting the app with command line args, working directories etc
+- write tests and functionality for starting the app with command line args, working directories etc (start_with_settings method)
 
 Execution Logic
 - Better exception throwing, eg: check for enabled state of textfield before attempting to set the text

@@ -114,7 +114,15 @@ module Bewildr
 
     def clickable_point
       existence_check
-      @automation_element.get_clickable_point
+      Timeout.timeout(30) do
+        current_clickable_point = nil
+        begin
+          current_clickable_point = @automation_element.get_clickable_point
+        rescue NoClickablePointException
+          retry
+        end
+        return current_clickable_point
+      end
     end
 
     private
@@ -192,7 +200,7 @@ module Bewildr
     def build_custom_control_type
       @automation_element.get_supported_patterns.each do |supported_pattern|
         case supported_pattern.programmatic_name.to_s
-          when "ValuePatternIdentifiers.Pattern" then extend Bewildr::ControlPatterns::ValuePattern
+        when "ValuePatternIdentifiers.Pattern" then extend Bewildr::ControlPatterns::ValuePattern
         end
       end
     end

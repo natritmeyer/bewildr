@@ -9,3 +9,11 @@ end
 Then /^the row count for the table is 3$/ do
   @main_window.get(:id => "dataGrid1").row_count.should == 3
 end
+
+Then /^the first column is called col 1$/ do
+  @main_window.get(:id => "dataGrid1").column_headers[0].name.should match("col 1")
+end
+
+Then /^the column names are called col 1, col 2, col 3$/ do
+  @main_window.get(:id => "dataGrid1").column_header_names.should == ["col 1", "col 2", "col 3"]
+end

@@ -23,5 +23,5 @@ When /^I enter some text into the password field$/ do
 end
 
 Then /^bewildr complains on attempting to read the password field$/ do
-  lambda { @main_window.get(:id => "password_field").text }.should raise_error PasswordFieldReadAttempt
+  lambda { @main_window.get(:id => "password_field").text }.should raise_error(PasswordFieldReadAttempt)
 end

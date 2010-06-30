@@ -53,7 +53,7 @@ module Bewildr
           end
         end
       rescue Timeout::Error
-        raise ElementDoesntExist
+        raise Bewildr::ElementDoesntExist
       end
     end
 

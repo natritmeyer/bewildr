@@ -38,7 +38,7 @@ module Bewildr
 
           def select_by_name(input)
             my_item = list_items.find {|item| item.name == input}
-            raise NoSuchItemInListBox if my_item.nil?
+            raise Bewildr::NoSuchItemInListBox if my_item.nil?
             my_item.select
           end
 

@@ -32,15 +32,15 @@ module Bewildr
               case current_menu_items
               when Array
                 matching_menu_item = current_menu_items.find {|node| node.name == target_menu_item} #TODO: make this work with regexes as well as strings...
-                raise ElementDoesntExist if matching_menu_item.nil?
+                raise Bewildr::ElementDoesntExist if matching_menu_item.nil?
               when Bewildr::Element
                 if current_menu_items.name == target_menu_item #TODO: make this work with regexes as well as strings...
                   matching_menu_item = current_menu_items
                 else
-                  raise ElementDoesntExist
+                  raise Bewildr::ElementDoesntExist
                 end
               end
-              raise ElementDoesntExist if matching_menu_item.nil?
+              raise Bewildr::ElementDoesntExist if matching_menu_item.nil?
               if path.size != index + 1
                 matching_menu_item.expand
                 current_menu_items = matching_menu_item.sub_menus

@@ -50,7 +50,7 @@ module Bewildr
       private
 
       def set_state_to(value)
-        raise ElementNotEnabled unless enabled?
+        raise Bewildr::ElementNotEnabled unless enabled?
         case value
         when :on  then flip_state while state != :on
         when :off then flip_state while state != :off

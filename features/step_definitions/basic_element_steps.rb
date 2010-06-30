@@ -19,7 +19,7 @@ Then /^the disabled button is disabled$/ do
 end
 
 Then /^bewildr complains that the non existent element does not exist$/ do
-  lambda {@main_window.get(:id => "I dont exist").enabled?}.should raise_error(ElementDoesntExist)
+  lambda {@main_window.get(:id => "I dont exist").enabled?}.should raise_error(Bewildr::ElementDoesntExist)
 end
 
 When /^I get the enabled button by specifying more than one condition$/ do

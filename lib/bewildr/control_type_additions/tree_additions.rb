@@ -27,15 +27,15 @@ module Bewildr
               case current_nodes
               when Array
                 matching_node = current_nodes.find {|node| node.name == target_node} #TODO: make this work with regexes as well as strings...
-                raise ElementDoesntExist if matching_node.nil?
+                raise Bewildr::ElementDoesntExist if matching_node.nil?
               when Bewildr::Element
                 if current_nodes.name == target_node #TODO: make this work with regexes as well as strings...
                   matching_node = current_nodes
                 else
-                  raise ElementDoesntExist
+                  raise Bewildr::ElementDoesntExist
                 end
               end
-              raise ElementDoesntExist if matching_node.nil?
+              raise Bewildr::ElementDoesntExist if matching_node.nil?
               if path.size != index + 1
                 matching_node.expand
                 current_nodes = matching_node.child_nodes

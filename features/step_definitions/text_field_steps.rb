@@ -23,9 +23,9 @@ When /^I enter some text into the password field$/ do
 end
 
 Then /^bewildr complains on attempting to read the password field$/ do
-  lambda { @main_window.get(:id => "password_field").text }.should raise_error(PasswordFieldReadAttempt)
+  lambda { @main_window.get(:id => "password_field").text }.should raise_error(Bewildr::PasswordFieldReadAttempt)
 end
 
 Then /^I cannot set the text of a disabled text field$/ do
-  lambda { @main_window.get(:id => "disabled_text_field").text = "bob" }.should raise_error(ElementNotEnabled)
+  lambda { @main_window.get(:id => "disabled_text_field").text = "bob" }.should raise_error(Bewildr::ElementNotEnabled)
 end

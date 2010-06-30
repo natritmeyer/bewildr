@@ -8,7 +8,7 @@ module Bewildr
 
         base.instance_eval do
           def select(input)
-            raise NoSuchTab unless tab_names.include?(input)
+            raise Bewildr::NoSuchTab unless tab_names.include?(input)
             selectable_elements = tabs
             selectable_elements.find {|selectable_element| selectable_element.name == input}.select
           end

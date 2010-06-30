@@ -42,7 +42,7 @@ module Bewildr
             begin
               expand_combo
               my_item = list_items.find {|item| item.name == input}
-              raise NoSuchItemInComboBox if my_item.nil?
+              raise Bewildr::NoSuchItemInComboBox if my_item.nil?
               my_item.select
             ensure
               collapse_combo

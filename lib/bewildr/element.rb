@@ -12,7 +12,7 @@ module Bewildr
         set_control_type
         build_element
       when nil then @control_type = :non_existent
-      else raise BewildrInternalError, "Can only initialize an element with a nil or a Sys::Win::Auto::AE[C], not a #{input.class}"
+      else raise Bewildr::BewildrInternalError, "Can only initialize an element with a nil or a Sys::Win::Auto::AE[C], not a #{input.class}"
       end
     end
 
@@ -43,7 +43,7 @@ module Bewildr
     alias :contain? :contains?
 
     def existence_check
-      raise ElementDoesntExist unless exists?
+      raise Bewildr::ElementDoesntExist unless exists?
     end
     private :existence_check
 

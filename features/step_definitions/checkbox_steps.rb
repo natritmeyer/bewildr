@@ -25,7 +25,7 @@ When /^I uncheck the two state checkbox$/ do
 end
 
 Then /^I can't check a disabled checkbox$/ do
-  lambda { @main_window.get(:id => "disabled_checkbox").check }.should raise_error(ElementNotEnabled)
+  lambda { @main_window.get(:id => "disabled_checkbox").check }.should raise_error(Bewildr::ElementNotEnabled)
 end
 
 Then /^the three state checkbox is set to indeterminate/ do

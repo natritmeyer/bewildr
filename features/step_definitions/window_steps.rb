@@ -5,3 +5,11 @@ end
 Then /^I have a reference to a window$/ do
   @main_window.control_type.should == :window
 end
+
+When /^I look for the window by string$/ do
+  @main_window = @app.wait_for_window("Bewildr Test App")
+end
+
+When /^I look for the window by regex$/ do
+  @main_window = @app.wait_for_window(/B\w+ T\w+ A\w+/)
+end

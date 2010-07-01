@@ -21,3 +21,27 @@ end
 Then /^I cannot get a reference to a nonexistent window$/ do
   @app.window('i dont exist').should == nil
 end
+
+Then /^the window is normal$/ do
+  @main_window.visual_state.should == :normal
+end
+
+When /^I minimize the window$/ do
+  @main_window.minimize
+end
+
+Then /^the window is minimized$/ do
+  @main_window.visual_state.should == :minimized
+end
+
+When /^I maximize the window$/ do
+  @main_window.maximize
+end
+
+Then /^the window is maximized$/ do
+  @main_window.visual_state.should == :maximized
+end
+
+When /^I restore the window$/ do
+  @main_window.restore
+end

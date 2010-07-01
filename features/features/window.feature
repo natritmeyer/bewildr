@@ -31,3 +31,15 @@ Feature: Window interaction
     Scenario: non existent windows
     Given I start the test app
     Then I cannot get a reference to a nonexistent window
+
+    @wip
+    Scenario: minimize, maximize and restore window
+    Given I ensure that there are no instances of the test app running
+    Given I start the test app
+    Then the window is normal
+    When I minimize the window
+    Then the window is minimized
+    When I maximize the window
+    Then the window is maximized
+    When I restore the window
+    Then the window is normal

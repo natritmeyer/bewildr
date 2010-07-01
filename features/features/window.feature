@@ -27,3 +27,7 @@ Feature: Window interaction
     And I start the test app from scratch
     When I try to get a reference to the main window
     Then the number of windows belonging to the app is 1
+
+    Scenario: non existent windows
+    Given I start the test app
+    Then I cannot get a reference to a nonexistent window

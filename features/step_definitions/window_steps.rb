@@ -13,3 +13,7 @@ end
 When /^I look for the window by regex$/ do
   @main_window = @app.wait_for_window(/B\w+ T\w+ A\w+/)
 end
+
+Then /^the number of windows belonging to the app is 1$/ do
+  @app.windows.size.should == 1
+end

@@ -47,7 +47,6 @@ Feature: Window interaction
     Given I start the test app
     Then the window name is Bewildr Test App
 
-    @wip
     Scenario: close window
     Given I start the test app
     When I close the main window

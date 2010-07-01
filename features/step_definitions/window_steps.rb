@@ -49,3 +49,11 @@ end
 Then /^the window name is Bewildr Test App$/ do
   @main_window.name.should match("Bewildr Test App")
 end
+
+When /^I close the main window$/ do
+  @main_window.close
+end
+
+Then /^the main window does not exist$/ do
+  @main_window.should_not exist
+end

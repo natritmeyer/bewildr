@@ -43,7 +43,12 @@ Feature: Window interaction
     When I restore the window
     Then the window is normal
 
-    @wip
     Scenario: get window title
     Given I start the test app
     Then the window name is Bewildr Test App
+
+    @wip
+    Scenario: close window
+    Given I start the test app
+    When I close the main window
+    Then the main window does not exist

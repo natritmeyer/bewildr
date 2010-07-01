@@ -32,7 +32,6 @@ Feature: Window interaction
     Given I start the test app
     Then I cannot get a reference to a nonexistent window
 
-    @wip
     Scenario: minimize, maximize and restore window
     Given I ensure that there are no instances of the test app running
     Given I start the test app
@@ -43,3 +42,8 @@ Feature: Window interaction
     Then the window is maximized
     When I restore the window
     Then the window is normal
+
+    @wip
+    Scenario: get window title
+    Given I start the test app
+    Then the window name is Bewildr Test App

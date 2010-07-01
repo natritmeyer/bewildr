@@ -45,3 +45,7 @@ end
 When /^I restore the window$/ do
   @main_window.restore
 end
+
+Then /^the window name is Bewildr Test App$/ do
+  @main_window.name.should match("Bewildr Test App")
+end

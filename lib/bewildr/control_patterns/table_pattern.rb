@@ -4,8 +4,10 @@ module Bewildr
   module ControlPatterns
     module TablePattern
       def column_headers
-        #puts @automation_element.get_current_pattern(System::Windows::Automation::TablePattern.pattern).current.get_column_headers.inspect
-        @automation_element.get_current_pattern(System::Windows::Automation::TablePattern.pattern).current.GetColumnHeaders.collect do |header|
+        #the following line seems to prompt the table pattern into giving up the column header
+        #information that's called on the line that follows it. Weird? tell me about it...
+        @automation_element.get_current_pattern(System::Windows::Automation::TablePattern.pattern).current.get_row_headers
+        @automation_element.get_current_pattern(System::Windows::Automation::TablePattern.pattern).current.get_column_headers.collect do |header|
           Bewildr::Element.new(header)
         end
       end

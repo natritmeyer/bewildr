@@ -46,3 +46,4 @@ Feature: table interaction
     Given I start the test app
     And I select the tables tab
     Then the first cell in the first row has a row span of 1
+    

@@ -25,8 +25,8 @@ module Bewildr
       #returns the method to call
       def how_many_for(condition_hash)
         case condition_hash[:how_many]
-        when :first     then :find_first
-        when :all, nil  then :find_all
+        when :first, nil then :find_first
+        when :all then :find_all
         else raise "Invalid number of elements to look for. Use ':first' or ':all'"
         end
       end

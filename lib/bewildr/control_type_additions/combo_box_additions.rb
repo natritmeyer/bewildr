@@ -18,7 +18,7 @@ module Bewildr
           def list_items
             begin
               expand_combo
-              bewildr_list_items = get(:type => :list_item, :scope => :children)
+              bewildr_list_items = get(:type => :list_item, :scope => :children, :how_many => :all)
               bewildr_list_items.nil? ? nil : bewildr_list_items
             ensure
               collapse_combo

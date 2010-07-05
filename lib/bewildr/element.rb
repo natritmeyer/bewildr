@@ -88,8 +88,8 @@ module Bewildr
         element_array = c_array_list.to_array.to_a
         case
         when element_array.size == 0 then return Bewildr::Element.new(nil)
-        when element_array.size == 1 then return Bewildr::Element.new(element_array.first)
-        when element_array.size  > 1 then return element_array.collect {|element| Bewildr::Element.new(element) }
+        #when element_array.size == 1 then return Bewildr::Element.new(element_array.first)
+        when element_array.size > 0 then return element_array.collect {|element| Bewildr::Element.new(element) }
         end
       end
     end

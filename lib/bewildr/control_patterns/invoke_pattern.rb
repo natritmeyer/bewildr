@@ -4,7 +4,7 @@ module Bewildr
   module ControlPatterns
     module InvokePattern
       def click
-         @automation_element.get_current_pattern(System::Windows::Automation::InvokePattern.pattern).invoke
+        @automation_element.get_current_pattern(System::Windows::Automation::InvokePattern.pattern).invoke
       end
     end
   end

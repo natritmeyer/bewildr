@@ -4,7 +4,8 @@ module Bewildr
   module ControlPatterns
     module TablePattern
       def column_headers
-        @automation_element.get_current_pattern(System::Windows::Automation::TablePattern.pattern).current.get_column_headers.collect do |header|
+        #puts @automation_element.get_current_pattern(System::Windows::Automation::TablePattern.pattern).current.get_column_headers.inspect
+        @automation_element.get_current_pattern(System::Windows::Automation::TablePattern.pattern).current.GetColumnHeaders.collect do |header|
           Bewildr::Element.new(header)
         end
       end

@@ -14,11 +14,14 @@ Feature: table interaction
     And I select the tables tab
     Then the row count for the table is 3
 
+    @broken
     Scenario: single column name
     Given I start the test app
     And I select the tables tab
     Then the first column is called col 1
+    And the second column is called col 2
 
+    @broken
     Scenario: all column names
     Given I start the test app
     And I select the tables tab

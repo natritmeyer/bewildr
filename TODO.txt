@@ -7,7 +7,7 @@ App Management
 - write tests and functionality for starting the app with command line args, working directories etc (start_with_settings method)
 
 Execution Logic
-- Better exception throwing
+- Continue implementation of clearer exceptions for things like editing a disabled text field
 
 Documentation
 - rdoc for everything

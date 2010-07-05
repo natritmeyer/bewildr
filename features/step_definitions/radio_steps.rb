@@ -23,7 +23,7 @@ Then /^the second radio button is selected$/ do
 end
 
 When /^I loop through each radio button, clicking each one$/ do
-  @main_window.get(:id => "tab_checks_radio").get(:type => :radio_button).each do |radio|
+  @main_window.get(:id => "tab_checks_radio").get(:type => :radio_button, :how_many => :all).each do |radio|
     radio.should_not be_selected
     radio.select
     radio.should be_selected

@@ -18,6 +18,7 @@ Feature: table interaction
     Given I start the test app
     And I select the tables tab
     Then the first column is called col 1
+    And the second column is called col 2
 
     Scenario: all column names
     Given I start the test app
@@ -46,4 +47,3 @@ Feature: table interaction
     Given I start the test app
     And I select the tables tab
     Then the first cell in the first row has a row span of 1
-    

@@ -8,7 +8,7 @@ module Bewildr
 
         base.instance_eval do
           def select(input)
-            selectable_elements = get(:type => :list_item, :scope => :children)
+            selectable_elements = get(:type => :list_item, :scope => :children, :how_many => :all)
             selectable_elements.find {|selectable_element| selectable_element.name == input}.select
           end
 
@@ -19,7 +19,7 @@ module Bewildr
           end
 
           def list_items
-            bewildr_list_items = get(:type => :list_item, :scope => :children)
+            bewildr_list_items = get(:type => :list_item, :scope => :children, :how_many => :all)
             bewildr_list_items.nil? ? nil : bewildr_list_items
           end
 

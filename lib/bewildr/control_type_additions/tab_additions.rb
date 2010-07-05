@@ -14,7 +14,7 @@ module Bewildr
           end
 
           def tabs
-            get(:type => :tab_item, :scope => :children)
+            get(:type => :tab_item, :scope => :children, :how_many => :all)
           end
 
           def tab_names

@@ -10,7 +10,7 @@ module Bewildr
 
         base.instance_eval do
           def root_menu_items
-            get(:type =>:menu_item, :scope => :children)
+            get(:type => :menu_item, :scope => :children, :how_many => :all)
           end
 
           def root_menu_item_names

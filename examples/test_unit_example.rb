@@ -26,10 +26,13 @@ class BewildrTest < Test::Unit::TestCase
     #select the 'bars' tab
     @main_window.get(:id => "main_tabs").select("bars")
 
+    #get the slider
+    slider = @main_window.get(:id => "slider1")
+
     #move the slider
-    @main_window.get(:id => "slider1").value = 7
+    slider.value = 7
 
     #check to see if the slider moved
-    assert @main_window.get(:id => "slider1").value == 7
+    assert slider.value == 7
   end
 end

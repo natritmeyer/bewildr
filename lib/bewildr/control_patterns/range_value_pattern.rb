@@ -4,7 +4,7 @@ module Bewildr
   module ControlPatterns
     module RangeValuePattern
       def value
-        @automation_element.get_current_pattern(System::Windows::Automation::RangeValuePattern.pattern).current.value
+        @automation_element.get_current_pattern(System::Windows::Automation::RangeValuePattern.pattern).current.value.to_f
       end
 
       def value=(input)
@@ -12,11 +12,11 @@ module Bewildr
       end
 
       def maximum
-        @automation_element.get_current_pattern(System::Windows::Automation::RangeValuePattern.pattern).current.maximum
+        @automation_element.get_current_pattern(System::Windows::Automation::RangeValuePattern.pattern).current.maximum.to_f
       end
 
       def minimum
-        @automation_element.get_current_pattern(System::Windows::Automation::RangeValuePattern.pattern).current.minimum
+        @automation_element.get_current_pattern(System::Windows::Automation::RangeValuePattern.pattern).current.minimum.to_f
       end
     end
   end

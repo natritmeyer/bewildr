@@ -6,6 +6,7 @@ module Bewildr
       def is_password_field?
         @automation_element.current.class_name.to_s == "PasswordBox" ? true : false
       end
+      alias :password_field? :is_password_field?
 
       def text
         raise Bewildr::PasswordFieldReadAttempt, "You can't get the text of a password field" if is_password_field?

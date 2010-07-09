@@ -29,3 +29,7 @@ end
 Then /^I cannot set the text of a disabled text field$/ do
   lambda { @main_window.get(:id => "disabled_text_field").text = "bob" }.should raise_error(Bewildr::ElementNotEnabled)
 end
+
+Then /^bewildr recognizes that the password field is a password field$/ do
+  @main_window.get(:id => "password_field").should be_a_password_field
+end

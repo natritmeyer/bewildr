@@ -1,4 +1,4 @@
-v??? - ???
+v0.1.4 - 2010/7/11
 - renamed is_password_field? to password_field?
 - made many of the control pattern methods return ruby objects rather than .net objects (eg: count => count.to_i)
 - updated gem's url details

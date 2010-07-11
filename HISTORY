@@ -1,5 +1,7 @@
 v??? - ???
 - renamed is_password_field? to password_field?
+- made many of the control pattern methods return ruby objects rather than .net objects (eg: count => count.to_i)
+- updated gem's url details
 
 v0.1.3 - 2010/7/5
 - added table (datagrid) interaction

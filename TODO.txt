@@ -3,6 +3,7 @@ UIElements
 - images
 - increase the size of the list box to see if scrolling is necessary
 - drag and drop
+- visible?
 
 App Management
 - write tests and functionality for starting the app with command line args, working directories etc (start_with_settings method)

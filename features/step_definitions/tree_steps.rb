@@ -29,7 +29,18 @@ end
 Then /^the level 2 tree item is selected$/ do
   @main_window.get(:id => "treeView1").node(["Level 1", "Level 2"]).should be_selected
 end
+
+When /^I select the level 8 tree item$/ do
+  @main_window.get(:id => "treeView1").select_node(["Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Level 7", "Level 8"])
+end
+
+Then /^the level 8 tree item is selected$/ do
+  @main_window.get(:id => "treeView1").node(["Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Level 7", "Level 8"]).should be_selected
+end
+
 When /^I double click the level 1 tree item$/ do
+  #need to focus on it for now (it's been scrolled out of sight be this point - need to investigate
+  @main_window.get(:id => "treeView1").node(["Level 1"]).focus
   @main_window.get(:id => "treeView1").node(["Level 1"]).double_click
 end
 

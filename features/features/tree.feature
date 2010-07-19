@@ -22,6 +22,8 @@ Feature: tree interaction
     Then the level 1 tree item is selected
     When I select the level 2 tree item
     Then the level 2 tree item is selected
+    When I select the level 8 tree item
+    Then the level 8 tree item is selected
 
     Scenario: double click a node
     Given I start the test app

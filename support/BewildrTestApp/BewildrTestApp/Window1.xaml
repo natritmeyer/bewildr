@@ -63,11 +63,21 @@
             </TabItem>
             <TabItem Header="tree" Name="tab_trees">
                 <Grid>
-                    <TreeView HorizontalAlignment="Left" Margin="17,18,0,167" Name="treeView1" Width="284">
+                    <TreeView HorizontalAlignment="Left" Margin="17,18,0,323" Name="treeView1" Width="284" Height="70">
                         <TreeViewItem Header="Level 1" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
                             <TreeViewItem Header="Level 2" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
                                 <TreeViewItem Header="Level 3" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
+                                    <TreeViewItem Header="Level 4" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
+                                        <TreeViewItem Header="Level 5" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
+                                            <TreeViewItem Header="Level 6" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
+                                                <TreeViewItem Header="Level 7" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
+                                                    <TreeViewItem Header="Level 8" MouseDoubleClick="tree_double_clicked" Selected="tree_selected">
 
+                                                    </TreeViewItem>
+                                                </TreeViewItem>
+                                            </TreeViewItem>
+                                        </TreeViewItem>
+                                    </TreeViewItem>
                                 </TreeViewItem>
                             </TreeViewItem>
                         </TreeViewItem>

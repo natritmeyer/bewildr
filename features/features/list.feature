@@ -34,6 +34,12 @@ Feature: list interaction
     When I select Three from the single select list box
     Then the single select list box selected item is Three
 
+    Scenario: select item far down the list
+    Given I start the test app
+    And I select the list tab
+    When I select the last item in the single select list box
+    Then the selected item is twentyone
+
     Scenario: select item from multi select list
     Given I start the test app
     And I select the list tab

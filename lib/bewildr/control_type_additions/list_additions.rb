@@ -19,6 +19,7 @@ module Bewildr
           end
 
           def list_items
+            prepare_element
             bewildr_list_items = get(:type => :list_item, :scope => :children, :how_many => :all)
             bewildr_list_items.nil? ? nil : bewildr_list_items
           end

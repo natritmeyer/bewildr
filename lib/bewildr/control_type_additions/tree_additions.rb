@@ -9,6 +9,7 @@ module Bewildr
         
         base.instance_eval do
           def root_nodes
+            prepare_element
             get(:type => :tree_item, :scope => :children)
           end
 

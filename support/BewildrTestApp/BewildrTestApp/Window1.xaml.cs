@@ -33,6 +33,25 @@ namespace BewildrTestApp
             single_select_list_box.Items.Add("One");
             single_select_list_box.Items.Add("Two");
             single_select_list_box.Items.Add("Three");
+            single_select_list_box.Items.Add("Four");
+            single_select_list_box.Items.Add("5");
+            single_select_list_box.Items.Add("6");
+            single_select_list_box.Items.Add("7");
+            single_select_list_box.Items.Add("8");
+            single_select_list_box.Items.Add("9");
+            single_select_list_box.Items.Add("10");
+            single_select_list_box.Items.Add("11");
+            single_select_list_box.Items.Add("12");
+            single_select_list_box.Items.Add("13");
+            single_select_list_box.Items.Add("14");
+            single_select_list_box.Items.Add("15");
+            single_select_list_box.Items.Add("16");
+            single_select_list_box.Items.Add("17");
+            single_select_list_box.Items.Add("18");
+            single_select_list_box.Items.Add("19");
+            single_select_list_box.Items.Add("20");
+            single_select_list_box.Items.Add("twentyone");
+
 
             //populate the multiple select list
             multiple_select_list.Items.Add("Zero");

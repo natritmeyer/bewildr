@@ -4,12 +4,14 @@ UIElements
 - increase the size of the list box to see if scrolling is necessary
 - drag and drop
 - visible?
+- scroll hidden items into view before acting on them
 
 App Management
 - write tests and functionality for starting the app with command line args, working directories etc (start_with_settings method)
 
 Execution Logic
 - Continue implementation of clearer exceptions for things like editing a disabled text field
+- fix build_element to work dynamically rather than by using a case statement
 
 Documentation
 - rdoc for everything

@@ -69,6 +69,15 @@ module Bewildr
       @automation_element.set_focus
     end
 
+    def scrollable?
+      return false unless @automation_element.get_supported_patterns.collect {|pattern| pattern.programmatic_name.to_s }.include?("ScrollPatternIdentifiers.Pattern")
+      vertically_scrollable
+    end
+
+    def prepare_element
+      load_all_items_hack if scrollable?
+    end
+
     #:id => "id"
     #:name => "bob"
     #:type => :button
@@ -194,9 +203,16 @@ module Bewildr
       when :window
         extend Bewildr::ControlTypeAdditions::WindowAdditions
       end
+
+      #add scrolling capability if relevant - TODO: this ugliness will be fixed later
+      if @automation_element.get_supported_patterns.collect {|pattern| pattern.programmatic_name.to_s }.include?("ScrollPatternIdentifiers.Pattern")
+        extend Bewildr::ControlTypeAdditions::ScrollAdditions
+      end
     end
 
-    #TODO: this is horrible - fix it
+    #TODO: replace build_element to use something similar to what's below, but
+    #make it smarter
+
     def build_custom_control_type
       @automation_element.get_supported_patterns.each do |supported_pattern|
         case supported_pattern.programmatic_name.to_s

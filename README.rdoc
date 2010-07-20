@@ -1,5 +1,5 @@
 =bewildr
-Test WPF UI apps with (iron) ruby!
+Test WPF UI apps with IronRuby!
 
 Written by Nat Ritmeyer (http://www.natontesting.com)
 

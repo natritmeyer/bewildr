@@ -10,10 +10,10 @@ require 'cucumber/rake/task'
 
 spec = Gem::Specification.new do |s|
   s.name = 'bewildr'
-  s.version = '0.1.4'
+  s.version = '0.1.6'
   s.has_rdoc = true
   s.extra_rdoc_files = ['README.rdoc', 'LICENSE']
-  s.summary = 'Test WPF UI apps with (iron) ruby!'
+  s.summary = 'Test WPF UI apps with IronRuby'
   s.description = s.summary
   s.author = 'Nat Ritmeyer'
   s.email = 'nat@natontesting.com'

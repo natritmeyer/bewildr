@@ -8,9 +8,14 @@ module Bewildr
 
         base.instance_eval do
 
-          #TODO: make this deal with other special chars
           def clean_string(input)
-            input.gsub(/\n/, "{ENTER}")
+            #add special chars as necessary. Ref: http://msdn.microsoft.com/en-us/library/system.windows.forms.sendkeys.send.aspx
+            replacements = {
+              /\n/ => "{ENTER}"
+            }
+            cleaned_string = input
+            replacements.keys.each {|key| cleaned_string.gsub!(key, replacements[key])}
+            cleaned_string
           end
 
           def text

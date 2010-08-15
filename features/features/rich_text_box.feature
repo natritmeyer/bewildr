@@ -18,9 +18,15 @@ Feature: rich text box interaction
     When I enter some different text into the rich text box
     Then the rich text box contains the different text
 
-    @wip
     Scenario: text with newlines
     Given I start the test app
     And I select the textfields tab
     When I enter some text containing a \n character into the rich text box
     Then the rich text box contains a return character where expected
+
+    @wip
+    Scenario: text with tabs
+    Given I start the test app
+    And I select the textfields tab
+    When I enter some text containing a \t character into the rich text box
+    Then the rich text box contains a tab character where expected

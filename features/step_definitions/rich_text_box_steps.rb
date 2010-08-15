@@ -25,3 +25,11 @@ end
 Then /^the rich text box contains a return character where expected$/ do
   @main_window.get(:id => "richTextBox1").text.should match("word1\r\nword2")
 end
+
+When /^I enter some text containing a \\t character into the rich text box$/ do
+  @main_window.get(:id => "richTextBox1").text = "word1\tword2"
+end
+
+Then /^the rich text box contains a tab character where expected$/ do
+  @main_window.get(:id => "richTextBox1").text.should match("word1\tword2")
+end

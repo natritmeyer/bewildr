@@ -15,4 +15,3 @@ Execution Logic
 Documentation
 - rdoc for everything
 - github wiki pages
-- create a 'watir-like' grid explaining what methods are available on what object types

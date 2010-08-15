@@ -22,5 +22,5 @@ Feature: rich text box interaction
     Scenario: text with newlines
     Given I start the test app
     And I select the textfields tab
-    When I enter some text containing a \n character
-    Then the text field contains a return character where expected
+    When I enter some text containing a \n character into the rich text box
+    Then the rich text box contains a return character where expected

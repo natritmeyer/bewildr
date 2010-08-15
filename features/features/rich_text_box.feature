@@ -17,3 +17,10 @@ Feature: rich text box interaction
     Then the rich text box contains the text I entered
     When I enter some different text into the rich text box
     Then the rich text box contains the different text
+
+    @wip
+    Scenario: text with newlines
+    Given I start the test app
+    And I select the textfields tab
+    When I enter some text containing a \n character
+    Then the text field contains a return character where expected

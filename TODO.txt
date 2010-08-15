@@ -4,6 +4,7 @@ UIElements
 - drag and drop
 - visible?
 - scroll hidden items into view before acting on them
+- replace "\n" with "{ENTER}", etc when entering text into text fields
 
 App Management
 - write tests and functionality for starting the app with command line args, working directories etc (start_with_settings method)

@@ -1,3 +1,6 @@
+? - ?
+- fixed bug with entering new lines into text fields
+
 v0.1.6 - 2010/7/20
 - added scroll interaction
 - added prepare_element

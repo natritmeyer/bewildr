@@ -33,3 +33,11 @@ end
 Then /^bewildr recognizes that the password field is a password field$/ do
   @main_window.get(:id => "password_field").should be_a_password_field
 end
+
+When /^I enter some text containing a \\n character$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^the text field contains a return character where expected$/ do
+  pending # express the regexp above with the code you wish you had
+end

@@ -34,3 +34,10 @@ Feature: text field interaction
     Given I start the test app
     And I select the textfields tab
     Then I cannot set the text of a disabled text field
+
+    @wip
+    Scenario: text with newlines
+    Given I start the test app
+    And I select the textfields tab
+    When I enter some text containing a \n character
+    Then the text field contains a return character where expected

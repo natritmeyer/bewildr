@@ -63,8 +63,12 @@ module Bewildr
       Bewildr::Application.new(System::Diagnostics::Process.start(process_name))
     end
 
-    def self.start_with_settings(settings_hash)
-      #TODO
+    def self.start_with_settings(path_to_exe, settings_hash)
+      start_info = System::Diagnostics::ProcessStartInfo.new(path_to_exe)
+      unless settings_hash[:args].nil? and settings_hash[:args].size > 0
+        start_info.arguments = settings_hash[:args].collect {|arg| arg.to_s}.join(" ")
+      end
+      Bewildr::Application.new(System::Diagnostics::Process.start(start_info))
     end
 
     def self.attach_to_process_name(process_name)

@@ -53,5 +53,6 @@ Then /^bewildr complains when it cannot find the exe$/ do
 end
 
 Given /^I start the app with some command line arguments$/ do
-  @app = Bewildr::Application.start_with_settings(:args => ["arg1", "arg2", "arg3"])
+  @app = Bewildr::Application.start_with_settings("features/support/BewildrTestApp.exe", :args => ["arg1", "arg2", "arg3"])
+  @main_window = @app.wait_for_window("Bewildr Test App")
 end

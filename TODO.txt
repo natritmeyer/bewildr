@@ -5,8 +5,8 @@ UIElements
 - visible?
 - scroll hidden items into view before acting on them
 
-App Management
-- write tests and functionality for starting the app with command line args, working directories etc (start_with_settings method)
+Input
+- write wrapper class for BewildrClickr, replace current calls to dll
 
 Execution Logic
 - Continue implementation of clearer exceptions for things like editing a disabled text field

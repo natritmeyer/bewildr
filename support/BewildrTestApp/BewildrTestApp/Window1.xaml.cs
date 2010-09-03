@@ -16,6 +16,9 @@ namespace BewildrTestApp
         {
             InitializeComponent();
 
+            //write any command line args to the basic tab
+            command_line_args.Content = String.Join(" ", Environment.GetCommandLineArgs());
+
             //populate the combobox
             comboBox1.Items.Add("Zero");
             comboBox1.Items.Add("One");

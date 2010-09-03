@@ -66,3 +66,7 @@ end
 Then /^the double click result message says double clicked!$/ do
   @main_window.get(:id => "double_click_result").text.should match("double clicked!")
 end
+
+Then /^the command line arguments I passed are displayed$/ do
+  @main_window.get(:id => "command_line_args").text.include?("arg1 arg2 arg3").should be_true
+end

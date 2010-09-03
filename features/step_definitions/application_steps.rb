@@ -53,9 +53,5 @@ Then /^bewildr complains when it cannot find the exe$/ do
 end
 
 Given /^I start the app with some command line arguments$/ do
-  pending
-end
-
-Then /^the command line arguments I passed are displayed$/ do
-  pending
+  @app = Bewildr::Application.start_with_settings(:args => ["arg1", "arg2", "arg3"])
 end

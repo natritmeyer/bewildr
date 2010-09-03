@@ -47,32 +47,36 @@ namespace Bewildr.Clickr
             LeftMouseButtonUp();
         }
 
-        #endregion
+        public void Drag(Point startingLocation, Point targetLocation)
+        {
+            SetLocation(startingLocation);
+            LeftMouseButtonDown();
+            SetLocation(targetLocation);
+            LeftMouseButtonUp();
+        }
 
-        #region high level mouse actions
-
-        protected void SetLocation(Point location)
+        public void SetLocation(Point location)
         {
             //Point point = new Point(location.X, location.Y);
             PerformMouseAction((int)location.X, (int)location.Y, 0, MouseInputFlags.Move | MouseInputFlags.Absolute);
         }
 
-        protected void LeftMouseButtonDown()
+        public void LeftMouseButtonDown()
         {
             PerformMouseAction(0, 0, 0, MouseInputFlags.LeftDown);
         }
 
-        protected void LeftMouseButtonUp()
+        public void LeftMouseButtonUp()
         {
             PerformMouseAction(0, 0, 0, MouseInputFlags.LeftUp);
         }
 
-        protected void RightMouseButtonDown()
+        public void RightMouseButtonDown()
         {
             PerformMouseAction(0, 0, 0, MouseInputFlags.RightDown);
         }
 
-        protected void RightMouseButtonUp()
+        public void RightMouseButtonUp()
         {
             PerformMouseAction(0, 0, 0, MouseInputFlags.RightUp);
         }

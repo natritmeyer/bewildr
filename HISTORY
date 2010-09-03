@@ -1,5 +1,6 @@
 ? - ?
 - fixed bug with entering new lines into text fields
+- can now start apps with command line args
 
 v0.1.6 - 2010/7/20
 - added scroll interaction

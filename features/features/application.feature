@@ -36,3 +36,9 @@ Feature: Application interaction
     Scenario: Attempt starting a non existent app
     Given I have a path to an exe which does not exist
     Then bewildr complains when it cannot find the exe
+
+    @wip
+    Scenario: Start app with command line arguments
+    Given I start the app with some command line arguments
+    When I select the basic elements tab
+    Then the command line arguments I passed are displayed

@@ -51,3 +51,11 @@ end
 Then /^bewildr complains when it cannot find the exe$/ do
   lambda { Bewildr::Application.start(@path_to_non_existent_app) }.should raise_error
 end
+
+Given /^I start the app with some command line arguments$/ do
+  pending
+end
+
+Then /^the command line arguments I passed are displayed$/ do
+  pending
+end

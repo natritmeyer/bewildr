@@ -1,13 +1,12 @@
 UIElements
 - find a way to multi-select items in a multi-select list box... can't seem to do this with boilerplate ms ui automation libraries...
 - images
-- drag and drop
 - visible?
 - scroll hidden items into view before acting on them
 
 Input
 - write wrapper class for BewildrClickr, replace current calls to dll
-
+  - drag and drop
 Execution Logic
 - Continue implementation of clearer exceptions for things like editing a disabled text field
 - fix build_element to work dynamically rather than by using a case statement

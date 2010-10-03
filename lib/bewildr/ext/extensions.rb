@@ -5,11 +5,6 @@
 #adds the submodules method to modules - returns a list of submodules in the module's namespace
 class Module
   def submodules
-    modules = []
-    self.constants.each do |const|
-      temp_const = self.const_get(const)
-      modules << temp_const if temp_const.class == Module
-    end
-    modules
+    constants.collect {|const_name| const_get(const_name)}.select {|const| const.class == Module}
   end
 end

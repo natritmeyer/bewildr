@@ -19,6 +19,9 @@ CLICKR = Bewildr::Clickr::Clickr.new
 #load plain old ruby libraries
 require 'timeout'
 
+#require ruby extensions
+require 'bewildr/ext/extensions'
+
 #require bewildr classes
 require 'bewildr/exceptions'
 require 'bewildr/bewildr_helpers'

@@ -4,8 +4,6 @@ module Bewildr
   module ControlTypeAdditions
     module ListAdditions
       def self.extended(base)
-        base.extend Bewildr::ControlPatterns::SelectionPattern
-
         base.instance_eval do
           def select(input)
             selectable_elements = get(:type => :list_item, :scope => :children, :how_many => :all)

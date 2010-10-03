@@ -4,8 +4,6 @@ module Bewildr
   module ControlTypeAdditions
     module TabAdditions
       def self.extended(base)
-        base.extend Bewildr::ControlPatterns::SelectionPattern
-
         base.instance_eval do
           def select(input)
             raise Bewildr::NoSuchTab unless tab_names.include?(input)

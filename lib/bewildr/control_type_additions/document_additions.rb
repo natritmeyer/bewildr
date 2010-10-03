@@ -4,8 +4,6 @@ module Bewildr
   module ControlTypeAdditions
     module DocumentAdditions
       def self.extended(base)
-        base.extend Bewildr::ControlPatterns::TextPattern
-
         base.instance_eval do
 
           def clean_string(input)

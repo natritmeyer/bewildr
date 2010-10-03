@@ -4,8 +4,6 @@ module Bewildr
   module ControlTypeAdditions
     module WindowAdditions
       def self.extended(base)
-        base.extend Bewildr::ControlPatterns::WindowPattern
-
         base.instance_eval do
           def open?
             exists?

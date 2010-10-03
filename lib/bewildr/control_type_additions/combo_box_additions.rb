@@ -4,10 +4,6 @@ module Bewildr
   module ControlTypeAdditions
     module ComboBoxAdditions
       def self.extended(base)
-        base.extend Bewildr::ControlPatterns::ExpandCollapsePattern
-        base.extend Bewildr::ControlPatterns::SelectionPattern
-        base.extend Bewildr::ControlPatterns::SelectionItemPattern
-
         base.instance_eval do
           def items
             my_list_items = list_items

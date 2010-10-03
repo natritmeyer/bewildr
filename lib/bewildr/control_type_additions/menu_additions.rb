@@ -4,10 +4,6 @@ module Bewildr
   module ControlTypeAdditions
     module MenuAdditions
       def self.extended(base)
-        base.extend Bewildr::ControlPatterns::ExpandCollapsePattern
-        base.extend Bewildr::ControlPatterns::SelectionPattern
-        base.extend Bewildr::ControlPatterns::SelectionItemPattern
-
         base.instance_eval do
           def root_menu_items
             get(:type => :menu_item, :scope => :children, :how_many => :all)

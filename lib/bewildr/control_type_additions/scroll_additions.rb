@@ -4,8 +4,6 @@ module Bewildr
   module ControlTypeAdditions
     module ScrollAdditions
       def self.extended(base)
-        base.extend Bewildr::ControlPatterns::ScrollPattern
-
         base.instance_eval do
           
           #required because when a list is displayed, UI Automation only knows

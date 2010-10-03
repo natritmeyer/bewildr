@@ -4,9 +4,6 @@ module Bewildr
   module ControlTypeAdditions
     module TreeAdditions
       def self.extended(base)
-        base.extend Bewildr::ControlPatterns::ExpandCollapsePattern
-        base.extend Bewildr::ControlPatterns::SelectionPattern
-        
         base.instance_eval do
           def root_nodes
             prepare_element

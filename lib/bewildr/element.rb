@@ -11,6 +11,7 @@ module Bewildr
       when System::Windows::Automation::AutomationElement
         set_control_type
         build_element
+        include_additions
       when nil then @control_type = :non_existent
       else raise Bewildr::BewildrInternalError, "Can only initialize an element with a nil or a Sys::Win::Auto::AE[C], not a #{input.class}"
       end
@@ -88,7 +89,6 @@ module Bewildr
         element_array = c_array_list.to_array.to_a
         case
         when element_array.size == 0 then return Bewildr::Element.new(nil)
-        #when element_array.size == 1 then return Bewildr::Element.new(element_array.first)
         when element_array.size > 0 then return element_array.collect {|element| Bewildr::Element.new(element) }
         end
       end
@@ -139,62 +139,35 @@ module Bewildr
       @control_type = Bewildr::ControlType.symbol_for_enum(@automation_element.current.control_type)
     end
 
-    #list of control types comes from http://msdn.microsoft.com/en-us/library/ms750574.aspx
     def build_element
+      @automation_element.get_supported_patterns.each do |pattern|
+        pattern_name = pattern.programmatic_name.to_s.gsub(/Identifiers\.Pattern/, "")
+        potential_pattern = Bewildr::ControlPatterns.submodules.select {|mod| mod.name =~ /#{pattern_name}$/}.first
+        extend(potential_pattern) unless potential_pattern.nil?
+      end
+    end
+
+    #list of control types comes from http://msdn.microsoft.com/en-us/library/ms750574.aspx
+    def include_additions
       case @control_type
-      when :button
-      when :calendar
-      when :check_box
-        extend Bewildr::ControlPatterns::TogglePattern
       when :combo_box
         extend Bewildr::ControlTypeAdditions::ComboBoxAdditions
-      when :custom
-        build_custom_control_type
       when :data_grid
         extend Bewildr::ControlTypeAdditions::DataGridAdditions
-      when :data_item
       when :document
         extend Bewildr::ControlTypeAdditions::DocumentAdditions
-      when :edit
-        extend Bewildr::ControlPatterns::ValuePattern
-      when :group
-      when :header
-      when :header_item
       when :hyperlink
         extend Bewildr::ControlTypeAdditions::TextAdditions
-      when :image
       when :list
         extend Bewildr::ControlTypeAdditions::ListAdditions
-      when :list_item
-        extend Bewildr::ControlPatterns::SelectionItemPattern
       when :menu
         extend Bewildr::ControlTypeAdditions::MenuAdditions
-      when :menu_bar
       when :menu_item
         extend Bewildr::ControlTypeAdditions::MenuItemAdditions
-      when :pane
-      when :progress_bar
-        extend Bewildr::ControlPatterns::RangeValuePattern
-      when :radio_button
-        extend Bewildr::ControlPatterns::SelectionItemPattern
-      when :scroll_bar
-      when :seperator
-      when :slider
-        extend Bewildr::ControlPatterns::RangeValuePattern
-      when :spinner
-      when :split_button
-      when :status_bar
       when :tab
         extend Bewildr::ControlTypeAdditions::TabAdditions
-      when :tab_item
-        extend Bewildr::ControlPatterns::SelectionItemPattern
-      when :table
       when :text
         extend Bewildr::ControlTypeAdditions::TextAdditions
-      when :thumb
-      when :title_bar
-      when :tool_bar
-      when :tool_tip
       when :tree
         extend Bewildr::ControlTypeAdditions::TreeAdditions
       when :tree_item
@@ -206,17 +179,6 @@ module Bewildr
       #add scrolling capability if relevant - TODO: this ugliness will be fixed later
       if @automation_element.get_supported_patterns.collect {|pattern| pattern.programmatic_name.to_s }.include?("ScrollPatternIdentifiers.Pattern")
         extend Bewildr::ControlTypeAdditions::ScrollAdditions
-      end
-    end
-
-    #TODO: replace build_element to use something similar to what's below, but
-    #make it smarter
-    def build_custom_control_type
-      @automation_element.get_supported_patterns.each do |supported_pattern|
-        case supported_pattern.programmatic_name.to_s
-        when "ValuePatternIdentifiers.Pattern" then extend Bewildr::ControlPatterns::ValuePattern
-        when "TableItemPatternIdentifiers.Pattern" then extend Bewildr::ControlPatterns::TableItemPattern
-        end
       end
     end
   end

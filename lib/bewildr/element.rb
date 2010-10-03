@@ -42,11 +42,6 @@ module Bewildr
     end
     alias :contain? :contains?
 
-    def existence_check
-      raise Bewildr::ElementDoesntExist unless exists?
-    end
-    private :existence_check
-
     def enabled?
       existence_check
       @automation_element.current.is_enabled
@@ -72,10 +67,6 @@ module Bewildr
     def scrollable?
       return false unless @automation_element.get_supported_patterns.collect {|pattern| pattern.programmatic_name.to_s }.include?("ScrollPatternIdentifiers.Pattern")
       vertically_scrollable
-    end
-
-    def prepare_element
-      load_all_items_hack if scrollable?
     end
 
     #:id => "id"
@@ -121,6 +112,12 @@ module Bewildr
       CLICKR.right_click(clickable_point)
     end
 
+    private
+
+    def existence_check
+      raise Bewildr::ElementDoesntExist unless exists?
+    end
+
     def clickable_point
       existence_check
       Timeout.timeout(30) do
@@ -134,7 +131,9 @@ module Bewildr
       end
     end
 
-    private
+    def prepare_element
+      load_all_items_hack if scrollable?
+    end
 
     def set_control_type
       @control_type = Bewildr::ControlType.symbol_for_enum(@automation_element.current.control_type)
@@ -212,7 +211,6 @@ module Bewildr
 
     #TODO: replace build_element to use something similar to what's below, but
     #make it smarter
-
     def build_custom_control_type
       @automation_element.get_supported_patterns.each do |supported_pattern|
         case supported_pattern.programmatic_name.to_s

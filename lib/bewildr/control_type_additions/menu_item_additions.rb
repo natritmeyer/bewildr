@@ -8,6 +8,10 @@ module Bewildr
           def sub_menus
             get(:type => :menu_item, :scope => :children, :how_many => :all)
           end
+		  
+          def click
+            @automation_element.get_current_pattern(System::Windows::Automation::InvokePattern.pattern).invoke
+		  end
         end
       end
     end

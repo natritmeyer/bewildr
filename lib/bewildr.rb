@@ -32,7 +32,7 @@ require 'bewildr/windows'
 require 'bewildr/element'
 
 require 'bewildr/control_patterns/window_pattern'
-require 'bewildr/control_patterns/invoke_pattern'
+#require 'bewildr/control_patterns/invoke_pattern'
 require 'bewildr/control_patterns/value_pattern'
 require 'bewildr/control_patterns/toggle_pattern'
 require 'bewildr/control_patterns/selection_pattern'

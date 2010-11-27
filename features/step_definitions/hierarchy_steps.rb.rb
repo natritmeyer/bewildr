@@ -4,12 +4,19 @@ Then /^the tab is the parent object of the enabled button$/ do
   @main_window.get(:id => "enabled_button").parent.control_type.should == :tab_item
 end
 
+Then /^the enabled button is not the root object$/ do
+  @enabled_button = @main_window.get(:id => "enabled_button")
+  @enabled_button.should_not be_root
+end
+
 When /^I cycle up the object tree$/ do
-  pending
+  @root_element = @enabled_button.parent.parent.parent.parent
+  @root_element.should be_root
 end
 
 Then /^the root object is at the top of the tree$/ do
-  pending
+  @root_element.should be_root
+  @root_element.parent.should be_nil
 end
 
 Then /^the bars tab has 2 children$/ do

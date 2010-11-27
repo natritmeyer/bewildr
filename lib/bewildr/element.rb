@@ -96,7 +96,12 @@ module Bewildr
 
     #add "children/child" and "descendants/descendant" methods
 
+    def root?
+      @automation_element == System::Windows::Automation::AutomationElement.root_element
+    end
+
     def parent
+      return nil if root?
       walker = System::Windows::Automation::TreeWalker.RawViewWalker
       potential_parent = walker.get_parent(@automation_element)
       Bewildr::Element.new(potential_parent)

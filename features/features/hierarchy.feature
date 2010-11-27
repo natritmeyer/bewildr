@@ -16,12 +16,12 @@ Feature: object hierarchy navigation
     When I cycle up the object tree
     Then the root object is at the top of the tree
 
+    @wip
     Scenario: get children objects
     Given I start the test app
     And I select the bars tab
     Then the bars tab has 2 children
 
-    @wip
     Scenario: object has no children
     Given I start the test app
     And I select the bars tab

@@ -22,6 +22,8 @@ end
 Then /^the bars tab has 2 children$/ do
   bars_tab = @main_window.get(:id => "tab_bars")
   bars_tab.should have_children
+  bars_tab.children.size.should == 2
+  bars_tab.children.collect {|c| c.control_type}.should == [:progress_bar, :slider]
 end
 
 Then /^the progress bar has no children$/ do

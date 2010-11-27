@@ -113,8 +113,15 @@ module Bewildr
     end
 
     def children
-      #get({:scope => :children}).collect {|element| Bewildr::Element.new(element)}
       return [] unless has_children?
+      walker = System::Windows::Automation::TreeWalker.ControlViewWalker #RawViewWalker
+      bewildred_children = []
+      child = walker.get_first_child(@automation_element)
+      while !child.nil? do
+        bewildred_children << Bewildr::Element.new(child)
+        child = walker.get_next_sibling(child)
+      end
+      bewildred_children
     end
 
     def click

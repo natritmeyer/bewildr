@@ -20,9 +20,10 @@ Then /^the root object is at the top of the tree$/ do
 end
 
 Then /^the bars tab has 2 children$/ do
-  pending
+  bars_tab = @main_window.get(:id => "tab_bars")
+  bars_tab.should have_children
 end
 
 Then /^the progress bar has no children$/ do
-  pending
+  @main_window.get(:id => "progressBar1").should_not have_children
 end

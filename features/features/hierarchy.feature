@@ -9,7 +9,6 @@ Feature: object hierarchy navigation
     And I select the basic elements tab
     Then the tab is the parent object of the enabled button
 
-    @wip
     Scenario: stop at the root element
     Given I start the test app
     And I select the basic elements tab
@@ -22,6 +21,7 @@ Feature: object hierarchy navigation
     And I select the bars tab
     Then the bars tab has 2 children
 
+    @wip
     Scenario: object has no children
     Given I start the test app
     And I select the bars tab

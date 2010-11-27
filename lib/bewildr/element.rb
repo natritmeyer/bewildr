@@ -107,6 +107,11 @@ module Bewildr
       Bewildr::Element.new(potential_parent)
     end
 
+    def has_children?
+      walker = System::Windows::Automation::TreeWalker.RawViewWalker
+      !walker.get_first_child(@automation_element).nil?
+    end
+
     def children
       get({:scope => :children}).collect {|element| Bewildr::Element.new(element)}
     end

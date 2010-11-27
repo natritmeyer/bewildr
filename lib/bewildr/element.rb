@@ -113,7 +113,8 @@ module Bewildr
     end
 
     def children
-      get({:scope => :children}).collect {|element| Bewildr::Element.new(element)}
+      #get({:scope => :children}).collect {|element| Bewildr::Element.new(element)}
+      return [] unless has_children?
     end
 
     def click

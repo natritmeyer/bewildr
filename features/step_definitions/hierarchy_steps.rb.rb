@@ -26,4 +26,5 @@ end
 
 Then /^the progress bar has no children$/ do
   @main_window.get(:id => "progressBar1").should_not have_children
+  @main_window.get(:id => "progressBar1").children.should == []
 end

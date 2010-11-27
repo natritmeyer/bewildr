@@ -1,6 +1,8 @@
-? - ?
+v0.1.7 - 2010/11/27
 - fixed bug with entering new lines into text fields
 - can now start apps with command line args
+- can now navigate the object hierarchy: added root?, has_children?, children and parent methods to element
+- element building innards reworked. now extends elements based on supported patterns
 
 v0.1.6 - 2010/7/20
 - added scroll interaction

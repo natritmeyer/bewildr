@@ -10,7 +10,6 @@ Input
 
 Execution Logic
 - Continue implementation of clearer exceptions for things like editing a disabled text field
-- fix build_element to work dynamically rather than by using a case statement
 
 Documentation
 - rdoc for everything

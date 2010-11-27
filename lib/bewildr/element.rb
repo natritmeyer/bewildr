@@ -96,6 +96,12 @@ module Bewildr
 
     #add "children/child" and "descendants/descendant" methods
 
+    def parent
+      walker = System::Windows::Automation::TreeWalker.RawViewWalker
+      potential_parent = walker.get_parent(@automation_element)
+      Bewildr::Element.new(potential_parent)
+    end
+
     def children
       get({:scope => :children}).collect {|element| Bewildr::Element.new(element)}
     end

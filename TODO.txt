@@ -3,6 +3,7 @@ UIElements
 - images
 - visible?
 - scroll hidden items into view before acting on them
+- methods to allow access to sibling elements
 
 Input
 - write wrapper class for BewildrClickr, replace current calls to dll

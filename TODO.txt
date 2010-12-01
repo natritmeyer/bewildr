@@ -4,6 +4,7 @@ UIElements
 - visible?
 - scroll hidden items into view before acting on them
 - methods to allow access to sibling elements
+- Elements to add editions dynamically - will allow user-created additions for custom object types
 
 Input
 - write wrapper class for BewildrClickr, replace current calls to dll

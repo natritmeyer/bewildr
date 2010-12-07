@@ -13,12 +13,13 @@ module Bewildr
         item_array.to_a.collect {|item| Bewildr::Element.new(item)}
       end
 
-      def can_select_multiple?
+      def multi_selectable?
         @automation_element.get_current_pattern(System::Windows::Automation::SelectionPattern.pattern).current.can_select_multiple
       end
+      alias :can_select_multiple? :multi_selectable?
 
       def selected
-        can_select_multiple? ? get_selection : get_selection.first
+        multi_selectable? ? get_selection : get_selection.first
       end
     end
   end

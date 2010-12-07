@@ -8,7 +8,7 @@ module Bewildr
         @@control_type_map.index(input_control_type_enum)
       end
 
-      def class_for_symbol(input_symbol)
+      def enum_for_symbol(input_symbol)
         raise "Unknown control type: #{input_symbol}" unless @@control_type_map.key?(input_symbol)
         @@control_type_map[input_symbol]
       end

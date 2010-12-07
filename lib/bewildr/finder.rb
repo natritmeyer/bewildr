@@ -58,7 +58,7 @@ module Bewildr
       end
 
       def type_condition(condition_hash)
-        value = Bewildr::ControlType.class_for_symbol(condition_hash[:type])
+        value = Bewildr::ControlType.enum_for_symbol(condition_hash[:type])
         System::Windows::Automation::PropertyCondition.new(System::Windows::Automation::AutomationElement.control_type_property, value)
       end
     end

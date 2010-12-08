@@ -16,7 +16,6 @@ Feature: object hierarchy navigation
     When I cycle up the object tree
     Then the root object is at the top of the tree
 
-    @wip
     Scenario: get children objects
     Given I start the test app
     And I select the bars tab

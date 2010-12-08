@@ -1,3 +1,7 @@
+v0.1.8 - 2010/12/08
+- added visible? method to element. Don't expect too much from this
+- started documenting the code
+
 v0.1.7 - 2010/11/27
 - fixed bug with entering new lines into text fields
 - can now start apps with command line args

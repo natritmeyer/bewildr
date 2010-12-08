@@ -14,6 +14,11 @@ Feature: basic element interaction
     And I select the basic elements tab
     Then a non existent element does not exist
 
+    Scenario: check for visibility of an element
+    Given I start the test app
+    And I select the basic elements tab
+    Then the enabled button is visible
+
     Scenario: check for enabledness of an enabled element
     Given I start the test app
     And I select the basic elements tab

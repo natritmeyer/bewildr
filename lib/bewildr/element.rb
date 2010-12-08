@@ -38,6 +38,11 @@ module Bewildr
     end
     alias :exist? :exists?
 
+    def visible?
+      existence_check
+      !@automation_element.current.is_offscreen
+    end
+
     def contains?(condition_hash)
       get(condition_hash).exists?
     end

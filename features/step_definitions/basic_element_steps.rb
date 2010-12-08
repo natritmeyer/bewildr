@@ -70,3 +70,7 @@ end
 Then /^the command line arguments I passed are displayed$/ do
   @main_window.get(:id => "command_line_args").text.include?("arg1 arg2 arg3").should be_true
 end
+
+Then /^the enabled button is visible$/ do
+  @main_window.get(:id => "enabled_button").should be_visible
+end

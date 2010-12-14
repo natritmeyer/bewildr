@@ -1,3 +1,6 @@
+v? - ?
+- fixed bug when checking for selected list items when none are selected
+
 v0.1.8 - 2010/12/08
 - added visible? method to element. Don't expect too much from this
 - started documenting the code

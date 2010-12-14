@@ -47,6 +47,7 @@ module Bewildr
           end
 
           def selected
+            return nil if get_selection.empty?
             get_selection.first.name
           end
         end

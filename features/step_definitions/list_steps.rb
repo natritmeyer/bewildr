@@ -49,3 +49,7 @@ end
 Then /^the selected item is twentyone$/ do
   @main_window.get(:id => "single_select_list_box").selected.should match("twentyone")
 end
+
+Then /^there are no selected items in the single select list box$/ do
+  @main_window.get(:id => "single_select_list_box").selected.should be_nil
+end

@@ -43,7 +43,7 @@ module Bewildr
 
           def select_by_index(input)
             raise "Index must be 0 or greater" if input < 0
-            my_item = list_items[input].select
+            list_items[input].select
           end
 
           def selected

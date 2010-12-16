@@ -49,7 +49,7 @@ module Bewildr
             raise "Index must be 0 or greater" if input < 0
             begin
               expand_combo
-              my_item = list_items[input].select
+              list_items[input].select
             ensure
               collapse_combo
             end

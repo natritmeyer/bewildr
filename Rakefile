@@ -21,6 +21,7 @@ spec = Gem::Specification.new do |s|
   s.files = %w(LICENSE README.rdoc Rakefile) + Dir.glob("{bin,lib}/**/*")
   s.require_path = "lib"
   s.bindir = "bin"
+  s.add_dependency('activesupport', '>= 3.0.0')
 end
 
 Rake::GemPackageTask.new(spec) do |p|

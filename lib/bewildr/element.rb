@@ -203,24 +203,15 @@ module Bewildr
       end
     end
 
-    #Adds control type addition modules to this element based on the underlying automation element's control
-    #type. This method will become more dynamic in the near future
+    #Adds control type addition modules to this element based on the underlying automation element's control type.
     #list of control types comes from http://msdn.microsoft.com/en-us/library/ms750574.aspx
     def include_additions
-      case @control_type
-      when :combo_box then extend Bewildr::ControlTypeAdditions::ComboBoxAdditions
-      when :data_grid then extend Bewildr::ControlTypeAdditions::DataGridAdditions
-      when :document  then extend Bewildr::ControlTypeAdditions::DocumentAdditions
-      when :hyperlink then extend Bewildr::ControlTypeAdditions::TextAdditions
-      when :list      then extend Bewildr::ControlTypeAdditions::ListAdditions
-      when :menu      then extend Bewildr::ControlTypeAdditions::MenuAdditions
-      when :menu_item then extend Bewildr::ControlTypeAdditions::MenuItemAdditions
-      when :tab       then extend Bewildr::ControlTypeAdditions::TabAdditions
-      when :text      then extend Bewildr::ControlTypeAdditions::TextAdditions
-      when :tree      then extend Bewildr::ControlTypeAdditions::TreeAdditions
-      when :tree_item then extend Bewildr::ControlTypeAdditions::TreeItemAdditions
-      when :window    then extend Bewildr::ControlTypeAdditions::WindowAdditions
-      end 
+      #the following looks like could have performance issues, but the tests don't take any longer to execute...
+      potential_addition = Bewildr::ControlTypeAdditions.submodules.select {|mod| mod.name.demodulize == "#{@control_type.to_s.classify}Additions"}.first
+      extend potential_addition unless potential_addition.nil?
+
+      #non-standards - move this to another method in the near future
+      extend Bewildr::ControlTypeAdditions::TextAdditions if @control_type == :hyperlink
 
       #add scrolling capability if relevant - TODO: this ugliness will be fixed later
       if @automation_element.get_supported_patterns.collect {|pattern| pattern.programmatic_name.to_s }.include?("ScrollPatternIdentifiers.Pattern")

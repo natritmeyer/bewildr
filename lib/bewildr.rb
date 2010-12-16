@@ -18,6 +18,7 @@ CLICKR = Bewildr::Clickr::Clickr.new
 
 #load plain old ruby libraries
 require 'timeout'
+require 'active_support/core_ext/string/inflections'
 
 #require ruby extensions
 require 'bewildr/ext/extensions'
@@ -56,3 +57,8 @@ require 'bewildr/control_type_additions/tree_item_additions'
 require 'bewildr/control_type_additions/data_grid_additions'
 require 'bewildr/control_type_additions/document_additions'
 require 'bewildr/control_type_additions/scroll_additions'
+
+
+Bewildr::ControlTypeAdditions.submodules.each do |m|
+  puts m.name.inspect
+end

@@ -56,3 +56,11 @@ Given /^I start the app with some command line arguments$/ do
   @app = Bewildr::Application.start_with_settings("features/support/BewildrTestApp.exe", :args => ["arg1", "arg2", "arg3"])
   @main_window = @app.wait_for_window("Bewildr Test App")
 end
+
+Then /^the process id can be asked for and is correct$/ do
+  pending # express the regexp above with the code you wish
+end
+
+Then /^the process name can be asked for and is correct$/ do
+  pending # express the regexp above with the code you wish
+end

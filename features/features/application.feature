@@ -42,3 +42,17 @@ Feature: Application interaction
     When I start the app with some command line arguments
     And I select the basic elements tab
     Then the command line arguments I passed are displayed
+
+    @wip
+    Scenario: Get the app process id
+    Given I ensure that there are no instances of the test app running
+    And I start the test app from scratch
+    When the test app is running
+    Then the process id can be asked for and is correct
+
+    @wip
+    Scenario: Get the app process name
+    Given I ensure that there are no instances of the test app running
+    And I start the test app from scratch
+    When the test app is running
+    Then the process name can be asked for and is correct

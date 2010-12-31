@@ -46,7 +46,6 @@ Feature: list interaction
     When I select Zero from the multi select list box
     Then the first item from the multi select list box is selected
 
-    @wip
     Scenario: no items selected in single select list
     Given I ensure that there are no instances of the test app running
     When I start the test app

@@ -8,13 +8,22 @@ module Bewildr
     def initialize(proc)
       @proc = proc
       @proc.wait_for_input_idle(10)
-      @proc_id = proc.id
     end
     private :initialize
 
+    #Returns the id of the underlying process
+    def proc_id
+      running? ? @proc.id.to_i : nil
+    end
+
+    #Return the name of the underlying process
+    def name
+      running? ? @proc.process_name.to_s : nil
+    end
+
     #kills this process. Uses taskkill to perform the butchery
     def kill
-      `taskkill /f /t /pid #{@proc_id}`
+      `taskkill /f /t /pid #{proc_id}`
       Timeout::timeout(5) do
         sleep 0.1 while running?
       end
@@ -34,7 +43,7 @@ module Bewildr
 
     #Returns a list of windows associated with this application
     def windows
-      Bewildr::Windows.windows_by_process_id(@proc_id)
+      Bewildr::Windows.windows_by_process_id(proc_id)
     end
 
     #Returns a window whose title matches the string or regex passed in as the argument

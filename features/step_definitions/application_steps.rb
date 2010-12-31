@@ -58,9 +58,9 @@ Given /^I start the app with some command line arguments$/ do
 end
 
 Then /^the process id can be asked for and is correct$/ do
-  pending # express the regexp above with the code you wish
+  @app.proc_id.should == @app.instance_variable_get("@proc").id.to_i
 end
 
 Then /^the process name can be asked for and is correct$/ do
-  pending # express the regexp above with the code you wish
+  @app.name.should == @app.instance_variable_get("@proc").process_name.to_s
 end

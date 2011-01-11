@@ -150,17 +150,17 @@ module Bewildr
 
     #Clicks this element - this is done by actual mouse moves and clicks. The automation element's underlying InvokePattern is not used.
     def click
-      CLICKR.click(clickable_point)
+      Bewildr::Mouse.click(clickable_point)
     end
 
     #Double clicks this element - this is done by actual mouse moves and clicks. The automation element's underlying InvokePattern is not used.
     def double_click
-      CLICKR.double_click(clickable_point)
+      Bewildr::Mouse.double_click(clickable_point)
     end
 
     #Right clicks this element - this is done by actual mouse moves and clicks. The automation element's underlying InvokePattern is not used.
     def right_click
-      CLICKR.right_click(clickable_point)
+      Bewildr::Mouse.right_click(clickable_point)
     end
 
     private

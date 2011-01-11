@@ -18,6 +18,7 @@ CLICKR = Bewildr::Clickr::Clickr.new
 
 #load plain old ruby libraries
 require 'timeout'
+require 'singleton'
 require 'active_support/core_ext/string/inflections'
 
 #require ruby extensions
@@ -31,6 +32,7 @@ require 'bewildr/finder'
 require 'bewildr/application'
 require 'bewildr/windows'
 require 'bewildr/element'
+require 'bewildr/mouse'
 
 require 'bewildr/control_patterns/window_pattern'
 require 'bewildr/control_patterns/value_pattern'

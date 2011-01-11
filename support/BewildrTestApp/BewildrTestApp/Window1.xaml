@@ -99,6 +99,7 @@
                             <il:MouseDragElementBehavior/>
                         </i:Interaction.Behaviors>
                     </Label>
+                    <Label Content="Drag Target..." Height="28" HorizontalAlignment="Left" Margin="669,100,0,0" Name="drag_target" VerticalAlignment="Top" />
                 </Grid>
             </TabItem>
         </TabControl>
@@ -117,6 +118,6 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <Label Height="28" HorizontalAlignment="Right" Margin="0,28,18,0" Name="label2" VerticalAlignment="Top" Width="414" HorizontalContentAlignment="Right">Copyright (c) 2010, Nathaniel Ritmeyer. http://www.natontesting.com</Label>
+        <Label Height="28" HorizontalAlignment="Right" Margin="0,28,18,0" Name="label2" VerticalAlignment="Top" Width="414" HorizontalContentAlignment="Right" Content="Copyright (c) 2010-2011, Nathaniel Ritmeyer. http://www.natontesting.com"></Label>
     </Grid>
 </Window>

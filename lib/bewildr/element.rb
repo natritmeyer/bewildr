@@ -163,13 +163,6 @@ module Bewildr
       Bewildr::Mouse.right_click(clickable_point)
     end
 
-    private
-
-    #Raises an exception if this element no longer exists
-    def existence_check
-      raise Bewildr::ElementDoesntExist unless exists?
-    end
-
     #Returns the underlying automation element's clickable point property - this is used by the various click methods
     def clickable_point
       existence_check
@@ -182,6 +175,13 @@ module Bewildr
         end
         return current_clickable_point
       end
+    end
+
+    private
+
+    #Raises an exception if this element no longer exists
+    def existence_check
+      raise Bewildr::ElementDoesntExist unless exists?
     end
 
     #Used to add scrollability to an element if it becomes scrollable subsequent to its initial discovery

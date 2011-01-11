@@ -13,6 +13,12 @@ end
 Then /^I can drag the label from one point to another by referencing the element$/ do
   drag_label  = @main_window.get(:id => "drag_lbl")
   drag_target = @main_window.get(:id => "drag_target")
-
   Bewildr::Mouse.drag(:from => drag_label, :to => drag_target)
+end
+
+Then /^I can drag the label from one point to another via yet another by referencing the elements$/ do
+  drag_label  = @main_window.get(:id => "drag_lbl")
+  drag_target = @main_window.get(:id => "drag_target")
+  drag_via_me = @main_window.get(:id => "drag_via_me")
+  Bewildr::Mouse.drag(:from => drag_label, :via => drag_via_me, :to => drag_target, :wait_at_via_for => 0.5)
 end

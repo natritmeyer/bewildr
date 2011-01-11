@@ -1,11 +1,17 @@
 ﻿<Window x:Class="BewildrTestApp.Window1"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:il="clr-namespace:Microsoft.Expression.Interactivity.Layout;assembly=Microsoft.Expression.Interactions"
     Title="Bewildr Test App" Height="561" Width="905">
     <Grid>
         <TabControl Margin="12,68,12,12" Name="main_tabs">
             <TabItem Header="basic" Name="tab_basic">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="478" />
+                        <ColumnDefinition Width="370" />
+                    </Grid.ColumnDefinitions>
                     <Button Height="39" HorizontalAlignment="Left" Margin="12,14,0,0" Name="enabled_button" VerticalAlignment="Top" Width="126" Click="enabled_button_Click">enabled</Button>
                     <Label Height="22" HorizontalAlignment="Left" Margin="150,23,0,0" Name="enabled_button_message" VerticalAlignment="Top" Width="138">not clicked yet...</Label>
                     <Button Height="41" HorizontalAlignment="Left" Margin="12,59,0,0" Name="disabled_button" VerticalAlignment="Top" Width="126" IsEnabled="False">disabled</Button>
@@ -13,7 +19,7 @@
                     <StackPanel HorizontalAlignment="Left" Margin="150,106,0,0" Name="stackPanel1" Width="200" Height="99.723" VerticalAlignment="Top" />
                     <Label Content="Double click me" MouseDoubleClick="label_double_clicked" Height="43" HorizontalAlignment="Left" Margin="12,227,0,0" Name="double_click_me" VerticalAlignment="Top" Width="126" BorderThickness="1" Background="LightGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                     <Label Content="not double clicked yet..." Height="28" HorizontalAlignment="Left" Margin="150,237,0,0" Name="double_click_result" VerticalAlignment="Top" Width="200" />
-                    <Label Height="24" HorizontalAlignment="Left" Margin="12,276,0,0" Name="command_line_args" VerticalAlignment="Top" Width="822" />
+                    <Label Height="24" HorizontalAlignment="Left" Margin="12,276,0,0" Name="command_line_args" VerticalAlignment="Top" Width="822" Grid.ColumnSpan="2" />
                 </Grid>
             </TabItem>
             <TabItem Header="text fields" Name="tab_text_fields">
@@ -84,6 +90,15 @@
                         </TreeViewItem>
                     </TreeView>
                     <Label Height="28" HorizontalAlignment="Left" Margin="17,0,0,133" Name="tree_results" VerticalAlignment="Bottom" Width="120">nothing done yet...</Label>
+                </Grid>
+            </TabItem>
+            <TabItem Header="drag'n'drop" Name="tab_drag">
+                <Grid>
+                    <Label Content="Drag Me!" Height="28" HorizontalAlignment="Left" Margin="100,100,0,0" Name="drag_lbl" VerticalAlignment="Top">
+                        <i:Interaction.Behaviors>
+                            <il:MouseDragElementBehavior/>
+                        </i:Interaction.Behaviors>
+                    </Label>
                 </Grid>
             </TabItem>
         </TabControl>

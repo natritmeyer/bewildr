@@ -1,9 +1,9 @@
-Then /^there are 8 tabs$/ do
-  @main_window.get(:id => "main_tabs").tabs.size.should == 8
+Then /^there are the correct number of tabs$/ do
+  @main_window.get(:id => "main_tabs").tabs.size.should == 9
 end
 
 Then /^the tab names are the expected ones$/ do
-  @main_window.get(:id => "main_tabs").tab_names.should == ["basic", "text fields", "checks/radio", "listboxes", "menus", "bars", "tables", "tree"]
+  @main_window.get(:id => "main_tabs").tab_names.should == ["basic", "text fields", "checks/radio", "listboxes", "menus", "bars", "tables", "tree", "drag'n'drop"]
 end
 
 Given /^I select the listboxes tab$/ do

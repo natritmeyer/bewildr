@@ -6,7 +6,7 @@ Feature: tab interaction
 
     Scenario: get number of tabs
     Given I start the test app
-    Then there are 8 tabs
+    Then there are the correct number of tabs
 
     Scenario: get tab names
     Given I start the test app

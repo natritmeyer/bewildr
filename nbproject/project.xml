@@ -5,6 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/ruby-project/1">
             <name>bewildr</name>
             <source-roots>
+                <root id="src.support.dir"/>
                 <root id="src.dir"/>
             </source-roots>
             <test-roots>

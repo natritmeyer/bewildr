@@ -136,5 +136,15 @@ namespace BewildrTestApp
         {
             double_click_result.Content = "double clicked!";
         }
+
+        private void drag_target_DragEnter(object sender, DragEventArgs e)
+        {
+            drag_target.Content = "drag over registered";
+        }
+
+        private void drag_via_me_DragEnter(object sender, DragEventArgs e)
+        {
+            drag_via_me.Content = "via drag registered";
+        }
     }
 }

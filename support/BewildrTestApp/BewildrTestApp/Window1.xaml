@@ -94,12 +94,13 @@
             </TabItem>
             <TabItem Header="drag'n'drop" Name="tab_drag">
                 <Grid>
-                    <Label Content="Drag Me!" Height="28" HorizontalAlignment="Left" Margin="100,100,0,0" Name="drag_lbl" VerticalAlignment="Top">
+                    <Label Content="Drag Me!" Height="28" HorizontalAlignment="Left" Margin="100,100,0,0" Name="drag_lbl" VerticalAlignment="Top" Panel.ZIndex="99">
                         <i:Interaction.Behaviors>
                             <il:MouseDragElementBehavior/>
                         </i:Interaction.Behaviors>
                     </Label>
-                    <Label Content="Drag Target..." Height="28" HorizontalAlignment="Left" Margin="669,100,0,0" Name="drag_target" VerticalAlignment="Top" />
+                    <Label Content="Drag Target..." Height="28" HorizontalAlignment="Left" Margin="669,100,0,0" Name="drag_target" VerticalAlignment="Top" Width="121" HorizontalContentAlignment="Center" DragEnter="drag_target_DragEnter" />
+                    <Label Content="Drag via me..." Height="28" HorizontalAlignment="Left" Margin="346,320,360,0" Name="drag_via_me" VerticalAlignment="Top" Width="142" HorizontalContentAlignment="Center" DragEnter="drag_via_me_DragEnter" />
                 </Grid>
             </TabItem>
         </TabControl>

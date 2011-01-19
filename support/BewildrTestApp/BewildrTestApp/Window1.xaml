@@ -1,8 +1,6 @@
 ﻿<Window x:Class="BewildrTestApp.Window1"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-    xmlns:il="clr-namespace:Microsoft.Expression.Interactivity.Layout;assembly=Microsoft.Expression.Interactions"
     Title="Bewildr Test App" Height="561" Width="905">
     <Grid>
         <TabControl Margin="12,68,12,12" Name="main_tabs">
@@ -93,15 +91,11 @@
                 </Grid>
             </TabItem>
             <TabItem Header="drag'n'drop" Name="tab_drag">
-                <Grid>
-                    <Label Content="Drag Me!" Height="28" HorizontalAlignment="Left" Margin="100,100,0,0" Name="drag_lbl" VerticalAlignment="Top" Panel.ZIndex="99">
-                        <i:Interaction.Behaviors>
-                            <il:MouseDragElementBehavior/>
-                        </i:Interaction.Behaviors>
-                    </Label>
-                    <Label Content="Drag Target..." Height="28" HorizontalAlignment="Left" Margin="669,100,0,0" Name="drag_target" VerticalAlignment="Top" Width="121" HorizontalContentAlignment="Center" DragEnter="drag_target_DragEnter" />
-                    <Label Content="Drag via me..." Height="28" HorizontalAlignment="Left" Margin="346,320,360,0" Name="drag_via_me" VerticalAlignment="Top" Width="142" HorizontalContentAlignment="Center" DragEnter="drag_via_me_DragEnter" />
-                </Grid>
+                <Canvas Name="drag_canvas" Background="Transparent">
+                    <Label Content="drag me..." Height="28" HorizontalAlignment="Left" Canvas.Left="135" Canvas.Top="100" Name="drag_lbl" VerticalAlignment="Top"/>
+                    <Label Content="...to me!" Height="28" HorizontalAlignment="Left" Canvas.Left="669" Canvas.Top="100" Name="drag_target" VerticalAlignment="Top" Width="121" HorizontalContentAlignment="Center"/>
+                    <Label Content="...via me..." Height="28" HorizontalAlignment="Left" Canvas.Left="346" Canvas.Top="320" Name="drag_via_me" VerticalAlignment="Top" Width="142" HorizontalContentAlignment="Center"/>
+                </Canvas>
             </TabItem>
         </TabControl>
         <Menu Height="22" Name="main_menu" VerticalAlignment="Top" >

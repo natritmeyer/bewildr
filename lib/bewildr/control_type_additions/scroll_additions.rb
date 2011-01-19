@@ -23,7 +23,7 @@ module Bewildr
           end
 
           def page_down_to_bottom_of_scroll_bar
-            scroll_down_one_page while vertical_scroll_percent < 100.0
+            scroll_down_one_page while vertical_scroll_percent < 99.99
           end
         end
       end

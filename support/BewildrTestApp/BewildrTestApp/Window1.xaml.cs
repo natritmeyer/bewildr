@@ -4,6 +4,8 @@ using System.Threading;
 using System.Windows;
 using System.Data;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace BewildrTestApp
 {
@@ -85,6 +87,9 @@ namespace BewildrTestApp
 
             ///horrible binding stuff
             dataGrid1.DataContext = data_table;
+
+            EventManager.RegisterClassHandler(typeof(Window1), Label.PreviewMouseUpEvent, new MouseButtonEventHandler(this.drag_lbl_PreviewMouseUp), true);
+            EventManager.RegisterClassHandler(typeof(Window1), Label.PreviewMouseDownEvent, new MouseButtonEventHandler(this.drag_lbl_PreviewMouseDown), true);
         }
 
         private void enabled_button_Click(object sender, RoutedEventArgs e)
@@ -137,14 +142,41 @@ namespace BewildrTestApp
             double_click_result.Content = "double clicked!";
         }
 
-        private void drag_target_DragEnter(object sender, DragEventArgs e)
+        Point? dragPoint;
+        private void mouse_enter(object sender, MouseEventArgs e)
         {
-            drag_target.Content = "drag over registered";
+            if (sender == drag_target)
+                drag_target.Content = "drag over registered";
+            if (sender == drag_via_me)
+                drag_via_me.Content = "via drag registered";
         }
 
-        private void drag_via_me_DragEnter(object sender, DragEventArgs e)
+        private void mouse_move(object sender, MouseEventArgs e)
         {
-            drag_via_me.Content = "via drag registered";
+            if (dragPoint != null)
+            {
+                var canvPoint = e.GetPosition(drag_canvas);
+                var point = new Point(canvPoint.X - dragPoint.Value.X,
+                                      canvPoint.Y - dragPoint.Value.Y);
+                Canvas.SetLeft(drag_lbl, point.X);
+                Canvas.SetTop(drag_lbl, point.Y);
+            }
+        }
+
+        private void drag_lbl_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            drag_via_me.AddHandler(Label.MouseEnterEvent, new MouseEventHandler(mouse_enter));
+            drag_target.AddHandler(Label.MouseEnterEvent, new MouseEventHandler(mouse_enter));
+            drag_canvas.AddHandler(Canvas.MouseMoveEvent, new MouseEventHandler(mouse_move));
+            dragPoint = e.GetPosition(drag_lbl);
+        }
+
+        private void drag_lbl_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            dragPoint = null;
+            drag_lbl.RemoveHandler(Canvas.MouseMoveEvent, new MouseEventHandler(mouse_move));
+            drag_via_me.RemoveHandler(Label.MouseEnterEvent, new MouseEventHandler(mouse_enter));
+            drag_target.RemoveHandler(Label.MouseEnterEvent, new MouseEventHandler(mouse_enter));
         }
     }
 }

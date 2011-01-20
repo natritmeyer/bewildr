@@ -18,7 +18,6 @@ Feature: toggle button interaction
     When I toggle off the toggle button
     Then the toggle button is untoggled
 
-    @wip
     Scenario: Toggle a button
     Given I start the test app
     And I select the basic elements tab

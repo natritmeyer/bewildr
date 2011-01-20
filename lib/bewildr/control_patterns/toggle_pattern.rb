@@ -32,8 +32,12 @@ module Bewildr
               state
             end
           when :button
-            def toggle(value)
-              set_state_to(value)
+            def toggle_on
+               set_state_to(:on)
+            end
+
+            def toggle_off
+               set_state_to(:off)
             end
 
             def toggle_state

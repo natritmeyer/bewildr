@@ -18,6 +18,7 @@
                     <Label Content="Double click me" MouseDoubleClick="label_double_clicked" Height="43" HorizontalAlignment="Left" Margin="12,227,0,0" Name="double_click_me" VerticalAlignment="Top" Width="126" BorderThickness="1" Background="LightGray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                     <Label Content="not double clicked yet..." Height="28" HorizontalAlignment="Left" Margin="150,237,0,0" Name="double_click_result" VerticalAlignment="Top" Width="200" />
                     <Label Height="24" HorizontalAlignment="Left" Margin="12,276,0,0" Name="command_line_args" VerticalAlignment="Top" Width="822" Grid.ColumnSpan="2" />
+                    <ToggleButton Content="toggleable" Height="38" HorizontalAlignment="Left" Margin="12,153,0,0" Name="toggle_button" VerticalAlignment="Top" Width="126" />
                 </Grid>
             </TabItem>
             <TabItem Header="text fields" Name="tab_text_fields">

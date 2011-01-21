@@ -177,6 +177,16 @@ module Bewildr
       end
     end
 
+    #Returns the height of the element in pixels
+    def height
+      @automation_element.current.bounding_rectangle.height.to_i
+    end
+
+    #Returns the width of the element in pixels
+    def width
+      @automation_element.current.bounding_rectangle.width.to_i
+    end
+
     private
 
     #Raises an exception if this element no longer exists

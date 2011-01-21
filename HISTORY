@@ -1,3 +1,6 @@
+v? - ?
+- adding height and width methods to Bewildr::Element
+
 v0.1.9 - 2011/1/20
 - fixed bug when checking for selected list items when none are selected
 - now dependent on active_support gem (as a result of dynamic [Type]Additions, err, addition!)

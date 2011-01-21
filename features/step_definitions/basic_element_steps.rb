@@ -74,3 +74,11 @@ end
 Then /^the enabled button is visible$/ do
   @main_window.get(:id => "enabled_button").should be_visible
 end
+
+Then /^the height of the enabled button is as expected$/ do
+  @main_window.get(:id => "enabled_button").height.should == 39
+end
+
+Then /^the width of the enabled button is as expected$/ do
+  @main_window.get(:id => "enabled_button").width.should == 126
+end

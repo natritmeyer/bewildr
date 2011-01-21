@@ -72,3 +72,10 @@ Feature: basic element interaction
     Given I start the test app
     And I select the basic elements tab
     Then the automation id of the enabled button is enabled_button
+
+    @wip
+    Scenario: get the width and height of an element
+    Given I start the test app
+    And I select the basic elements tab
+    Then the height of the enabled button is as expected
+    And the width of the enabled button is as expected

@@ -9,7 +9,7 @@ Documentation is on the way; until then, take a look at the tests or read the AP
 ==Getting started
 ===Dependencies
 1. Install .net 3 and 4 (http://www.microsoft.com/downloads/details.aspx?FamilyID=10cc340b-f857-4a14-83f5-25634c3bf043&displaylang=en & http://msdn.microsoft.com/en-us/netframework/aa569263.aspx)
-2. Install the latest ironruby (http://www.ironruby.net/), and for your own sanity install it in c:\\\\ironruby instead of the default location.
+2. Install the latest ironruby (http://ironruby.codeplex.com/), and for your own sanity install it in c:\\\\ironruby instead of the default location.
 3. You'll need at least rubygems version 1.3.6:
   gem update --system
 

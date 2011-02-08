@@ -2,6 +2,7 @@
 
 module Bewildr
   class Windows
+    #Returns an array of windows belonging to a process id
     def self.windows_by_process_id(process_id)
       #find top level windows
       window_scope = System::Windows::Automation::TreeScope.Children

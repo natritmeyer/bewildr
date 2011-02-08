@@ -34,6 +34,7 @@ module Bewildr
           raise Bewildr::ElementDoesntExist if matching_node.nil?
           if path.size != index + 1
             matching_node.expand
+            load_all_items_hack
             current_nodes = matching_node.child_nodes
           end
         end

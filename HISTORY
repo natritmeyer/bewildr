@@ -2,6 +2,7 @@ v? - ?
 - adding height and width methods to Bewildr::Element
 - changed additions to not use instance_eval. Should make the rdoc useful!
 - fixed bug where tree didn't load invisible items
+- added tons of rdoc
 
 v0.1.9 - 2011/1/20
 - fixed bug when checking for selected list items when none are selected

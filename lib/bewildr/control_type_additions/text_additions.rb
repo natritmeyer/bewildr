@@ -3,6 +3,7 @@
 module Bewildr
   module ControlTypeAdditions
     module TextAdditions
+      #Returns the element's text
       def text
         existence_check
         name

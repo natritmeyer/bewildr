@@ -3,6 +3,7 @@
 module Bewildr
   module ControlPatterns
     module SelectionPattern
+      #Returns the elements that are selected
       def get_selection
         my_selected_items = @automation_element.get_current_pattern(System::Windows::Automation::SelectionPattern.pattern).current.get_selection
 
@@ -13,11 +14,13 @@ module Bewildr
         item_array.to_a.collect {|item| Bewildr::Element.new(item)}
       end
 
+      #Returns true if more than one selection is possible, false if it's not
       def multi_selectable?
         @automation_element.get_current_pattern(System::Windows::Automation::SelectionPattern.pattern).current.can_select_multiple
       end
       alias :can_select_multiple? :multi_selectable?
 
+      #Returns the (first - if relevant) selected item
       def selected
         multi_selectable? ? get_selection : get_selection.first
       end

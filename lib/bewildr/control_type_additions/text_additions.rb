@@ -3,13 +3,9 @@
 module Bewildr
   module ControlTypeAdditions
     module TextAdditions
-      def self.extended(base)
-        base.instance_eval do
-          def text
-            existence_check
-            name
-          end
-        end
+      def text
+        existence_check
+        name
       end
     end
   end

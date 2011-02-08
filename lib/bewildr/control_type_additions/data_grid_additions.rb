@@ -3,12 +3,8 @@
 module Bewildr
   module ControlTypeAdditions
     module DataGridAdditions
-      def self.extended(base)
-        base.instance_eval do
-          def cell(row, column)
-            get_item(row, column)
-          end
-        end
+      def cell(row, column)
+        get_item(row, column)
       end
     end
   end

@@ -3,10 +3,12 @@
 module Bewildr
   module ControlTypeAdditions
     module WindowAdditions
+      #Returns true if the window is open, false if it's not
       def open?
         exists?
       end
 
+      #Waits up to 30 seconds for the window to close
       def wait_for_close
         Timeout::timeout(30) do
           sleep 0.2 while open?

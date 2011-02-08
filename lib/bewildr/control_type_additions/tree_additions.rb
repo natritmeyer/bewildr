@@ -3,19 +3,25 @@
 module Bewildr
   module ControlTypeAdditions
     module TreeAdditions
+      #Returns an array containing the tree's root nodes
       def root_nodes
         prepare_element
         get(:type => :tree_item, :scope => :children)
       end
 
+      #Returns the root node
       def root_node
         root_nodes.first
       end
 
+      #Selects the tree node described by the input, eg:
+      #  select_node(["parent node", "child node"])
       def select_node(path)
         node(path).select
       end
 
+      #Returns the tree node described by the input, eg:
+      #  node(["parent node", "child node"])
       def node(path)
         current_nodes = root_nodes
         matching_node = nil
@@ -41,6 +47,7 @@ module Bewildr
         return matching_node
       end
 
+      #Returns true if the tree contains the item described by the input, false if it doesn't
       def contains_node?(path)
         begin
           node(path)

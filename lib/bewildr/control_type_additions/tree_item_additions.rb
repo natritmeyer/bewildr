@@ -3,6 +3,7 @@
 module Bewildr
   module ControlTypeAdditions
     module TreeItemAdditions
+      #Returns the tree item's child nodes
       def child_nodes
         get(:type => :tree_item, :scope => :children)
       end

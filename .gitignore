@@ -9,3 +9,5 @@ support/BewildrClickr/BewildrClickr.suo
 nbproject/private/rake-d.txt
 
 white_wpf_test_app/WindowsPresentationFramework.exe
+
+doc/*

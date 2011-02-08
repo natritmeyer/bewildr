@@ -2,51 +2,58 @@
 
 module Bewildr
   module ControlPatterns
-    module TogglePattern
+    module TogglePatternForButton
+      def toggle_on
+        set_state_to(:on)
+      end
 
+      def toggle_off
+        set_state_to(:off)
+      end
+
+      def toggle_state
+        state
+      end
+
+      def toggle
+        flip_state
+      end
+    end
+
+    module TogglePatternForCheckBox
+      def check
+        set_state_to :on
+      end
+
+      def uncheck
+        set_state_to :off
+      end
+
+      def checked?
+        state == :on
+      end
+
+      def unchecked?
+        state == :off
+      end
+
+      def indeterminate?
+        state == :indeterminate
+      end
+
+      def checked_state
+        state
+      end
+    end
+    
+    module TogglePattern
       def self.extended(base)
         base.instance_eval do
           case @control_type
           when :check_box
-            def check
-              set_state_to :on
-            end
-
-            def uncheck
-              set_state_to :off
-            end
-
-            def checked?
-              state == :on
-            end
-
-            def unchecked?
-              state == :off
-            end
-
-            def indeterminate?
-              state == :indeterminate
-            end
-
-            def checked_state
-              state
-            end
+            base.extend(Bewildr::ControlPatterns::TogglePatternForCheckBox)
           when :button
-            def toggle_on
-               set_state_to(:on)
-            end
-
-            def toggle_off
-               set_state_to(:off)
-            end
-
-            def toggle_state
-              state
-            end
-
-            def toggle
-              flip_state
-            end
+            base.extend(Bewildr::ControlPatterns::TogglePatternForButton)
           end
         end
       end

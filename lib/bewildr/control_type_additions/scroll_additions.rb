@@ -19,6 +19,7 @@ module Bewildr
         scroll_to initial_scroll_value
       end
 
+      #Scrolls down to the bottom, page by page
       def page_down_to_bottom_of_scroll_bar
         scroll_down_one_page while vertical_scroll_percent < 99.99
       end

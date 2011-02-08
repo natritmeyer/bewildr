@@ -4,11 +4,9 @@ UIElements
 - scroll hidden items into view before acting on them
 - methods to allow access to sibling elements
 - allow user-created additions for custom object types
-- add a scroll-hack-check when expanding tree nodes
 
 Execution Logic
 - Continue implementation of clearer exceptions for things like editing a disabled text field
 
 Documentation
-- rdoc for everything
 - github wiki pages

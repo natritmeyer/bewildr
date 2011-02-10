@@ -17,7 +17,8 @@ module Bewildr
       #These keys can be combined to create more complex search criteria
       def condition_for(condition_hash)
         conditions = condition_hash.select {|key, value| [:id, :name, :type].include?(key) }
-        conditions = Hash[*conditions.flatten]
+        conditions = Hash[*conditions.flatten] if RUBY_VERSION == "1.8.6"
+
         case
         when conditions.length == 0 then raise "Condition needs to include at least an :id, a :name or a :type"
         when conditions.length == 1 then return single_condition(conditions)

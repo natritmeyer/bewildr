@@ -41,7 +41,7 @@ class Bewildr::Mouse
     instance.clickr.set_location(point)
   end
 
-  #Drags the mouse from one location to another, and optionally, via another! Pass a has containing the following keys:
+  #Drags the mouse from one location to another, and optionally, via another! Pass a hash containing the following keys:
   #  :from
   #  :to
   #  :via (optional)

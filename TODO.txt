@@ -4,6 +4,7 @@ UIElements
 - scroll hidden items into view before acting on them
 - methods to allow access to sibling elements
 - allow user-created additions for custom object types
+- build drag and drop into elements
 
 Execution Logic
 - Continue implementation of clearer exceptions for things like editing a disabled text field

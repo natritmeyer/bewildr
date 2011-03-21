@@ -63,13 +63,10 @@ module Bewildr
     def wait_for_window(input, wait_time = 30)
       begin
         Timeout::timeout(wait_time) do
-          begin
+          loop do
             my_window = window(input)
-            raise if my_window.nil?
-            return my_window
-          rescue
+            return my_window unless my_window.nil?
             sleep 0.2
-            retry
           end
         end
       rescue Timeout::Error

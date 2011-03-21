@@ -1,3 +1,6 @@
+v? - ????/??/??
+- fixing issue with wait_for_window sometimes not timing out - raised by mrwizard82d1
+
 v0.1.11 - 2011/2/10
 - tweek to make bewildr work with IronRuby 1.1.2
 

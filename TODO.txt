@@ -7,6 +7,7 @@ UIElements
 - build drag and drop into elements
 - fix list-style elements to return an empty array instead of nil when the list contains no list items
 - flip 'items'/'list_items'
+- make get(:how_many => :all) return an empty array instead of nil when it doesn't find anything
 
 Execution Logic
 - Continue implementation of clearer exceptions for things like editing a disabled text field

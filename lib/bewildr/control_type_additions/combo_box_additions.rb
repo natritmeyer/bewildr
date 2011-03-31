@@ -5,17 +5,14 @@ module Bewildr
     module ComboBoxAdditions
       #Returns a string array containing the element's item names
       def items
-        my_list_items = list_items
-        return nil if my_list_items.nil?
-        my_list_items.collect {|item| item.name}
+        list_items.collect {|item| item.name}
       end
 
       #Returns an array containing the combobox items
       def list_items
         begin
           expand_combo
-          bewildr_list_items = get(:type => :list_item, :scope => :children, :how_many => :all)
-          bewildr_list_items.nil? ? nil : bewildr_list_items
+          get(:type => :list_item, :scope => :children, :how_many => :all)
         ensure
           collapse_combo
         end
@@ -23,8 +20,7 @@ module Bewildr
 
       #Returns the number of items in the combobox
       def count
-        my_items = items
-        my_items.nil? ? 0 : my_items.size
+        items.size
       end
 
       #Selects a combobox item. Takes a string (and selects the first item whose name matches) or an integer and selects the respective element

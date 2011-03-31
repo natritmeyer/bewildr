@@ -5,28 +5,23 @@ module Bewildr
     module ListAdditions
       #Select the list item whose name matches the supplied input
       def select(input)
-        selectable_elements = get(:type => :list_item, :scope => :children, :how_many => :all)
-        selectable_elements.find {|selectable_element| selectable_element.name == input}.select
+        list_items.find {|selectable_element| selectable_element.name == input}.select
       end
 
       #Returns a string array containing the list item names
       def items
-        my_list_items = list_items
-        return nil if my_list_items.nil?
-        my_list_items.collect {|item| item.name}
+        list_items.collect {|item| item.name}
       end
 
       #Returns an array containing the list items
       def list_items
         prepare_element
-        bewildr_list_items = get(:type => :list_item, :scope => :children, :how_many => :all)
-        bewildr_list_items.nil? ? nil : bewildr_list_items
+        get(:type => :list_item, :scope => :children, :how_many => :all)
       end
 
       #Returns the number of items in the list
       def count
-        my_items = items
-        my_items.nil? ? 0 : my_items.size
+        items.size
       end
 
       #Selects a list item. Takes a string (and selects the first item whose name matches) or an integer and selects the respective element

@@ -111,3 +111,35 @@ Then /^an array containing a number of elements is returned$/ do
   @buttons.should_not be_empty
   @buttons.size.should > 1
 end
+
+When /^I get the enabled textfield's next sibling$/ do
+  @enabled_next_sibling = @main_window.get(:id => "enabled_text_field").next_sibling
+end
+
+Then /^I have the disabled textfield$/ do
+  @enabled_next_sibling.automation_id.should == "disabled_text_field"
+end
+
+When /^I get the password textfield's next sibling$/ do
+  @password_next_sibling = @main_window.get(:id => "password_field").next_sibling
+end
+
+When /^I get the disabled textfield's previous sibling$/ do
+  @disabled_previous_sibling = @main_window.get(:id => "disabled_text_field").previous_sibling
+end
+
+Then /^I have the enabled textfield$/ do
+  @disabled_previous_sibling.automation_id.should == "enabled_text_field"
+end
+
+When /^I get the enabled textfield's previous sibling$/ do
+  @enabled_previous_sibling = @main_window.get(:id => "enabled_text_field").previous_sibling
+end
+
+Then /^the password field does not have a next sibling$/ do
+  @password_next_sibling.should be_nil
+end
+
+Then /^the enabled textfield does not have a previous sibling$/ do
+  @enabled_previous_sibling.should be_nil
+end

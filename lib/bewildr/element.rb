@@ -143,6 +143,20 @@ module Bewildr
       bewildred_children
     end
 
+    #Returns the current element's next sibling, or nil if there is no next sibling
+    def next_sibling
+      walker = System::Windows::Automation::TreeWalker.ControlViewWalker
+      potential_next_sibling = walker.get_next_sibling(@automation_element)
+      potential_next_sibling.nil? ? nil : Bewildr::Element.new(potential_next_sibling)
+    end
+
+    #Returns the current element's previous sibling, or nil if there is no previous sibling
+    def previous_sibling
+      walker = System::Windows::Automation::TreeWalker.ControlViewWalker
+      potential_previous_sibling = walker.get_previous_sibling(@automation_element)
+      potential_previous_sibling.nil? ? nil : Bewildr::Element.new(potential_previous_sibling)
+    end
+
     #Clicks this element - this is done by actual mouse moves and clicks. The automation element's underlying InvokePattern is not used.
     def click
       Bewildr::Mouse.click(clickable_point)

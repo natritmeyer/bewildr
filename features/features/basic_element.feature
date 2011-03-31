@@ -96,3 +96,31 @@ Feature: basic element interaction
     And I select the basic elements tab
     When I look for all button elements
     Then an array containing a number of elements is returned
+
+    @wip
+    Scenario: get next sibling element
+    Given I start the test app
+    And I select the textfields tab
+    When I get the enabled textfield's next sibling
+    Then I have the disabled textfield
+
+    @wip
+    Scenario: no next sibling element
+    Given I start the test app
+    And I select the textfields tab
+    When I get the password textfield's next sibling
+    Then the password field does not have a next sibling
+
+    @wip
+    Scenario: get previous sibling element
+    Given I start the test app
+    And I select the textfields tab
+    When I get the disabled textfield's previous sibling
+    Then I have the enabled textfield
+
+    @wip
+    Scenario: no previous sibling element
+    Given I start the test app
+    And I select the textfields tab
+    When I get the enabled textfield's previous sibling
+    Then the enabled textfield does not have a previous sibling

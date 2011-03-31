@@ -107,9 +107,7 @@ module Bewildr
       case result
       when System::Windows::Automation::AutomationElement, nil then return Bewildr::Element.new(result)
       when System::Windows::Automation::AutomationElementCollection
-        c_array_list = System::Collections::ArrayList.new(result)
-        element_array = c_array_list.to_array.to_a
-        element_array.collect {|element| Bewildr::Element.new(element) }
+        System::Collections::ArrayList.new(result).to_array.to_a.collect {|element| Bewildr::Element.new(element) }
       end
     end
 

@@ -5,7 +5,6 @@ UIElements
 - methods to allow access to sibling elements
 - allow user-created additions for custom object types
 - build drag and drop into elements
-- fix list-style elements to return an empty array instead of nil when the list contains no list items
 - make 'items' and 'list_items' methods return the same thing, add an 'items_names' method to return what 'items' does at the moment
 
 Execution Logic

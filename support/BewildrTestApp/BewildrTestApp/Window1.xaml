@@ -47,6 +47,8 @@
                     <ListBox Height="100" HorizontalAlignment="Left" Margin="22,19,0,0" Name="single_select_list_box" VerticalAlignment="Top" Width="120" />
                     <ComboBox HorizontalAlignment="Left" Margin="22,140,0,0" Name="comboBox1" Width="120" Height="22.723" VerticalAlignment="Top" IsReadOnly="False" />
                     <ListBox Height="100" Margin="148,19,0,0" Name="multiple_select_list" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" SelectionMode="Multiple" />
+                    <ListBox Height="100" HorizontalAlignment="Left" Margin="274,19,0,0" Name="empty_list" VerticalAlignment="Top" Width="129" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="274,140,0,0" Name="empty_combo" VerticalAlignment="Top" Width="129" />
                 </Grid>
             </TabItem>
             <TabItem Header="menus" Name="tab_menus">

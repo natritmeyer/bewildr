@@ -109,10 +109,7 @@ module Bewildr
       when System::Windows::Automation::AutomationElementCollection
         c_array_list = System::Collections::ArrayList.new(result)
         element_array = c_array_list.to_array.to_a
-        case
-        when element_array.size == 0 then return []
-        when element_array.size > 0 then return element_array.collect {|element| Bewildr::Element.new(element) }
-        end
+        element_array.collect {|element| Bewildr::Element.new(element) }
       end
     end
 

@@ -79,21 +79,18 @@ Feature: basic element interaction
     Then the height of the enabled button is as expected
     And the width of the enabled button is as expected
 
-    @wip
     Scenario: how_many returns an empty array when no elements match
     Given I start the test app
     And I select the basic elements tab
     When I look for all elements with automation id of flibble
     Then an empty array is returned
 
-    @wip
     Scenario: how_many returns an array with one element when one matches
     Given I start the test app
     And I select the basic elements tab
     When I look for all elements with automation id of toggle_button
     Then an array containing one element returned
 
-    @wip
     Scenario: use how_many to get all matching objects
     Given I start the test app
     And I select the basic elements tab

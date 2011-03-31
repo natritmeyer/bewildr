@@ -6,8 +6,7 @@ UIElements
 - allow user-created additions for custom object types
 - build drag and drop into elements
 - fix list-style elements to return an empty array instead of nil when the list contains no list items
-- flip 'items'/'list_items'
-- make get(:how_many => :all) return an empty array instead of nil when it doesn't find anything
+- make 'items' and 'list_items' methods return the same thing, add an 'items_names' method to return what 'items' does at the moment
 
 Execution Logic
 - Continue implementation of clearer exceptions for things like editing a disabled text field

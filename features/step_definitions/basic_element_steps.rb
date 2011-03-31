@@ -85,7 +85,7 @@ end
 
 When /^I look for all elements with automation id of flibble$/ do
   @flibbles = @main_window.get(:id => "flibble", :how_many => :all)
-  p @flibbles
+  #p @flibbles
 end
 
 Then /^an empty array is returned$/ do
@@ -94,7 +94,7 @@ end
 
 When /^I look for all elements with automation id of toggle_button$/ do
   @toggles = @main_window.get(:id => "toggle_button", :how_many => :all)
-  p @toggles
+  #p @toggles
 end
 
 Then /^an array containing one element returned$/ do
@@ -104,7 +104,7 @@ end
 
 When /^I look for all button elements$/ do
   @buttons = @main_window.get(:type => :button, :how_many => :all)
-  p @buttons
+  #p @buttons
 end
 
 Then /^an array containing a number of elements is returned$/ do

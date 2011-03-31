@@ -82,3 +82,32 @@ end
 Then /^the width of the enabled button is as expected$/ do
   @main_window.get(:id => "enabled_button").width.should == 126
 end
+
+When /^I look for all elements with automation id of flibble$/ do
+  @flibbles = @main_window.get(:id => "flibble", :how_many => :all)
+  p @flibbles
+end
+
+Then /^an empty array is returned$/ do
+  @flibbles.should be_empty
+end
+
+When /^I look for all elements with automation id of toggle_button$/ do
+  @toggles = @main_window.get(:id => "toggle_button", :how_many => :all)
+  p @toggles
+end
+
+Then /^an array containing one element returned$/ do
+  @toggles.should_not be_empty
+  @toggles.size.should == 1
+end
+
+When /^I look for all button elements$/ do
+  @buttons = @main_window.get(:type => :button, :how_many => :all)
+  p @buttons
+end
+
+Then /^an array containing a number of elements is returned$/ do
+  @buttons.should_not be_empty
+  @buttons.size.should > 1
+end

@@ -51,3 +51,9 @@ Feature: list interaction
     When I start the test app
     And I select the list tab
     Then there are no selected items in the single select list box
+
+    Scenario: empty array returned when there are no list items
+    Given I start the test app
+    And I select the list tab
+    When I get the items out of the empty list box
+    Then the empty list box returns an empty array

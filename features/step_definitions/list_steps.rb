@@ -53,3 +53,11 @@ end
 Then /^there are no selected items in the single select list box$/ do
   @main_window.get(:id => "single_select_list_box").selected.should be_nil
 end
+
+When /^I get the items out of the empty list box$/ do
+  @empty_list_items = @main_window.get(:id => "empty_list").list_items
+end
+
+Then /^the empty list box returns an empty array$/ do
+  @empty_list_items.should be_empty
+end

@@ -25,3 +25,9 @@ Feature: checkbox interaction
     And I select the combobox tab
     When I select the 4th combobox item by its index
     Then the selected combobox item is three
+
+    Scenario: empty array returned when there are no combo items
+    Given I start the test app
+    And I select the combobox tab
+    When I get the items out of the empty combobox
+    Then the empty combobox returns an empty array

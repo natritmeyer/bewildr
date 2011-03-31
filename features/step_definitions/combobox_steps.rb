@@ -25,3 +25,11 @@ end
 Then /^the selected combobox item is three$/ do
   @main_window.get(:id => "comboBox1").selected.should match("Three")
 end
+
+When /^I get the items out of the empty combobox$/ do
+  @empty_combo_items = @main_window.get(:id => "empty_combo").list_items
+end
+
+Then /^the empty combobox returns an empty array$/ do
+  @empty_combo_items.should be_empty
+end

@@ -1,4 +1,4 @@
-v? - ????/??/??
+v0.1.12 - 2011/4/26
 - fixing issue with wait_for_window sometimes not timing out - raised by mrwizard82d1
 - using (:how_many => :all) when getting elements will always return an array, even when no matching elements are found
 - comboboxes and list boxes that contain no items will now return an array (instead of nil) when asked for their items

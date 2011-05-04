@@ -64,13 +64,14 @@ module Bewildr
       @automation_element.current.is_enabled
     end
 
-    #Waits up to 30 seconds for a descendant of this element to exist that meets the search criteria
+    #Waits up to 30 seconds for a descendant of this element to exist that meets the search criteria, returns the element if found
     def wait_for_existence_of(condition_hash)
       Timeout.timeout(30) do
         sleep 0.1 until contains?(condition_hash)
       end
       get(condition_hash)
     end
+    alias :wait_for :wait_for_existence_of
 
     #Waits for up to 30 seconds for this element to no longer have a descendant element that meest the criteria
     def wait_for_non_existence_of(condition_hash)

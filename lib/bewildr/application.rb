@@ -101,6 +101,11 @@ module Bewildr
       Bewildr::Application.new(System::Diagnostics::Process.get_processes_by_name(process_name).first)
     end
 
+    #Returns a Bewildr::Application wrapping a process already in memory where the argument is the process id
+    def self.attach_to_process_id(process_id)
+       Bewildr::Application.new(System::Diagnostics::Process.get_process_by_id(process_id))
+    end
+
     #Returns a Bewildr::Application wrapping a process already in memory where the argument is the process object to be wrapped
     def self.attach_to_process(process)
       Bewildr::Application.new(process)

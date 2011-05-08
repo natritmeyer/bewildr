@@ -68,3 +68,8 @@ end
 Then /^the app process is available$/ do
   @app.process.class.should == System::Diagnostics::Process
 end
+
+Then /^I attach to the process by its id$/ do
+  @temp_test_app = Bewildr::Application.wait_for_process_with_name('BewildrTestApp')
+  @app = Bewildr::Application.attach_to_process_id(@temp_test_app.proc_id)
+end

@@ -49,6 +49,13 @@ Feature: Application interaction
     When the test app is running
     Then the process id can be asked for and is correct
 
+    Scenario: Attach to process by id
+    Given I ensure that there are no instances of the test app running
+    And I start the test app from scratch
+    When the test app is running
+    And I attach to the process by its id
+    Then I have a reference to the test app
+
     Scenario: Get the app process name
     Given I ensure that there are no instances of the test app running
     And I start the test app from scratch

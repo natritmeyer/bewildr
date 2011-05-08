@@ -54,3 +54,10 @@ Feature: Application interaction
     And I start the test app from scratch
     When the test app is running
     Then the process name can be asked for and is correct
+
+    @wip
+    Scenario: Get the process itself
+    Given I ensure that there are no instances of the test app running
+    And I start the test app from scratch
+    When the test app is running
+    Then the app process is available

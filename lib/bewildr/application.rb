@@ -11,6 +11,11 @@ module Bewildr
     end
     private :initialize
 
+    #Returns the underlying process wrapped by this Application object
+    def process
+      @proc
+    end
+
     #Returns the id of the underlying process
     def proc_id
       running? ? @proc.id.to_i : nil

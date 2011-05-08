@@ -1,5 +1,6 @@
 v? - ?
 - added alias wait_for to use instead of the more cumbersome wait_for_existence_of
+- added 'process' method to Bewildr::Application to return the underlying windows process
 
 v0.1.12 - 2011/4/26
 - fixing issue with wait_for_window sometimes not timing out - raised by mrwizard82d1

@@ -64,3 +64,7 @@ end
 Then /^the process name can be asked for and is correct$/ do
   @app.name.should == @app.instance_variable_get("@proc").process_name.to_s
 end
+
+Then /^the app process is available$/ do
+  @app.process.class.should == System::Diagnostics::Process
+end

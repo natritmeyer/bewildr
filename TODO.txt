@@ -4,6 +4,7 @@ UIElements
 - allow user-created additions for custom object types
 - build drag and drop into elements
 - make 'items' and 'list_items' methods return the same thing, add an 'items_names' method to return what 'items' does at the moment
+- make ListAdditions.selected return the selected object, not its name
 
 Execution Logic
 - Continue implementation of clearer exceptions for things like editing a disabled text field

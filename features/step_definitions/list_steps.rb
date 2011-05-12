@@ -15,7 +15,9 @@ When /^I select Zero from the single select list box$/ do
 end
 
 Then /^the first item from the single select list box is selected$/ do
-  @main_window.get(:id => "single_select_list_box").selected.should match("Zero")
+  @main_window.get(:id => "single_select_list_box").selected.class.should == Bewildr::Element
+  @main_window.get(:id => "single_select_list_box").selected.control_type.should == :list_item
+  @main_window.get(:id => "single_select_list_box").selected.name.should match("Zero")
 end
 
 When /^I select the second item from the single select list box$/ do
@@ -23,7 +25,7 @@ When /^I select the second item from the single select list box$/ do
 end
 
 Then /^the second item from the single select list box is selected$/ do
-  @main_window.get(:id => "single_select_list_box").selected.should match("One")
+  @main_window.get(:id => "single_select_list_box").selected.name.should match("One")
 end
 
 When /^I select Three from the single select list box$/ do
@@ -31,7 +33,7 @@ When /^I select Three from the single select list box$/ do
 end
 
 Then /^the single select list box selected item is Three$/ do
-  @main_window.get(:id => "single_select_list_box").selected.should match("Three")
+  @main_window.get(:id => "single_select_list_box").selected.name.should match("Three")
 end
 
 When /^I select Zero from the multi select list box$/ do
@@ -39,7 +41,7 @@ When /^I select Zero from the multi select list box$/ do
 end
 
 Then /^the first item from the multi select list box is selected$/ do
-  @main_window.get(:id => "multiple_select_list").selected.should match("Zero")
+  @main_window.get(:id => "multiple_select_list").selected.name.should match("Zero")
 end
 
 When /^I select the last item in the single select list box$/ do
@@ -47,7 +49,7 @@ When /^I select the last item in the single select list box$/ do
 end
 
 Then /^the selected item is twentyone$/ do
-  @main_window.get(:id => "single_select_list_box").selected.should match("twentyone")
+  @main_window.get(:id => "single_select_list_box").selected.name.should match("twentyone")
 end
 
 Then /^there are no selected items in the single select list box$/ do

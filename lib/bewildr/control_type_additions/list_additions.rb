@@ -49,7 +49,7 @@ module Bewildr
       #Returns the selected list item
       def selected
         return nil if get_selection.empty?
-        get_selection.first.name
+        get_selection.first
       end
     end
   end

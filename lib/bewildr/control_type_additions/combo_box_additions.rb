@@ -61,7 +61,7 @@ module Bewildr
         expand_combo
         collapse_combo
         #get_selection.first
-        get_selection.first.name
+        get_selection.first
       end
 
       #Expands the combobox

@@ -11,7 +11,9 @@ When /^I select zero from the combobox$/ do
 end
 
 Then /^the selected combobox item is zero$/ do
-  @main_window.get(:id => "comboBox1").selected.should match("Zero")
+  @main_window.get(:id => "comboBox1").selected.class.should == Bewildr::Element
+  @main_window.get(:id => "comboBox1").selected.control_type.should == :list_item
+  @main_window.get(:id => "comboBox1").selected.name.should match("Zero")
 end
 
 Then /^the items in the combobox match the expected items$/ do
@@ -23,7 +25,7 @@ When /^I select the 4th combobox item by its index$/ do
 end
 
 Then /^the selected combobox item is three$/ do
-  @main_window.get(:id => "comboBox1").selected.should match("Three")
+  @main_window.get(:id => "comboBox1").selected.name.should match("Three")
 end
 
 When /^I get the items out of the empty combobox$/ do

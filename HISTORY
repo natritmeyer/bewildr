@@ -2,6 +2,8 @@ v? - ?
 - added alias wait_for to use instead of the more cumbersome wait_for_existence_of
 - added 'process' method to Bewildr::Application to return the underlying windows process
 - added 'attach_to_process_id' class method to Bewildr::Application
+- changed ListAdditions#selected to return a bewildr element representing the list item - not its name as it used to
+- changed ComboBoxAdditions#selected to return a bewildr element representing the list item - not its name as it used to
 
 v0.1.12 - 2011/4/26
 - fixing issue with wait_for_window sometimes not timing out - raised by mrwizard82d1

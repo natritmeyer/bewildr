@@ -35,3 +35,7 @@ end
 Then /^the empty combobox returns an empty array$/ do
   @empty_combo_items.should be_empty
 end
+
+Then /^asking for the selected item from the empty combobox returns nil$/ do
+  @main_window.get(:id => "empty_combo").selected.should be_nil
+end

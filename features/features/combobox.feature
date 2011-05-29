@@ -31,3 +31,8 @@ Feature: checkbox interaction
     And I select the combobox tab
     When I get the items out of the empty combobox
     Then the empty combobox returns an empty array
+
+    Scenario: nil returned when asking an empty combobox for its selected item
+    Given I start the test app
+    And I select the combobox tab
+    Then asking for the selected item from the empty combobox returns nil

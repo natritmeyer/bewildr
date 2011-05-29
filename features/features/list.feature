@@ -14,7 +14,6 @@ Feature: list interaction
     And I select the list tab
     Then the multi select list box contains the expected items
 
-    @wip
     Scenario: select item from single select list
     Given I start the test app
     And I select the list tab

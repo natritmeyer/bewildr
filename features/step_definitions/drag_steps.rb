@@ -24,3 +24,12 @@ Then /^I can drag the label element from one point to another$/ do
   label.drag :to => target
   target.text.should == "drag over registered"
 end
+
+Then /^I can drag the label element from one point to another via yet another$/ do
+  label  = @main_window.get(:id => "drag_lbl")
+  target = @main_window.get(:id => "drag_target")
+  way_point = @main_window.get(:id => "drag_via_me")
+  label.drag :via => way_point, :to => target, :wait_at_via_for => 0.5
+  way_point.text.should == "via drag registered"
+  target.text.should == "drag over registered"
+end

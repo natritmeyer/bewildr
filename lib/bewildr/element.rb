@@ -199,11 +199,14 @@ module Bewildr
 
 	#Drags this element to a target element; optionally via a different element. Takes a hash with the following:
 	#  :to => some_element
-	#  :via => another_element
+	#  :via => another_element (optional)
+	#  :wait_at_via_for => seconds (optional)
 	#Eg:
 	#  my_element.drag :to => some_element
 	#or...
 	#  my_element.drag :via => another_element, :to => some_element
+	#or, if you need to hover over the via_element for 2.5 seconds:
+    #  my_element.drag :via => another_element, :to => some_element, :wait_at_via_for => 2.5
 	def drag(target_details)
 	  drag_args = target_details
 	  drag_args[:from] = self

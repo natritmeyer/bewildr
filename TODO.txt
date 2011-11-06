@@ -3,12 +3,10 @@ UIElements
 - scroll hidden items into view before acting on them
 - allow user-created additions for custom object types
 - make 'items' and 'list_items' methods return the same thing, add an 'items_names' method to return what 'items' does at the moment
+- change ScrollPattern#vertically_scrollable to vertically_scrollable?
 
 Execution Logic
 - Continue implementation of clearer exceptions for things like editing a disabled text field
 
 Documentation
 - github wiki pages
-
-Dependencies
-- remove ActiveSupport dependency

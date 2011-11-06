@@ -243,7 +243,7 @@ module Bewildr
     #list of control types comes from http://msdn.microsoft.com/en-us/library/ms750574.aspx
     def include_additions
       #the following looks like could have performance issues, but the tests don't take any longer to execute...
-      potential_addition = Bewildr::ControlTypeAdditions.submodules.select {|mod| mod.name.demodulize == "#{@control_type.to_s.classify}Additions"}.first
+      potential_addition = Bewildr::ControlTypeAdditions.submodules.select {|mod| mod.name.bewildr_demodulize == "#{@control_type.to_s.bewildr_classify}Additions"}.first
       extend potential_addition unless potential_addition.nil?
 
       #non-standards - move this to another method in the near future

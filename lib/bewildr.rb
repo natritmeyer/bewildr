@@ -20,7 +20,6 @@ CLICKR = Bewildr::Clickr::Clickr.new
 #load plain old ruby libraries
 require 'timeout'
 require 'singleton'
-require 'active_support/core_ext/string/inflections'
 
 #require ruby extensions
 require 'bewildr/ext/extensions'

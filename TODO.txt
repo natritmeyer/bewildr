@@ -9,3 +9,6 @@ Execution Logic
 
 Documentation
 - github wiki pages
+
+Dependencies
+- remove ActiveSupport dependency

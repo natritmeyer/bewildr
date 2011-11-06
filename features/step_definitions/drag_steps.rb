@@ -6,6 +6,7 @@ Then /^I can drag the label from one point to another by referencing the element
   drag_label  = @main_window.get(:id => "drag_lbl")
   drag_target = @main_window.get(:id => "drag_target")
   Bewildr::Mouse.drag(:from => drag_label, :to => drag_target)
+  drag_target.text.should == "drag over registered"
 end
 
 Then /^I can drag the label from one point to another via yet another by referencing the elements$/ do
@@ -15,4 +16,11 @@ Then /^I can drag the label from one point to another via yet another by referen
   Bewildr::Mouse.drag(:from => drag_label, :via => drag_via_me, :to => drag_target, :wait_at_via_for => 0.5)
   drag_via_me.text.should == "via drag registered"
   drag_target.text.should == "drag over registered"
+end
+
+Then /^I can drag the label element from one point to another$/ do
+  label  = @main_window.get(:id => "drag_lbl")
+  target = @main_window.get(:id => "drag_target")
+  label.drag_to target
+  target.text.should == "drag over registered"
 end

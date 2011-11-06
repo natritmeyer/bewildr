@@ -21,6 +21,6 @@ end
 Then /^I can drag the label element from one point to another$/ do
   label  = @main_window.get(:id => "drag_lbl")
   target = @main_window.get(:id => "drag_target")
-  label.drag_to target
+  label.drag :to => target
   target.text.should == "drag over registered"
 end

@@ -1,5 +1,6 @@
-v0.1.14 - ????/??/??
+v0.1.14 - 2011/11/6
 - added drag method to element
+- removed dependency on active support
 
 v0.1.13 - 2011/7/5
 - added alias wait_for to use instead of the more cumbersome wait_for_existence_of

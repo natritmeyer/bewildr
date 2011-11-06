@@ -197,6 +197,19 @@ module Bewildr
       @automation_element.current.bounding_rectangle.width.to_i
     end
 
+	#Drags this element to a target element; optionally via a different element. Takes a hash with the following:
+	#  :to => some_element
+	#  :via => another_element
+	#Eg:
+	#  my_element.drag :to => some_element
+	#or...
+	#  my_element.drag :via => another_element, :to => some_element
+	def drag(target_details)
+	  drag_args = target_details
+	  drag_args[:from] = self
+      Bewildr::Mouse.drag(drag_args)
+	end
+
     private
 
     #Raises an exception if this element no longer exists

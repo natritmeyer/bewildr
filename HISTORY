@@ -1,4 +1,7 @@
-v0.1.13 - 2001/7/5
+v0.1.14 - ????/??/??
+- added drag method to element
+
+v0.1.13 - 2011/7/5
 - added alias wait_for to use instead of the more cumbersome wait_for_existence_of
 - added 'process' method to Bewildr::Application to return the underlying windows process
 - added 'attach_to_process_id' class method to Bewildr::Application

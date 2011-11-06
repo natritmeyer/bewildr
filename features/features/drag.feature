@@ -16,7 +16,6 @@ Feature: drag and drop
     And I select the drag'n'drop tab
     Then I can drag the label from one point to another via yet another by referencing the elements
 	
-	@wip
 	Scenario: drag the label from one point to the other using the Element
 	Given I ensure that there are no instances of the test app running
     Given I start the test app

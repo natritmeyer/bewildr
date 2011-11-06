@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlPatterns
+  module ControlPatterns #:nodoc:
     module SelectionPattern
       #Returns the elements that are selected
       def get_selection

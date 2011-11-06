@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlPatterns
+  module ControlPatterns #:nodoc:
     module RangeValuePattern
       #Returns the current value of the element
       def value

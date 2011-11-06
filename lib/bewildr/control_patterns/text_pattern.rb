@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.s
 
 module Bewildr
-  module ControlPatterns
+  module ControlPatterns #:nodoc:
     module TextPattern
       #Selects all of the text in the element
       def select_all

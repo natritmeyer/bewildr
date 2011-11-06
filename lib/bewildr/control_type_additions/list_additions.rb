@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlTypeAdditions
+  module ControlTypeAdditions #:nodoc:
     module ListAdditions
       #Select the list item whose name matches the supplied input
       def select(input)

@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlTypeAdditions
+  module ControlTypeAdditions #:nodoc:
     module MenuAdditions
       #Returns an array containing the menu's root items
       def root_menu_items

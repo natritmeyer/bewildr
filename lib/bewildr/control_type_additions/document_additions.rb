@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlTypeAdditions
+  module ControlTypeAdditions #:nodoc:
     module DocumentAdditions
       #Returns the document text
       def text

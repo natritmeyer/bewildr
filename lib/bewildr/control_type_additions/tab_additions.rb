@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlTypeAdditions
+  module ControlTypeAdditions #:nodoc:
     module TabAdditions
       #Selects the tab whose name matches the input
       def select(input)

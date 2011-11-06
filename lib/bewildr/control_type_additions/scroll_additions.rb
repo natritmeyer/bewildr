@@ -1,8 +1,8 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlTypeAdditions
-    module ScrollAdditions
+  module ControlTypeAdditions #:nodoc:
+    module ScrollAdditions #:nodoc: all
       #required because when a list is displayed, UI Automation only knows
       #about the visible items. This method stores where the scroll value is,
       #then moves the scroller to the top of the scroll bar and proceeds to

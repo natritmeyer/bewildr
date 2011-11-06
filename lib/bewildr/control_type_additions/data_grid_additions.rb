@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlTypeAdditions
+  module ControlTypeAdditions #:nodoc:
     module DataGridAdditions
       #Returns the cell at the supplied row and column
       def cell(row, column)

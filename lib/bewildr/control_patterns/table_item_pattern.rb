@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlPatterns
+  module ControlPatterns #:nodoc:
     module TableItemPattern
       #Returns the number of rows the element spans
       def row_span

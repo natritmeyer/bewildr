@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlPatterns
+  module ControlPatterns #:nodoc:
     module TogglePatternForButton
       #Toggle on the element
       def toggle_on
@@ -64,7 +64,7 @@ module Bewildr
 
     #These are not the toggle patterns you are looking for [wave of the hand/]. If you are dealing with a button, look for Bewildr::ControlPatterns::TogglePatternForButton.
     #If you're dealing with a checkbox, take a look at Bewildr::ControlPatterns::TogglePatternForCheckBox
-    module TogglePattern
+    module TogglePattern #:nodoc:
       def self.extended(base)
         base.instance_eval do
           case @control_type

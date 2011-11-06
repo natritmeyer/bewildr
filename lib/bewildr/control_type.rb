@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  class ControlType
+  class ControlType #:nodoc: all
     class << self
       def symbol_for_enum(input_control_type_enum)
         raise "Unknown control type: #{input_control_type_enum}" unless @@control_type_map.value?(input_control_type_enum)

@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module BewildrHelpers
+  module BewildrHelpers #:nodoc: all
     def r_array_to_cs_array_of_strings(args)
       System::Array[System::String].new(args.map {|arg| arg.to_s.to_clr_string})
     end

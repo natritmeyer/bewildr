@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlPatterns
+  module ControlPatterns #:nodoc:
     module ScrollPattern
       #Returns true if the element is vertically scrollable, false if it's not
       def vertically_scrollable

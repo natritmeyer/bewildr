@@ -2,7 +2,7 @@
 # and open the template in the editor.
 
 module Bewildr
-  module ControlPatterns
+  module ControlPatterns #:nodoc:
     module SelectionItemPattern
       #Selects the element
       def select

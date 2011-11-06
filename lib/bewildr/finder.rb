@@ -5,7 +5,7 @@ module Bewildr
   #methods that build up the parts needed for to search for elements. These methods are called by Bewildr::Element#get in
   #order to get and test for existence of descendent elements in the UI element tree. All of the methods take a condition
   #hash, this is made up of at least one, but can be several key/value pairs.
-  class Finder
+  class Finder #:nodoc: all
     extend Bewildr::BewildrHelpers
     
     class << self

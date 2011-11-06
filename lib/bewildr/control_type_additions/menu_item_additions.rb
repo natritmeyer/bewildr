@@ -1,7 +1,7 @@
 #Copyright (c) 2010, Nathaniel Ritmeyer. All rights reserved.
 
 module Bewildr
-  module ControlTypeAdditions
+  module ControlTypeAdditions #:nodoc:
     module MenuItemAdditions
       def sub_menus
         get(:type => :menu_item, :scope => :children, :how_many => :all)
